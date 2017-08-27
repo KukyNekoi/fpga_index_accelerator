@@ -7,7 +7,7 @@
 \ProcessOptions
 \LoadClass{report}
 
-\RequirePackage[latin1]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[english,spanish]{babel}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
@@ -26,8 +26,8 @@
 \def\resumenname{Resumen}
 \def\Abstractname{Abstract}
 \def\tblcontname{Tabla de Contenidos}
-\def\indfigname{Índice de Figuras}
-\def\indtblname{Índice de Tablas}
+\def\indfigname{Ãndice de Figuras}
+\def\indtblname{Ãndice de Tablas}
 \def\glosname{Glosario}
 \def\appendixpartname{Anexos}
 
@@ -38,7 +38,7 @@
 \def\titulo#1{\def\@titulo{#1}}
 
 %%%
-% Redimensión de márgenes
+% Redimensiï¿½n de mï¿½rgenes
 %%%
 
 \setlength\paperheight{11in}  %
@@ -102,7 +102,7 @@
 \singlespacing
 \parbox{180pt}{
 %\MakeUppercase{
-Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
+Memoria para optar al tÃ­tulo de Ingeniero Civil en ComputaciÃ³n\\}%} \\}
 }
 
 \def\calificacion
@@ -110,7 +110,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 \doublespacing
 \parbox{300pt}{
   El presente documento fue calificado con nota: \line(1,0){50}\\
-  %Firman dicha calificación:\\
+  %Firman dicha calificaciÃ³n:\\
 }
 }
 
@@ -141,7 +141,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 % Encabezado
 \makeencabezado
 
-% Título de la memoria
+% TÃ­tulo de la memoria
 \bigskip
 \begin{center}
   %\onehalfspacing
@@ -180,7 +180,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 % Encabezado
 \makeencabezado
 
-% Título de la memoria
+% TÃ­tulo de la memoria
 \bigskip
 \begin{center}
   {\Large \bf \@titulo\\}  
@@ -240,8 +240,8 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 %\bigskip
 
 \newpage
-\pagestyle{headings} %% de ahora en adelante hay headings en las páginas
-\onehalfspacing %% de ahora en adelante la separacion es de línea y 1/2
+\pagestyle{headings} %% de ahora en adelante hay headings en las pÃ¡ginas
+\onehalfspacing %% de ahora en adelante la separacion es de lÃ­nea y 1/2
 }
 
 %%%
@@ -254,7 +254,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
   \thispagestyle{plain}
   \hbox{}\vskip 400\p@
   \flushright
-  \itshape %% en itálica
+  \itshape %% en itÃ¡lica
   }{
   \normalfont %% vuelve a font normal
   \endflushright
@@ -326,14 +326,14 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 \renewcommand\tableofcontents{
   \addcontentsline{toc}{chapter}{\tblcontname}	%% agrega la entrada al toc
   \onehalfspacing	%% setea el espacio para el toc
-  \def\thepage{\csname @roman\endcsname \c@page} %% define el estilo de numeración 
-  \thispagestyle{plain} %% estilo de la página
+  \def\thepage{\csname @roman\endcsname \c@page} %% define el estilo de numeraciÃ³n 
+  \thispagestyle{plain} %% estilo de la pï¿½gina
   \centerline{\bf\MakeUppercase{\tblcontname}} %% escribe \tblcontname
   \begin{flushright} \pagename \end{flushright} %% escribe \pagename
   \par 
   \@starttoc{toc} %% abre el archivo y escribe el toc
   
-  \newpage %% nueva página
+  \newpage %% nueva pÃ¡gina
   \def\thepage{\csname @arabic\endcsname \c@page} %% por si no hay mas inicio
 }
 
@@ -374,7 +374,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 }
 
 %%%
-% Formato encabezado capítulo
+% Formato encabezado capÃ­tulo
 %%%
 
 \def\@makechapterhead#1{%
@@ -450,7 +450,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 
   \bigskip\bigskip\bigskip
   
-  %%% no tengo idea por qué pero esto genera la bibliografía
+  %%% no tengo idea por quÃ© pero esto genera la bibliografÃ­a
   \list
   {\@biblabel{\@arabic\c@enumiv}}
   {\setlength{\leftmargin}{0pt}

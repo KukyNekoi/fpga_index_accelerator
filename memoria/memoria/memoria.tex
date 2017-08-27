@@ -1,16 +1,24 @@
 %% inicio, la clase del documento es iccmemoria.cls
 \documentclass{iccmemoria}
+\usepackage{pslatex}
+\usepackage[english]{babel}
+
+\usepackage{latexsym}
+\usepackage{amssymb} 
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{url}
 
 %% datos generales y para la tapa
-\titulo{Título de la Memoria}
-\author{Nombre del Alumno}
-\supervisor{Profesor Supervisor}
+\titulo{Hardware-accelerated algorithms for approximate search engines}
+\author{Erik Regla}
+\supervisor{Rodrigo Paredes}
 \informantes
 	{Profesor Informante 1}
 	{Profesor Informante 2}
-\adicional{(sólo por si se necesita agregar algún otro profesor)}
-\director{Profesor del ramo Memoria de Título}
-\date{mes, año}
+\adicional{(sÃ³lo por si se necesita agregar algÃºn otro profesor)}
+\director{Profesor del ramo Memoria de TÃ­tulo}
+\date{mes, aÃ±o}
 
 %% inicio de documento
 \begin{document}
@@ -20,7 +28,7 @@
 
 %% dedicatoria
 \begin{dedicatory}
-Dedicado a ...
+Dedicated to the me of the future. To remember him that desire knows no bounds.
 \end{dedicatory}
 
 %% agradecimientos
@@ -35,57 +43,122 @@ Agradecimientos a ...
 
 %% resumen
 \begin{resumen}
-Aquí va el resumen (en Castellano)... 
+AquÃ­ va el resumen (en Castellano)... 
 \end{resumen}
+
 
 %% abstract
 
-%% contenido del primer capítulo
-\chapter{Primer Capítulo}
-Aquí va el texto del capítulo 1...
+%% contenido del primer capÃ­tulo
+\chapter{Introduction}
+Introduction to the problem
 
-\section{La primera sección del capítulo 1}
-Aquí va el texto de la primera sección del capítulo 1... 
+\section{Context}
+AquÃ­ va el texto de la primera secciÃ³n del capÃ­tulo 1... 
 
-\subsection{La primera subsección de la primera sección del capítulo 1}
-Aquí va el texto de la primera subsección de la primera sección del capítulo 1... 
-
-\subsection{La segunda subsección de la primera sección del capítulo 1}
-Aquí va el texto de la segunda subsección de la primera sección del capítulo 1...
-
-\section{La segunda sección del capítulo 1}
-Aquí va el texto de la segunda sección del capítulo 1...
+\subsection{Motivation}
 
 
-%% contenido del segundo capítulo
-\chapter{Segundo Capítulo}
-Sólo para probar algunas cosas como las referencias.
-La primera cita es a Lamport~\cite{lamport79}.
-La segunda cita es para Lamport nuevamente~\cite{lamport78}.
-La última cita es para Keleher \emph{et al.}~\cite{keleher92}.
+\subsection{Goals}
+
+%% contenido del primer capÃ­tulo
+\chapter{Required knowledge}
+  \section{Aproximate search indexing}
+  \section{Metric spaces}
+    \subsection{Dimensionality crux}
+    \subsection{Pivot-based indices}
+    \subsection{Permutant-based indices}
+  \section{General overview}
+  \section{Permutant-based indices}
+  \section{Permutant-based search}
+  \section{Hardware acceleration}
+    \subsection{GPGPU}
+    \subsection{ASIC}
+    \subsection{FPGA}
+    \subsection{Design synthesis}
+    \subsection{High Level Synthesis}
+  \section{Embebbed Linux} 
+  \section{Adapteva Parallela} 
+    \subsection{Hardware}
+    \subsection{Inner workings}
+
+\chapter{Metric Space indexing}
+  \section{Dataset description}
+  \section{Implemented algorithm}
+
+\chapter{Software implementation analysis}
+  \section{Algorithm analysis}
+    \subsection{Index generation}
+    \subsection{Approximate search}
+  \section{Code analysis and benchmarking}
+    \subsection{Permutation distance}
+    \subsection{Permutation generation}
+
+\chapter{Accelerator Implementation}
+  \section{High Level Synthesis}
+    \subsection{Overview}
+    \subsection{Latency}
+    \subsection{Thoughput}
+    \subsection{Directives}
+    \subsection{Impact of coding style}
+  \section{Permutation distance}
+    \subsection{Analysis}
+    \subsection{Implementations}
+  \section{Permutation generation}
+    \subsection{Analysis}
+    \subsection{Implementations}
 
 
-%% contenido del tercer capítulo
-\chapter{Tercer Capítulo}
-Sólo para incluir figuras y tablas.
-\begin{figure}[h]
-  \vspace*{1cm}
-  \includegraphics[bb=0 0 640 480, width=.5\linewidth]{latexlogo.png}
-  \vspace*{1cm}
-  \caption{La primera figura de la memoria}
-\end{figure}
-\begin{table}[h]
-  \vspace*{1cm}
-  (aqui debiera ir la tabla)
-  \vspace*{1cm}
-  \caption{La primera tabla de la memoria}
-\end{table}
+
+\chapter{Hardware-Software interoperation}
+\section{AXI4 Protocol}
+  \subsection{AXI4 Protocol}
+  \subsection{AXI4Lite}
+  \subsection{AXI4Full}
+  \subsection{AXI4Stream}
+\section{Implementation}
+  \subsection{Direct Memory Access}
+  \subsection{Devicetree}
+  \subsection{AMBA}
+  \subsection{Userspace IO}
+
+\chapter{Results}
+\section{Original implementation benchmarks}
+\section{Accelerated implementation benchmarks}
+\section{Comparison between results}
+
+
+\chapter{Conclusions}
+
+% %% contenido del segundo capÃ­tulo
+% \chapter{Segundo CapÃ­tulo}
+% % SÃ³lo para probar algunas cosas como las referencias.
+% % La primera cita es a Lamport~\cite{lamport79}.
+% % La segunda cita es para Lamport nuevamente~\cite{lamport78}.
+% % La Ãºltima cita es para Keleher \emph{et al.}~\cite{keleher92}.
+
+
+% %% contenido del tercer capÃ­tulo
+% \chapter{Tercer CapÃ­tulo}
+% % SÃ³lo para incluir figuras y tablas.
+% % \begin{figure}[h]
+% %   \vspace*{1cm}
+% %   % \includegraphics[bb=0 0 640 480, width=.5\linewidth]{latexlogo.png}
+% %   \vspace*{1cm}
+% %   \caption{La primera figura de la memoria}
+% % \end{figure}
+% % \begin{table}[h]
+% %   \vspace*{1cm}
+% %   (aqui debiera ir la tabla)
+% %   \vspace*{1cm}
+% %   \caption{La primera tabla de la memoria}
+% % \end{table}
 
 
 %% ambiente glosario
 \begin{glosario}
-  \item[El primer término:] Este es el significado del primer término, realmente no se bien lo que significa pero podría haberlo averiguado si hubiese tenido un poco mas de tiempo.
-  \item[El segundo término:] Este si se lo que significa pero me da lata escribirlo...
+  \item[El primer tÃ©rmino:] Este es el significado del primer tÃ©rmino, realmente no se bien lo que significa pero podrÃ­a haberlo averiguado si hubiese tenido un poco mas de tiempo.
+  \item[El segundo tÃ©rmino:] Este si se lo que significa pero me da lata escribirlo...
 \end{glosario}
 
 
@@ -97,24 +170,24 @@ Sólo para incluir figuras y tablas.
 \appendixpart
 
 %% contenido del primer anexo
-\appendix{El Primer Anexo}
-Aquí va el texto del primer anexo...
+\appendix{HLS IP C++ code}
+AquÃ­ va el texto del primer anexo...
 
-\section{La primera sección del primer anexo}
-Aquí va el texto de la primera sección del primer anexo...
+% \section{La primera secciÃ³n del primer anexo}
+% AquÃ­ va el texto de la primera secciÃ³n del primer anexo...
 
-\section{La segunda sección del primer anexo}
-Aquí va el texto de la segunda sección del primer anexo...
+% \section{La segunda secciÃ³n del primer anexo}
+% AquÃ­ va el texto de la segunda secciÃ³n del primer anexo...
 
-\subsection{La primera subsección de la segunda sección del primer anexo}
+% \subsection{La primera subsecciÃ³n de la segunda secciÃ³n del primer anexo}
 
 
-%% contenido del segundo anexo
-\appendix{El segundo Anexo}
-Aquí va el texto del segundo anexo...
+% %% contenido del segundo anexo
+% \appendix{El segundo Anexo}
+% AquÃ­ va el texto del segundo anexo...
 
-\section{La primera sección del segundo anexo}
-Aquí va el texto de la primera sección del segundo anexo...
+% \section{La primera secciÃ³n del segundo anexo}
+% AquÃ­ va el texto de la primera secciÃ³n del segundo anexo...
 
 %% fin
 \end{document}

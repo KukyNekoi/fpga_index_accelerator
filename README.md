@@ -28,3 +28,4 @@ I suggest you to read my memoria before digging all the experiments, this will g
 * Fabián Olivares
 * Felipe Astroza
 * Rodrigo Paredes
+* Samuel Ortega
