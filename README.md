@@ -3,9 +3,10 @@ This project is intended as a guide for developers which want to start on FPGA p
 
 ## Repository structure
 * **memoria**: This folder houses all documentation related to my degree project document. 
-* **experiments**: All experiments performed during the process will be documented here. Both source code and experiment log.
+* **experiment_log**: All experiments performed during the process will be documented here. Both source code and experiment log.
 * **source**: Source code of the degree project studied
 * **dist**: Extra repositories and resources used
+* **tools**: Tools that I developed to ease my work
 
 ## Where to start?
 I suggest you to read my memoria before digging all the experiments, this will give you a good insight about what's happening in them in order to allow you to build new accelerators
