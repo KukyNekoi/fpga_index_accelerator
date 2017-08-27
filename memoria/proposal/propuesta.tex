@@ -13,7 +13,8 @@
 \pagestyle{empty}
 
 \title{
-    Hardware-accelerated routines for similarity search on high-dimensionality metric spaces
+    ASIC prototyping for hardware-accelerated similarity search algorithms.
+    % Experimental analysis for hardware accelerators on custom heterogeneous architectures.
     %Implementation of hardware-accelerated approximate search algorithms on a High-performance Low-Energy platform.\\
 %\footnote{Los comentarios de este documento (texto en itálica), incluyendo esta nota a pie de página, deben ser removidos por el alumno al momento de elaborar su propuesta de proyecto.}
 }
@@ -47,7 +48,7 @@ Universidad de Talca}
 }
 
 \subsection{Problem definition} 
-\emph{In order to perform k-nn or range queries on permutant-based indices, first, a permutation is generated for the query object and then compared to the whole dataset under the premise that computing distance between two permutations is faster than computing the full distance between the two elements. After their distances are computed, a subset is selected under a certain criteria given by the query nature and the results are filtered later in order to answer the query.
+\emph{One of the many approaches to perform similarity searches is to perform k-nn or range queries on permutant-based indices, which abstract the dataset dimensionality and the cost of the object-object distance calculation. To perform a search on this index, a permutation is generated for the query object and then compared to the whole dataset under the premise that computing distance between two permutations is faster than computing the full distance between the two elements. After their distances are computed, a subset is selected under a certain criteria given by the query nature and the results are filtered later in order to answer the query.
 \\
 As permutations are abstractions of the intrinsic dataset dimension, as we reduce the permutation/dimensionality ratio, the results become inaccurate, on the other hand, if we raise the ratio to increase acurracy we end computating the whole dataset rendering the approach useless as it's more time consuming than the original problem.
     % (Esta sección debe incluir la descripción del problema resolver o idea a desarrollar, y la motivación para hacerlo. Es decir, cual es la importancia, innovación, aporte, y/o beneficio para la ciencia y/o la humanidad). Esta sección responde a la pregunta ¿Cuál es el problema que voy a resolver?
@@ -113,26 +114,30 @@ TODO
 \section{Metodología}
 % \emph{(En esta sección se deben describir y justificar los métodos que se usarán para lograr las metas propuestas. Una buena opción es que, por cada objetivo, se describan una serie de pasos o métodos que se usarán para alcanzarlo. La longitud máxima de esta sección es de 1 página.)}
 
-\paragraph{Milestone 1:} ``Accelerator base design"
+
+\paragraph{Milestone 1:} ``ASIC Accelerator prototyping"
 \begin{itemize}
 \item Analise previously developed hardware-accelerators.
 \item Research about resource sharing methods and techniques for the proposed architecture.
-\item Implement a simple hardware-accelerator.
+\item Implement a simple hardware-accelerator IP Core on the FPGA.
+\item Study possible problems which could arise when porting common algorithms on custom hardware.
 \end{itemize}
 
 \paragraph{Milestone 2:} ``Permutant-based index"
 \begin{itemize}
-\item Research about approximate search methods for metric spaces.
 \item Research about approximate search indices for metric spaces.
 \item Research about workarounds for high-dimensionality metric space datasets.
 \item Implement a permutant-based index and query algorithm.
+\item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
 \end{itemize}
 
 \paragraph{Milestone 3:} ``Hardware-accelerated index implementation"
 \begin{itemize}
-\item Select code fragments to be analised.
-\item Implement on Programable Logic the selected code fragments.
+\item Implement as IP Cores the selected code fragments.
+\item Implement an interconection protocol for resource sharing between the two platforms.
+\item Detect possible bottlenecks or other problems derived from the interconection between the Atrix-7 FPGA and the ARMv7 A9 processor.
 \item Benchmark solutions.
+\item Profit.
 \end{itemize}
 
 \section{Work plan}
