@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="cQDYkrd3BA6">
+  <start-date>2017-09-04T15:30:00.000Z</start-date>
+  <prototype-task>
+    <task id="t-2">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-3">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-4">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r-2">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-3">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-4">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-5">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <child-resource idref="r1"/>
+  </resource>
+  <resource id="r1">
+    <name>Erik Regla</name>
+    <type>Staff</type>
+    <schedule>
+      <schedule-day day-of-week="sunday"/>
+      <schedule-day day-of-week="monday">
+        <time-span start-time="43200" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="tuesday">
+        <time-span start-time="39600" end-time="50400"/>
+        <time-span start-time="54000" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="wednesday">
+        <time-span start-time="28800" end-time="37800"/>
+        <time-span start-time="50400" end-time="57600"/>
+        <time-span start-time="59400" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="thursday">
+        <time-span start-time="28800" end-time="50400"/>
+      </schedule-day>
+      <schedule-day day-of-week="friday">
+        <time-span start-time="28800" end-time="39600"/>
+        <time-span start-time="53100" end-time="64800"/>
+      </schedule-day>
+      <schedule-day day-of-week="saturday"/>
+      <calendar name="Overtime" editable="yes" overtime="yes"/>
+      <calendar name="Time Off" editable="yes" overtime="no">
+        <event start="2017-09-18T11:00:00.000Z" end="2017-09-24T20:00:00.000Z" sd="6104" st="28800" ed="6110" et="61200"/>
+        <event start="2017-10-09T11:00:00.000Z" end="2017-10-09T20:00:00.000Z" sd="6125" st="28800" ed="6125" et="61200"/>
+        <event start="2017-10-27T11:00:00.000Z" end="2017-10-27T20:00:00.000Z" sd="6143" st="28800" ed="6143" et="61200"/>
+        <event start="2017-11-01T11:00:00.000Z" end="2017-11-01T20:00:00.000Z" sd="6148" st="28800" ed="6148" et="61200"/>
+        <event start="2017-12-08T11:00:00.000Z" end="2017-12-08T20:00:00.000Z" sd="6185" st="28800" ed="6185" et="61200"/>
+        <event start="2017-12-25T11:00:00.000Z" end="2017-12-25T20:00:00.000Z" sd="6202" st="28800" ed="6202" et="61200"/>
+        <event start="2018-01-01T11:00:00.000Z" end="2018-01-01T20:00:00.000Z" sd="6209" st="28800" ed="6209" et="61200"/>
+        <event start="2018-03-29T11:00:00.000Z" end="2018-03-30T20:00:00.000Z" sd="6296" st="28800" ed="6297" et="61200"/>
+        <event start="2018-05-01T11:00:00.000Z" end="2018-05-01T20:00:00.000Z" sd="6329" st="28800" ed="6329" et="61200"/>
+        <event start="2018-05-21T12:00:00.000Z" end="2018-05-21T21:00:00.000Z" sd="6349" st="28800" ed="6349" et="61200"/>
+        <event start="2018-07-02T12:00:00.000Z" end="2018-07-02T21:00:00.000Z" sd="6391" st="28800" ed="6391" et="61200"/>
+        <event start="2018-07-16T12:00:00.000Z" end="2018-07-16T21:00:00.000Z" sd="6405" st="28800" ed="6405" et="61200"/>
+      </calendar>
+    </schedule>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t1"/>
+  </task>
+  <task id="t1">
+    <title>Memoria</title>
+    <type>group</type>
+    <child-task idref="t6"/>
+    <child-task idref="t19"/>
+    <child-task idref="t7"/>
+    <child-task idref="t8"/>
+  </task>
+  <task id="t6">
+    <title>Implementación</title>
+    <type>group</type>
+    <child-task idref="t58"/>
+    <child-task idref="t59"/>
+    <child-task idref="t60"/>
+    <child-task idref="t9"/>
+    <child-task idref="t10"/>
+    <child-task idref="t57"/>
+    <child-task idref="t61"/>
+  </task>
+  <task id="t7">
+    <title>Revisión bibliográfica</title>
+    <type>group</type>
+    <child-task idref="t33"/>
+    <child-task idref="t28"/>
+    <child-task idref="t29"/>
+    <child-task idref="t54"/>
+  </task>
+  <task id="t8">
+    <title>Escritura documento Memoria</title>
+    <leveled-start>2018-05-18T12:30:00.000Z</leveled-start>
+    <effort>864000</effort>
+    <prerequisite-task idref="t6"/>
+    <prerequisite-task idref="t7"/>
+    <prerequisite-task idref="t19"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t9">
+    <title>Módulos kernel y controladores</title>
+    <leveled-start>2018-01-25T12:15:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <prerequisite-task idref="t58"/>
+    <prerequisite-task idref="t59"/>
+    <prerequisite-task idref="t60"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t10">
+    <title>Acelerador para índices</title>
+    <leveled-start>2018-02-23T13:15:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <prerequisite-task idref="t9"/>
+    <prerequisite-task idref="t25"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t19">
+    <title>Análisis</title>
+    <type>group</type>
+    <child-task idref="t23"/>
+    <child-task idref="t25"/>
+    <child-task idref="t26"/>
+    <child-task idref="t63"/>
+    <child-task idref="t55"/>
+  </task>
+  <task id="t23">
+    <title>Complejidad de creación de índices en espacios métricos</title>
+    <leveled-start>2018-02-05T15:45:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <min-estimate>72000</min-estimate>
+    <max-estimate>216000</max-estimate>
+    <prerequisite-task idref="t58"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t25">
+    <title>Evaluación de tareas potencialmente paralelizables</title>
+    <leveled-start>2018-02-14T17:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <min-estimate>72000</min-estimate>
+    <max-estimate>216000</max-estimate>
+    <prerequisite-task idref="t23"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t26">
+    <title>Rendimiento implementación sobre FPGA</title>
+    <leveled-start>2018-04-06T19:45:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <min-estimate>144000</min-estimate>
+    <max-estimate>432000</max-estimate>
+    <prerequisite-task idref="t10"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t28">
+    <title>ASIC</title>
+    <type>group</type>
+    <child-task idref="t45"/>
+    <child-task idref="t46"/>
+    <child-task idref="t48"/>
+  </task>
+  <task id="t29">
+    <title>Embebed Linux</title>
+    <type>group</type>
+    <child-task idref="t53"/>
+    <child-task idref="t50"/>
+    <child-task idref="t51"/>
+    <child-task idref="t52"/>
+    <prerequisite-task idref="t28"/>
+  </task>
+  <task id="t33">
+    <title>Búsqueda e indización sobre espacios métricos</title>
+    <leveled-start>2017-09-04T15:30:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <min-estimate>144000</min-estimate>
+    <max-estimate>432000</max-estimate>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t45">
+    <title>Diseño de circuitos digitales</title>
+    <leveled-start>2017-10-20T13:15:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <min-estimate>72000</min-estimate>
+    <max-estimate>216000</max-estimate>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t46">
+    <title>Núcleos IP para operaciones matemáticas.</title>
+    <leveled-start>2017-11-02T15:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <prerequisite-task idref="t45"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t48">
+    <title>Revisión bibliográfica de ASICs terminada.</title>
+    <type>milestone</type>
+    <leveled-start>2017-10-11T13:30:00.000Z</leveled-start>
+    <prerequisite-task idref="t46"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t50">
+    <title>Descripción de hardware y dispositivos</title>
+    <leveled-start>2017-12-14T11:45:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <min-estimate>72000</min-estimate>
+    <max-estimate>216000</max-estimate>
+    <prerequisite-task idref="t53"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t51">
+    <title>Interoperabilidad PS-PLs</title>
+    <leveled-start>2017-12-26T14:15:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <min-estimate>144000</min-estimate>
+    <max-estimate>432000</max-estimate>
+    <prerequisite-task idref="t50"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t52">
+    <title>Revisión bibliográfica para Embebed Linux terminada</title>
+    <type>milestone</type>
+    <leveled-start>2017-11-22T20:15:00.000Z</leveled-start>
+    <prerequisite-task idref="t51"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t53">
+    <title>Kernel y módulos</title>
+    <leveled-start>2017-12-01T19:45:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <min-estimate>72000</min-estimate>
+    <max-estimate>216000</max-estimate>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t54">
+    <title>Revisión bibliográfica terminada.</title>
+    <type>milestone</type>
+    <leveled-start>2017-11-22T20:15:00.000Z</leveled-start>
+    <prerequisite-task idref="t28"/>
+    <prerequisite-task idref="t29"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t55">
+    <title>Tareas de análisis terminadas.</title>
+    <type>milestone</type>
+    <leveled-start>2018-01-25T12:15:00.000Z</leveled-start>
+    <prerequisite-task idref="t23"/>
+    <prerequisite-task idref="t25"/>
+    <prerequisite-task idref="t26"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t57">
+    <title>Mejoras en acelerador para índices.</title>
+    <leveled-start>2018-03-15T14:30:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <prerequisite-task idref="t10"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t58">
+    <title>Indice inicial para espacios métricos</title>
+    <leveled-start>2017-09-29T13:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <prerequisite-task idref="t33"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t59">
+    <title>Prototipado ASIC</title>
+    <leveled-start>2017-11-22T20:15:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <prerequisite-task idref="t28"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t60">
+    <title>Circuito para interconexión PS-PL</title>
+    <leveled-start>2018-01-16T14:30:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <prerequisite-task idref="t29"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t61">
+    <title>Implementaciones terminadas.</title>
+    <type>milestone</type>
+    <leveled-start>2018-01-25T12:15:00.000Z</leveled-start>
+    <prerequisite-task idref="t9"/>
+    <prerequisite-task idref="t10"/>
+    <prerequisite-task idref="t57"/>
+    <prerequisite-task idref="t58"/>
+    <prerequisite-task idref="t59"/>
+    <prerequisite-task idref="t60"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t63">
+    <title>Contraste entre implementaciones FPGA y CPU</title>
+    <leveled-start>2018-04-27T11:15:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <min-estimate>144000</min-estimate>
+    <max-estimate>432000</max-estimate>
+    <prerequisite-task idref="t6"/>
+    <assignment idref="r1"/>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+  <critical-path root="61" enabled="false" resources="false">
+    <color h="0.4" s="0.5" v="0.8"/>
+  </critical-path>
+</scenario>
