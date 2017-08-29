@@ -853,6 +853,38 @@
     <change idref="t89" attribute="resourceLeveledDate" type="date" from="2017-11-15T18:30:00.000Z" to="2017-11-14T15:00:00.000Z" resolved="yes"/>
     <change idref="t91" attribute="resourceLeveledDate" type="date" from="2017-11-15T18:30:00.000Z" to="2017-11-14T15:00:00.000Z" resolved="yes"/>
   </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-08-29T03:15:22.011Z" timestamp="2017-08-29T03:15:22.011Z">
+    <change idref="t7" from="t1" from-position="2" resolved="yes">
+      <change idref="t7" attribute="internalPrerequisitesString" type="string" to="19FS"/>
+      <change idref="t7" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t7" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
+      <change idref="t7" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t7" attribute="title" type="string" to="Acelerador"/>
+    </change>
+    <change idref="t92" to="t1" to-position="2" resolved="yes">
+      <change idref="t92" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t92" attribute="internalPrerequisitesString" type="string" to="6FS, 19FS"/>
+      <change idref="t92" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t92" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t92" attribute="resourceLeveledDate" type="date" to="2017-11-09T14:00:00.000Z"/>
+      <change idref="t92" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t92" attribute="title" type="string" to="Memoria terminada"/>
+    </change>
+    <change idref="t23" attribute="resourceLeveledDate" type="date" from="2017-10-05T11:00:00.000Z" to="2017-10-04T19:00:00.000Z" resolved="yes"/>
+    <change idref="t25" attribute="resourceLeveledDate" type="date" from="2017-11-22T17:30:00.000Z" to="2017-11-21T18:30:00.000Z" resolved="yes"/>
+    <change idref="t58" attribute="resourceLeveledDate" type="date" from="2017-12-07T14:00:00.000Z" to="2017-12-06T18:00:00.000Z" resolved="yes"/>
+    <change idref="t73" attribute="resourceLeveledDate" type="date" from="2017-11-30T15:00:00.000Z" to="2017-11-29T19:30:00.000Z" resolved="yes"/>
+    <change idref="t74" attribute="resourceLeveledDate" type="date" from="2017-09-14T15:00:00.000Z" to="2017-09-14T14:00:00.000Z" resolved="yes"/>
+    <change idref="t75" attribute="resourceLeveledDate" type="date" from="2017-10-18T18:30:00.000Z" to="2017-10-18T12:30:00.000Z" resolved="yes"/>
+    <change idref="t76" attribute="resourceLeveledDate" type="date" from="2017-11-07T16:00:00.000Z" to="2017-11-02T15:30:00.000Z" resolved="yes"/>
+    <change idref="t81" attribute="resourceLeveledDate" type="date" from="2017-12-14T12:00:00.000Z" to="2017-12-13T12:00:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="resourceLeveledDate" type="date" from="2017-12-20T21:00:00.000Z" to="2017-12-19T19:30:00.000Z" resolved="yes"/>
+    <change idref="t83" attribute="resourceLeveledDate" type="date" from="2017-12-27T20:00:00.000Z" to="2017-12-26T17:00:00.000Z" resolved="yes"/>
+    <change idref="t87" attribute="resourceLeveledDate" type="date" from="2017-11-07T16:00:00.000Z" to="2017-11-02T15:30:00.000Z" resolved="yes"/>
+    <change idref="t88" attribute="resourceLeveledDate" type="date" from="2017-10-25T17:30:00.000Z" to="2017-10-24T20:00:00.000Z" resolved="yes"/>
+    <change idref="t89" attribute="resourceLeveledDate" type="date" from="2017-11-14T15:00:00.000Z" to="2017-11-09T14:00:00.000Z" resolved="yes"/>
+    <change idref="t91" attribute="resourceLeveledDate" type="date" from="2017-11-14T15:00:00.000Z" to="2017-11-09T14:00:00.000Z" resolved="yes"/>
+  </task-change-set>
   <resource-change-set user="KuKy NeKoi" date="2017-08-27T23:57:33.313Z" timestamp="2017-08-27T23:57:33.313Z">
     <change idref="r1" attribute="name" type="string" from="Resource 1" to="Erik Regla"/>
   </resource-change-set>
@@ -862,6 +894,9 @@
   </resource-change-set>
   <resource-change-set user="KuKy NeKoi" date="2017-08-29T02:52:38.172Z" timestamp="2017-08-29T02:52:38.172Z">
     <change idref="r1" attribute="standardHoursString" type="string" from=";43200,61200;39600,50400,54000,61200;28800,37800,50400,57600,59400,64800;28800,50400;28800,39600,53100,64800;" to=";;39600,50400,54000,61200;28800,37800,50400,57600,59400,64800;28800,50400;;" resolved="yes"/>
+  </resource-change-set>
+  <resource-change-set user="KuKy NeKoi" date="2017-08-29T03:15:22.010Z" timestamp="2017-08-29T03:15:22.010Z">
+    <change idref="r1" attribute="standardHoursString" type="string" from=";;39600,50400,54000,61200;28800,37800,50400,57600,59400,64800;28800,50400;;" to=";;39600,50400,54000,61200;28800,37800,50400,64800;28800,50400;;" resolved="yes"/>
   </resource-change-set>
   <metadata-change-set user="KuKy NeKoi" date="2017-08-27T23:57:33.313Z" timestamp="2017-08-27T23:57:33.313Z">
     <change idref="m1" attribute="fixedDate" type="date" from="2007-01-01T20:00:00.000Z" to="2017-08-27T03:00:00.000Z"/>

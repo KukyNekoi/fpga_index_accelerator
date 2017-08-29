@@ -13,17 +13,16 @@
 \pagestyle{empty}
 
 \title{
-    ASIC prototyping for hardware-accelerated similarity search algorithms.
+    ASIC prototyping for hardware-accelerated index operations for similarity search.
     % Experimental analysis for hardware accelerators on custom heterogeneous architectures.
     %Implementation of hardware-accelerated approximate search algorithms on a High-performance Low-Energy platform.\\
 %\footnote{Los comentarios de este documento (texto en itálica), incluyendo esta nota a pie de página, deben ser removidos por el alumno al momento de elaborar su propuesta de proyecto.}
 }
 \author{
-Erik Regla (Student)\\
-%cualquier hueón sirve acá, lo importante es que me deje trabajar tranquilo y no me estorbe.
-Rodrigo Paredes (Advisor)\\
-Ingeniería Civil en Computación\\ 
-Universidad de Talca}
+Erik Regla (Student)\\%Kuky
+Rodrigo Paredes (Advisor)\\%Rapa
+Civil Computer Engineering\\ 
+University of Talca}
 \date{\today}
 \maketitle
 
@@ -93,9 +92,11 @@ TODO
 % \emph{(Una lista de puntos que detallan el objetivo general.)}
 \begin{itemize}
     \item Specify requirements and considerations to be accounted when porting general purpose algorithms to FPGAs.
-    \item Devise and evaluate methods to share or transfer data between the ARMv7 A9 processor and the FPGA. 
-    \item Design a hardware accelerator on the FPGA
-    \item Evaluate the performance impact for the given solution.
+    \item Study and implement a PL-PS data sharing sharing solution.
+    \item Develop a functional FPGA-based hardware-accelerator prototype for a subset of routines involved on approximate similarity search.
+    \item Deliver a solid guide to serve as a starting point to future computer scientist with little or no knowledge about hardware design. 
+    % \item Design a hardware accelerator on the FPGA
+    % \item Evaluate the performance impact for the given solution.
     % \item Deliver an effective guide to port algorithms to FPGAs
 \end{itemize}
 
@@ -104,69 +105,72 @@ TODO
 \section{Scope}
 % \emph{(En esta sección se debe incluir una lista de puntos que definen los límites del trabajo. La longitud máxima de esta sección es de 1/2 página.)}
 \begin{itemize}
-    % probably this works as an objective... 
-%\item In this work we expect to develop a functional FPGA-based hardware-accelerator prototype for a subset of routines involved on approximate similarity search.
-
 \item During this work we will not create a framework to develop new algorithms on FPGAs. 
 \item Also, we will not work on optimizations for the original versions of the tested routines.
-
-% another objective?
-%but we expect to deliver a solid guide to serve as a basis to future hardware developers. 
 \item This work is limited only to research about FPGA hardware design, and to compare and contrast both implementations.
 \end{itemize}
 
 
 
-\section{Metodología}
+\section{Methodology}
 % \emph{(En esta sección se deben describir y justificar los métodos que se usarán para lograr las metas propuestas. Una buena opción es que, por cada objetivo, se describan una serie de pasos o métodos que se usarán para alcanzarlo. La longitud máxima de esta sección es de 1 página.)}
 
 
-\paragraph{Milestone 1:} ``ASIC Accelerator prototyping"
+\paragraph{Milestone 1:} ``Approximate search algorithms and indices"
 \begin{itemize}
 \item Analise previously developed hardware-accelerators.
 \item Research about resource sharing methods and techniques for the proposed architecture.
 \item Implement a simple hardware-accelerator IP Core on the FPGA.
 \item Study possible problems which could arise when porting common algorithms on custom hardware.
-\end{itemize}
-
-\paragraph{Milestone 2:} ``Permutant-based index"
-\begin{itemize}
 \item Research about approximate search indices for metric spaces.
 \item Research about workarounds for high-dimensionality metric space datasets.
 \item Implement a permutant-based index and query algorithm.
 \item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
 \end{itemize}
 
-\paragraph{Milestone 3:} ``Hardware-accelerated index implementation"
+\paragraph{Milestone 2:} ``Hardware-accelerated index implementation"
 \begin{itemize}
+\item Research about hardware prototyping.
+\item Research about hardware-software interconnection techniques and techlologies applicable to the target platform. 
 \item Implement as IP Cores the selected code fragments.
 \item Implement an interconection protocol for resource sharing between the two platforms.
 \item Detect possible bottlenecks or other problems derived from the interconection between the Atrix-7 FPGA and the ARMv7 A9 processor.
-\item Benchmark solutions.
-\item Profit.
+\item Implement a loadable bitstream for the Parallella board and design according kernel modules.
+\item Replace software solution with custom hardware solution.
+\item Benchmark hardware implemented solution and constrast it with software implementation.
 \end{itemize}
 
 \section{Work plan}
 % \emph{(En esta sección se debe definir como organizar y planificar, en términos de etapas y tiempo, las actividades a desarrollar así como los resultados a obtener. Esta sección debe incluir una Carta Gantt, la cual define fechas de inicio y término. La longitud máxima de esta sección es de 1 página, sin considerar la Carta Gantt.)}
 
-TODO
-% \paragraph{Etapa 1:} Desarrollar el objetivo 1 (inicio-término)
-% \begin{itemize}
-% \item Analizar ... (inicio-término)
-% \item Redactar ... (inicio-término)
-% \end{itemize}
+\paragraph{Milestone 1:} ``Approximate search algorithms and indices"
+\begin{itemize}
+\item Analise previously developed hardware-accelerators.
+\item Research about resource sharing methods and techniques for the proposed architecture.
+\item Implement a simple hardware-accelerator IP Core on the FPGA.
+\item Study possible problems which could arise when porting common algorithms on custom hardware.
+\item Research about approximate search indices for metric spaces.
+\item Research about workarounds for high-dimensionality metric space datasets.
+\item Implement a permutant-based index and query algorithm.
+\item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
+\end{itemize}
 
-% \paragraph{Etapa 2:} Desarrollar los objetivos 2 y 3 (inicio-término)
+\paragraph{Milestone 2:} ``Hardware-accelerated index implementation"
 % \begin{itemize}
-% \item Diseñar ... (inicio-término)
-% \item Programar ... (inicio-término)
-% \item Redactar ... (inicio-término)
+% % \item Research about hardware prototyping.
+% % \item Research about hardware-software interconnection techniques and techlologies applicable to the target platform. 
+% % \item Implement as IP Cores the selected code fragments.
+% % \item Implement an interconection protocol for resource sharing between the two platforms.
+% % \item Detect possible bottlenecks or other problems derived from the interconection between the Atrix-7 FPGA and the ARMv7 A9 processor.
+% % \item Implement a loadable bitstream for the Parallella board and design according kernel modules.
+% % \item Replace software solution with custom hardware solution.
+% % \item Benchmark hardware implemented solution and constrast it with software implementation.
 % \end{itemize}
 
 
 \bibliographystyle{plain}
 
 \bibliography{referencias}
-
+%%pegar referencias www
 
 \end{document}
