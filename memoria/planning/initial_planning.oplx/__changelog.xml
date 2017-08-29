@@ -559,12 +559,309 @@
     <change idref="t61" attribute="resourceLeveledDate" type="date" from="2018-02-14T13:30:00.000Z" to="2018-01-25T12:15:00.000Z" resolved="yes"/>
     <change idref="t63" attribute="resourceLeveledDate" type="date" from="2018-05-30T13:00:00.000Z" to="2018-04-27T11:15:00.000Z" resolved="yes"/>
   </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-08-29T02:37:46.960Z" timestamp="2017-08-29T02:37:46.960Z">
+    <change idref="t8" from="t1" from-position="3" resolved="yes">
+      <change idref="t8" attribute="effort" type="real" from="28800" to="864000"/>
+      <change idref="t8" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t8" attribute="internalPrerequisitesString" type="string" to="6FS, 7FS, 19FS"/>
+      <change idref="t8" attribute="resourceLeveledDate" type="date" to="2018-05-18T12:30:00.000Z"/>
+      <change idref="t8" attribute="title" type="string" to="Escritura documento Memoria"/>
+    </change>
+    <change idref="t6" attribute="title" type="string" from="Implementación" to="Índices para búsqueda aproximada" resolved="yes"/>
+    <change idref="t61" from="t6" from-position="6" resolved="yes">
+      <change idref="t61" attribute="criticalPathProperties" type="dict" to="{
+    color =     {
+        h = &quot;0.4&quot;;
+        s = &quot;0.5&quot;;
+        v = &quot;0.8&quot;;
+    };
+    enabled = 0;
+    root = 61;
+}"/>
+      <change idref="t61" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t61" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t61" attribute="internalPrerequisitesString" type="string" to="9FS, 10FS, 57FS, 58FS, 59FS, 60FS"/>
+      <change idref="t61" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t61" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t61" attribute="resourceLeveledDate" type="date" to="2018-01-25T12:15:00.000Z"/>
+      <change idref="t61" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t61" attribute="title" type="string" to="Implementaciones terminadas."/>
+    </change>
+    <change idref="t57" from="t6" from-position="5" resolved="yes">
+      <change idref="t57" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t57" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t57" attribute="internalPrerequisitesString" type="string" to="10FS"/>
+      <change idref="t57" attribute="resourceLeveledDate" type="date" to="2018-03-15T14:30:00.000Z"/>
+      <change idref="t57" attribute="title" type="string" to="Mejoras en acelerador para índices."/>
+    </change>
+    <change idref="t10" from="t6" from-position="4" resolved="yes">
+      <change idref="t10" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t10" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t10" attribute="internalPrerequisitesString" type="string" to="9FS, 25FS"/>
+      <change idref="t10" attribute="resourceLeveledDate" type="date" to="2018-02-23T13:15:00.000Z"/>
+      <change idref="t10" attribute="title" type="string" to="Acelerador para índices"/>
+    </change>
+    <change idref="t9" from="t6" from-position="3" resolved="yes">
+      <change idref="t9" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t9" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t9" attribute="internalPrerequisitesString" type="string" to="58FS, 59FS, 60FS"/>
+      <change idref="t9" attribute="resourceLeveledDate" type="date" to="2018-01-25T12:15:00.000Z"/>
+      <change idref="t9" attribute="title" type="string" to="Módulos kernel y controladores"/>
+    </change>
+    <change idref="t60" from="t6" from-position="2" resolved="yes">
+      <change idref="t60" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t60" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t60" attribute="internalPrerequisitesString" type="string" to="29FS"/>
+      <change idref="t60" attribute="resourceLeveledDate" type="date" to="2018-01-16T14:30:00.000Z"/>
+      <change idref="t60" attribute="title" type="string" to="Circuito para interconexión PS-PL"/>
+    </change>
+    <change idref="t59" from="t6" from-position="1" resolved="yes">
+      <change idref="t59" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t59" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t59" attribute="internalPrerequisitesString" type="string" to="28FS"/>
+      <change idref="t59" attribute="resourceLeveledDate" type="date" to="2017-11-22T20:15:00.000Z"/>
+      <change idref="t59" attribute="title" type="string" to="Prototipado ASIC"/>
+    </change>
+    <change idref="t77" to="t6" to-position="0" resolved="yes">
+      <change idref="t77" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t77" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t77" attribute="title" type="string" to="Investigación"/>
+    </change>
+    <change idref="t78" to="t6" to-position="1" resolved="yes">
+      <change idref="t78" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t78" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t78" attribute="title" type="string" to="Desarrollo"/>
+    </change>
+    <change idref="t79" to="t6" to-position="2" resolved="yes">
+      <change idref="t79" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t79" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t79" attribute="title" type="string" to="Revisión biliográfica"/>
+    </change>
+    <change idref="t7" attribute="title" type="string" from="Revisión bibliográfica" to="Acelerador" resolved="yes"/>
+    <change idref="t54" from="t7" from-position="3" resolved="yes">
+      <change idref="t54" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t54" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t54" attribute="internalPrerequisitesString" type="string" to="28FS, 29FS"/>
+      <change idref="t54" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t54" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t54" attribute="resourceLeveledDate" type="date" to="2017-11-22T20:15:00.000Z"/>
+      <change idref="t54" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t54" attribute="title" type="string" to="Revisión bibliográfica terminada."/>
+    </change>
+    <change idref="t29" from="t7" from-position="2" resolved="yes">
+      <change idref="t29" attribute="internalPrerequisitesString" type="string" to="28FS"/>
+      <change idref="t29" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t29" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t29" attribute="title" type="string" to="Embebed Linux"/>
+    </change>
+    <change idref="t28" from="t7" from-position="1" resolved="yes">
+      <change idref="t28" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t28" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t28" attribute="title" type="string" to="ASIC"/>
+    </change>
+    <change idref="t19" attribute="title" type="string" from="Análisis" to="FPGAs" resolved="yes"/>
+    <change idref="t55" from="t19" from-position="4" resolved="yes">
+      <change idref="t55" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t55" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t55" attribute="internalPrerequisitesString" type="string" to="23FS, 25FS, 26FS"/>
+      <change idref="t55" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t55" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t55" attribute="resourceLeveledDate" type="date" to="2018-01-25T12:15:00.000Z"/>
+      <change idref="t55" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t55" attribute="title" type="string" to="Tareas de análisis terminadas."/>
+    </change>
+    <change idref="t63" from="t19" from-position="3" resolved="yes">
+      <change idref="t63" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t63" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t63" attribute="internalPrerequisitesString" type="string" to="6FS"/>
+      <change idref="t63" attribute="resourceLeveledDate" type="date" to="2018-04-27T11:15:00.000Z"/>
+      <change idref="t63" attribute="title" type="string" to="Contraste entre implementaciones FPGA y CPU"/>
+    </change>
+    <change idref="t26" from="t19" from-position="2" resolved="yes">
+      <change idref="t26" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t26" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t26" attribute="internalPrerequisitesString" type="string" to="10FS"/>
+      <change idref="t26" attribute="resourceLeveledDate" type="date" to="2018-04-06T19:45:00.000Z"/>
+      <change idref="t26" attribute="title" type="string" to="Rendimiento implementación sobre FPGA"/>
+    </change>
+    <change idref="t23" attribute="internalPrerequisitesString" type="string" from="58FS" resolved="yes"/>
+    <change idref="t23" attribute="title" type="string" from="Complejidad de creación de índices en espacios métricos" to="Análisis de complejidad de operaciones en índices para búsqueda aproximada" resolved="yes"/>
+    <change idref="t23" attribute="resourceLeveledDate" type="date" from="2018-02-05T15:45:00.000Z" to="2017-09-26T18:00:00.000Z" resolved="yes"/>
+    <change idref="t25" attribute="internalPrerequisitesString" type="string" from="23FS" to="76FS" resolved="yes"/>
+    <change idref="t25" attribute="effort" type="real" from="144000" to="86400" resolved="yes"/>
+    <change idref="t25" attribute="resourceLeveledDate" type="date" from="2018-02-14T17:00:00.000Z" to="2017-11-07T16:45:00.000Z" resolved="yes"/>
+    <change idref="t33" attribute="title" type="string" from="Búsqueda e indización sobre espacios métricos" to="Revisión bibliográfica espacios métricos" resolved="yes"/>
+    <change idref="t33" attribute="effort" type="real" from="288000" to="115200" resolved="yes"/>
+    <change idref="t58" attribute="internalPrerequisitesString" type="string" from="33FS" to="23FS, 74FS" resolved="yes"/>
+    <change idref="t58" attribute="title" type="string" from="Indice inicial para espacios métricos" to="Documentación métodos de búsqueda aproximada" resolved="yes"/>
+    <change idref="t58" attribute="effort" type="real" from="288000" to="86400" resolved="yes"/>
+    <change idref="t58" attribute="resourceLeveledDate" type="date" from="2017-09-29T13:00:00.000Z" to="2017-11-22T20:15:00.000Z" resolved="yes"/>
+    <change idref="t33" from="t7" from-position="0" to="t77" to-position="0" resolved="yes"/>
+    <change idref="t74" to="t77" to-position="1" resolved="yes">
+      <change idref="t74" attribute="effort" type="real" from="28800" to="115200"/>
+      <change idref="t74" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t74" attribute="resourceLeveledDate" type="date" to="2017-09-11T19:15:00.000Z"/>
+      <change idref="t74" attribute="title" type="string" to="Revisión bibliográfica de métodos para búsqueda aproximada "/>
+    </change>
+    <change idref="t73" to="t79" to-position="0" resolved="yes">
+      <change idref="t73" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t73" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t73" attribute="internalPrerequisitesString" type="string" to="33FS"/>
+      <change idref="t73" attribute="resourceLeveledDate" type="date" to="2017-11-15T12:30:00.000Z"/>
+      <change idref="t73" attribute="title" type="string" to="Documentación espacios métricos."/>
+    </change>
+    <change idref="t58" from="t6" from-position="0" to="t79" to-position="1" resolved="yes"/>
+    <change idref="t81" to="t79" to-position="2" resolved="yes">
+      <change idref="t81" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t81" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t81" attribute="internalPrerequisitesString" type="string" to="75FS"/>
+      <change idref="t81" attribute="resourceLeveledDate" type="date" to="2017-11-30T14:00:00.000Z"/>
+      <change idref="t81" attribute="title" type="string" to="Documentación de implementación de índice"/>
+    </change>
+    <change idref="t82" to="t79" to-position="3" resolved="yes">
+      <change idref="t82" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t82" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t82" attribute="internalPrerequisitesString" type="string" to="76FS"/>
+      <change idref="t82" attribute="resourceLeveledDate" type="date" to="2017-12-11T15:45:00.000Z"/>
+      <change idref="t82" attribute="title" type="string" to="Documentación benchmark y experimentos diseñados"/>
+    </change>
+    <change idref="t83" to="t79" to-position="4" resolved="yes">
+      <change idref="t83" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t83" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t83" attribute="internalPrerequisitesString" type="string" to="25FS"/>
+      <change idref="t83" attribute="resourceLeveledDate" type="date" to="2017-12-18T19:30:00.000Z"/>
+      <change idref="t83" attribute="title" type="string" to="Documentación de tareas a paralelizar"/>
+    </change>
+    <change idref="t23" from="t19" from-position="0" to="t78" to-position="0" resolved="yes"/>
+    <change idref="t75" to="t78" to-position="1" resolved="yes">
+      <change idref="t75" attribute="effort" type="real" from="28800" to="201600"/>
+      <change idref="t75" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t75" attribute="internalPrerequisitesString" type="string" to="23FS"/>
+      <change idref="t75" attribute="resourceLeveledDate" type="date" to="2017-10-05T14:45:00.000Z"/>
+      <change idref="t75" attribute="title" type="string" to="Implementación de índice para marco referencial"/>
+    </change>
+    <change idref="t76" to="t78" to-position="2" resolved="yes">
+      <change idref="t76" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t76" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t76" attribute="internalPrerequisitesString" type="string" to="75FS"/>
+      <change idref="t76" attribute="resourceLeveledDate" type="date" to="2017-10-20T13:15:00.000Z"/>
+      <change idref="t76" attribute="title" type="string" to="Benchmarking y diseño de experimentos"/>
+    </change>
+    <change idref="t25" from="t19" from-position="1" to="t78" to-position="3" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-08-29T02:52:38.173Z" timestamp="2017-08-29T02:52:38.173Z">
+    <change idref="t91" to="t6" to-position="3" resolved="yes">
+      <change idref="t91" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t91" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t91" attribute="internalPrerequisitesString" type="string" to="77FS, 78FS, 79FS"/>
+      <change idref="t91" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t91" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t91" attribute="resourceLeveledDate" type="date" to="2017-10-26T15:00:00.000Z"/>
+      <change idref="t91" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t91" attribute="title" type="string" to="Etapa 1 Terminada"/>
+    </change>
+    <change idref="t7" attribute="internalPrerequisitesString" type="string" to="19FS" resolved="yes"/>
+    <change idref="t19" attribute="internalPrerequisitesString" type="string" to="6FS" resolved="yes"/>
+    <change idref="t25" attribute="resourceLeveledDate" type="date" from="2017-11-07T16:45:00.000Z" to="2017-11-02T15:00:00.000Z" resolved="yes"/>
+    <change idref="t58" attribute="resourceLeveledDate" type="date" from="2017-11-22T20:15:00.000Z" to="2017-11-15T12:30:00.000Z" resolved="yes"/>
+    <change idref="t73" attribute="resourceLeveledDate" type="date" from="2017-11-15T12:30:00.000Z" to="2017-11-08T20:45:00.000Z" resolved="yes"/>
+    <change idref="t23" from="t78" from-position="0" to="t77" to-position="2" resolved="yes"/>
+    <change idref="t25" from="t78" from-position="3" to="t77" to-position="3" resolved="yes"/>
+    <change idref="t87" to="t77" to-position="4" resolved="yes">
+      <change idref="t87" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t87" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t87" attribute="internalPrerequisitesString" type="string" to="23FS, 25FS, 33FS, 74FS"/>
+      <change idref="t87" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t87" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t87" attribute="resourceLeveledDate" type="date" to="2017-10-20T13:15:00.000Z"/>
+      <change idref="t87" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t87" attribute="title" type="string" to="Investigación etapa 1 terminada"/>
+    </change>
+    <change idref="t88" to="t78" to-position="2" resolved="yes">
+      <change idref="t88" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t88" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t88" attribute="internalPrerequisitesString" type="string" to="75FS, 76FS"/>
+      <change idref="t88" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t88" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t88" attribute="resourceLeveledDate" type="date" to="2017-10-16T15:15:00.000Z"/>
+      <change idref="t88" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t88" attribute="title" type="string" to="Índice objetivo implementado"/>
+    </change>
+    <change idref="t79" attribute="title" type="string" from="Revisión biliográfica" to="Documentacion" resolved="yes"/>
+    <change idref="t89" to="t79" to-position="5" resolved="yes">
+      <change idref="t89" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t89" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t89" attribute="internalPrerequisitesString" type="string" to="58FS, 73FS, 81FS, 82FS, 83FS"/>
+      <change idref="t89" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t89" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t89" attribute="resourceLeveledDate" type="date" to="2017-10-26T15:00:00.000Z"/>
+      <change idref="t89" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t89" attribute="title" type="string" to="Documentación espacios métricos e indización terminada."/>
+    </change>
+    <change idref="t81" attribute="resourceLeveledDate" type="date" from="2017-11-30T14:00:00.000Z" to="2017-11-21T16:15:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="resourceLeveledDate" type="date" from="2017-12-11T15:45:00.000Z" to="2017-11-27T18:00:00.000Z" resolved="yes"/>
+    <change idref="t83" attribute="resourceLeveledDate" type="date" from="2017-12-18T19:30:00.000Z" to="2017-12-01T19:45:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-08-29T02:53:37.884Z" timestamp="2017-08-29T02:53:37.884Z">
+    <change idref="t23" attribute="resourceLeveledDate" type="date" from="2017-09-26T18:00:00.000Z" to="2017-10-05T11:00:00.000Z" resolved="yes"/>
+    <change idref="t25" attribute="resourceLeveledDate" type="date" from="2017-11-02T15:00:00.000Z" to="2017-11-30T15:00:00.000Z" resolved="yes"/>
+    <change idref="t33" attribute="resourceLeveledDate" type="date" from="2017-09-04T15:30:00.000Z" to="2017-09-05T14:00:00.000Z" resolved="yes"/>
+    <change idref="t58" attribute="effort" type="real" from="86400" to="57600" resolved="yes"/>
+    <change idref="t58" attribute="resourceLeveledDate" type="date" from="2017-11-15T12:30:00.000Z" to="2017-12-20T21:00:00.000Z" resolved="yes"/>
+    <change idref="t73" attribute="effort" type="real" from="86400" to="57600" resolved="yes"/>
+    <change idref="t73" attribute="resourceLeveledDate" type="date" from="2017-11-08T20:45:00.000Z" to="2017-12-12T19:00:00.000Z" resolved="yes"/>
+    <change idref="t74" attribute="resourceLeveledDate" type="date" from="2017-09-11T19:15:00.000Z" to="2017-09-14T15:00:00.000Z" resolved="yes"/>
+    <change idref="t75" attribute="resourceLeveledDate" type="date" from="2017-10-05T14:45:00.000Z" to="2017-10-24T14:00:00.000Z" resolved="yes"/>
+    <change idref="t76" attribute="resourceLeveledDate" type="date" from="2017-10-20T13:15:00.000Z" to="2017-11-15T18:30:00.000Z" resolved="yes"/>
+    <change idref="t81" attribute="effort" type="real" from="86400" to="57600" resolved="yes"/>
+    <change idref="t81" attribute="resourceLeveledDate" type="date" from="2017-11-21T16:15:00.000Z" to="2018-01-02T15:00:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="effort" type="real" from="86400" to="57600" resolved="yes"/>
+    <change idref="t82" attribute="resourceLeveledDate" type="date" from="2017-11-27T18:00:00.000Z" to="2018-01-10T17:30:00.000Z" resolved="yes"/>
+    <change idref="t83" attribute="effort" type="real" from="86400" to="57600" resolved="yes"/>
+    <change idref="t83" attribute="resourceLeveledDate" type="date" from="2017-12-01T19:45:00.000Z" to="2018-01-18T15:00:00.000Z" resolved="yes"/>
+    <change idref="t87" attribute="resourceLeveledDate" type="date" from="2017-10-20T13:15:00.000Z" to="2017-11-15T18:30:00.000Z" resolved="yes"/>
+    <change idref="t88" attribute="resourceLeveledDate" type="date" from="2017-10-16T15:15:00.000Z" to="2017-11-07T16:00:00.000Z" resolved="yes"/>
+    <change idref="t89" attribute="resourceLeveledDate" type="date" from="2017-10-26T15:00:00.000Z" to="2017-11-23T16:00:00.000Z" resolved="yes"/>
+    <change idref="t91" attribute="resourceLeveledDate" type="date" from="2017-10-26T15:00:00.000Z" to="2017-11-23T16:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-08-29T02:54:30.861Z" timestamp="2017-08-29T02:54:30.861Z">
+    <change idref="t23" attribute="effort" type="real" from="144000" to="115200" resolved="yes"/>
+    <change idref="t25" attribute="resourceLeveledDate" type="date" from="2017-11-30T15:00:00.000Z" to="2017-11-23T16:00:00.000Z" resolved="yes"/>
+    <change idref="t58" attribute="resourceLeveledDate" type="date" from="2017-12-20T21:00:00.000Z" to="2017-12-12T19:00:00.000Z" resolved="yes"/>
+    <change idref="t73" attribute="resourceLeveledDate" type="date" from="2017-12-12T19:00:00.000Z" to="2017-12-06T12:00:00.000Z" resolved="yes"/>
+    <change idref="t75" attribute="effort" type="real" from="201600" to="144000" resolved="yes"/>
+    <change idref="t76" attribute="resourceLeveledDate" type="date" from="2017-11-15T18:30:00.000Z" to="2017-11-08T20:00:00.000Z" resolved="yes"/>
+    <change idref="t81" attribute="resourceLeveledDate" type="date" from="2018-01-02T15:00:00.000Z" to="2017-12-19T17:00:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="resourceLeveledDate" type="date" from="2018-01-10T17:30:00.000Z" to="2017-12-26T16:00:00.000Z" resolved="yes"/>
+    <change idref="t83" attribute="resourceLeveledDate" type="date" from="2018-01-18T15:00:00.000Z" to="2018-01-02T15:00:00.000Z" resolved="yes"/>
+    <change idref="t87" attribute="resourceLeveledDate" type="date" from="2017-11-15T18:30:00.000Z" to="2017-11-08T20:00:00.000Z" resolved="yes"/>
+    <change idref="t88" attribute="resourceLeveledDate" type="date" from="2017-11-07T16:00:00.000Z" to="2017-10-26T16:00:00.000Z" resolved="yes"/>
+    <change idref="t89" attribute="resourceLeveledDate" type="date" from="2017-11-23T16:00:00.000Z" to="2017-11-15T18:30:00.000Z" resolved="yes"/>
+    <change idref="t91" attribute="resourceLeveledDate" type="date" from="2017-11-23T16:00:00.000Z" to="2017-11-15T18:30:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-08-29T02:59:42.066Z" timestamp="2017-08-29T02:59:42.066Z">
+    <change idref="t25" attribute="resourceLeveledDate" type="date" from="2017-11-23T16:00:00.000Z" to="2017-11-22T17:30:00.000Z" resolved="yes"/>
+    <change idref="t58" attribute="resourceLeveledDate" type="date" from="2017-12-12T19:00:00.000Z" to="2017-12-07T14:00:00.000Z" resolved="yes"/>
+    <change idref="t73" attribute="resourceLeveledDate" type="date" from="2017-12-06T12:00:00.000Z" to="2017-11-30T15:00:00.000Z" resolved="yes"/>
+    <change idref="t75" attribute="resourceLeveledDate" type="date" from="2017-10-24T14:00:00.000Z" to="2017-10-18T18:30:00.000Z" resolved="yes"/>
+    <change idref="t76" attribute="resourceLeveledDate" type="date" from="2017-11-08T20:00:00.000Z" to="2017-11-07T16:00:00.000Z" resolved="yes"/>
+    <change idref="t81" attribute="resourceLeveledDate" type="date" from="2017-12-19T17:00:00.000Z" to="2017-12-14T12:00:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="resourceLeveledDate" type="date" from="2017-12-26T16:00:00.000Z" to="2017-12-20T21:00:00.000Z" resolved="yes"/>
+    <change idref="t83" attribute="resourceLeveledDate" type="date" from="2018-01-02T15:00:00.000Z" to="2017-12-27T20:00:00.000Z" resolved="yes"/>
+    <change idref="t87" attribute="resourceLeveledDate" type="date" from="2017-11-08T20:00:00.000Z" to="2017-11-07T16:00:00.000Z" resolved="yes"/>
+    <change idref="t88" attribute="resourceLeveledDate" type="date" from="2017-10-26T16:00:00.000Z" to="2017-10-25T17:30:00.000Z" resolved="yes"/>
+    <change idref="t89" attribute="resourceLeveledDate" type="date" from="2017-11-15T18:30:00.000Z" to="2017-11-14T15:00:00.000Z" resolved="yes"/>
+    <change idref="t91" attribute="resourceLeveledDate" type="date" from="2017-11-15T18:30:00.000Z" to="2017-11-14T15:00:00.000Z" resolved="yes"/>
+  </task-change-set>
   <resource-change-set user="KuKy NeKoi" date="2017-08-27T23:57:33.313Z" timestamp="2017-08-27T23:57:33.313Z">
     <change idref="r1" attribute="name" type="string" from="Resource 1" to="Erik Regla"/>
   </resource-change-set>
   <resource-change-set user="KuKy NeKoi" date="2017-08-28T02:44:36.319Z" timestamp="2017-08-28T02:44:36.319Z">
     <change idref="r1" attribute="timeOffString" type="string" from="YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ" to="YnBsaXN0MDCsAQoMDhASFBYZGx0f1AIDBAUGBwgJUmVkUnN0UmV0UnNkERfeIkbhAAAiR28QABEX2NQCAwQFCwcICxEX7dQCAwQFDQcIDREX/9QCAwQFDwcIDxEYBNQCAwQFEQcIEREYKdQCAwQFEwcIExEYOtQCAwQFFQcIFREYQdQCAwQFFwcIGBEYmREYmNQCAwQFGgcIGhEYudQCAwQFHAcIHBEYzdQCAwQFHgcIHhEY99QCAwQFIAcIIBEZBQgVHiEkJyotMjc6Q0ZPUlteZ2pzdn+Ci46Rmp2mqbK1vgAAAAAAAAEBAAAAAAAAACEAAAAAAAAAAAAAAAAAAADB" resolved="yes"/>
     <change idref="r1" attribute="standardHoursString" type="string" from="-;-;-;-;-;-;-" to=";43200,61200;39600,50400,54000,61200;28800,37800,50400,57600,59400,64800;28800,50400;28800,39600,53100,64800;" resolved="yes"/>
+  </resource-change-set>
+  <resource-change-set user="KuKy NeKoi" date="2017-08-29T02:52:38.172Z" timestamp="2017-08-29T02:52:38.172Z">
+    <change idref="r1" attribute="standardHoursString" type="string" from=";43200,61200;39600,50400,54000,61200;28800,37800,50400,57600,59400,64800;28800,50400;28800,39600,53100,64800;" to=";;39600,50400,54000,61200;28800,37800,50400,57600,59400,64800;28800,50400;;" resolved="yes"/>
   </resource-change-set>
   <metadata-change-set user="KuKy NeKoi" date="2017-08-27T23:57:33.313Z" timestamp="2017-08-27T23:57:33.313Z">
     <change idref="m1" attribute="fixedDate" type="date" from="2007-01-01T20:00:00.000Z" to="2017-08-27T03:00:00.000Z"/>

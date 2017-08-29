@@ -78,22 +78,22 @@ TODO
 
 
 
-\section{Goals}
+\section{Objectives}
 % \emph{
 %     % (En esta sección se deben especificar el objetivo general y los objetivos específicos del proyecto. Los objetivos deben reflejar lo que se espera lograr con el proyecto, evitando incluir características específicas de la solución. La longitud máxima de esta sección es de 1 página.)
 %     }
 
-\paragraph{Main goal}
+\paragraph{Main objective}
 % \emph{(Debe ser una sola frase que resuma lo que se quiere lograr.)} 
 \begin{itemize}
-\item Study the feasibility of hardware-based accelerators for the Adapteva Parallella SoC.
+\item Study the feasibility of implementing hardware-based accelerators for the Adapteva Parallella SoC.
 \end{itemize}
 
-\paragraph{Specific goals}
+\paragraph{Specific objectives}
 % \emph{(Una lista de puntos que detallan el objetivo general.)}
 \begin{itemize}
     \item Specify requirements and considerations to be accounted when porting general purpose algorithms to FPGAs.
-    \item Devise and evaluate methods to share or transfer data between the ARM A9 processor and the FPGA. 
+    \item Devise and evaluate methods to share or transfer data between the ARMv7 A9 processor and the FPGA. 
     \item Design a hardware accelerator on the FPGA
     \item Evaluate the performance impact for the given solution.
     % \item Deliver an effective guide to port algorithms to FPGAs
@@ -101,11 +101,17 @@ TODO
 
 
 
-\section{Scope of the work}
+\section{Scope}
 % \emph{(En esta sección se debe incluir una lista de puntos que definen los límites del trabajo. La longitud máxima de esta sección es de 1/2 página.)}
 \begin{itemize}
-\item In this work we expect to develop a functional FPGA-based hardware-accelerator prototype for a subset of routines involved on approximate similarity search.
-\item During this work we will not create a framework to develop new algorithms on FPGAs, but we expect to deliver a solid guide to serve as a basis to future hardware developers. Also, we won't work on optimizations for the original versions of the tested routines.
+    % probably this works as an objective... 
+%\item In this work we expect to develop a functional FPGA-based hardware-accelerator prototype for a subset of routines involved on approximate similarity search.
+
+\item During this work we will not create a framework to develop new algorithms on FPGAs. 
+\item Also, we will not work on optimizations for the original versions of the tested routines.
+
+% another objective?
+%but we expect to deliver a solid guide to serve as a basis to future hardware developers. 
 \item This work is limited only to research about FPGA hardware design, and to compare and contrast both implementations.
 \end{itemize}
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <omniplan xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opnx="http://www.omnigroup.com/namespace/OmniPlan/v2">
-  <window x="0" y="0" w="1600" h="858">
+  <window x="0" y="0" w="1280" h="758">
     <editing-scenario>ladLmvEmdR-</editing-scenario>
     <comparison-scenario>cQDYkrd3BA6</comparison-scenario>
     <view>task</view>
     <change-tracking/>
     <status-display>basic</status-display>
     <task-view>
-      <split-view-divider-position>334</split-view-divider-position>
-      <outline x="0" y="0" w="334" h="805">
+      <split-view-divider-position>405</split-view-divider-position>
+      <outline x="0" y="0" w="405" h="720">
         <column name="Violations" width="20"/>
         <column name="Title" width="190"/>
         <column name="Effort" width="42"/>
@@ -16,10 +16,10 @@
         <column name="Start" width="64"/>
         <column name="End" width="64"/>
         <column name="%Done" width="74"/>
-        <expanded-items idrefs="t19 t28 t7 t29 t6 t1"/>
-        <selected-items-at-filter-time idrefs="t50 t58 t26 t45 t8 t64 t51 t9 t27 t59 t46 t65 t33 t52 t28 t47 t66 t53 t29 t48 t67 t35 t54 t49 t60 t36 t55 t23 t10 t61 t24 t19 t38 t57 t25 t44 t6 t63 t7"/>
+        <expanded-items idrefs="t1 t77 t7 t6"/>
+        <selected-items-at-filter-time idrefs="t66 t24 t59 t80 t73 t67 t25 t74 t81 t75 t19 t33 t26 t82 t90 t27 t83 t76 t77 t35 t28 t84 t91 t78 t36 t50 t29 t85 t79 t51 t44 t86 t87 t52 t45 t10 t38 t6 t7 t88 t53 t8 t46 t60 t9 t89 t54 t47 t61 t55 t48 t49 t63 t57 t64 t65 t23 t58"/>
       </outline>
-      <gantt-view x="-53" y="0" w="934" h="805">
+      <gantt-view x="-62" y="0" w="873" h="720">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>
@@ -51,7 +51,7 @@
         <task-bar-label task-type="task" position="right">
           <key>Assigned</key>
         </task-bar-label>
-        <scale scale-name="Automatic" full-day-width="11.5519">
+        <scale scale-name="Automatic" full-day-width="26.4005">
           <selected/>
         </scale>
         <scale scale-name="Day" full-day-width="1215"/>
@@ -66,13 +66,13 @@
     </task-view>
     <resource-view>
       <split-view-divider-position>168</split-view-divider-position>
-      <outline x="0" y="0" w="153" h="820">
+      <outline x="0" y="0" w="168" h="735">
         <column name="Notes" width="20"/>
         <column name="Type" width="49"/>
         <column name="Resource" width="160"/>
         <column name="#" width="75"/>
       </outline>
-      <timeline x="-221" y="0" w="1387" h="820">
+      <timeline x="-343" y="0" w="1082" h="735">
         <offtime-display>holidays</offtime-display>
         <resource-allocation/>
         <show-project-end/>
@@ -103,7 +103,7 @@
         <task-bar-label task-type="task" position="right">
           <key/>
         </task-bar-label>
-        <scale scale-name="Automatic" full-day-width="14.6896">
+        <scale scale-name="Automatic" full-day-width="10.7021">
           <selected/>
         </scale>
         <scale scale-name="Day" full-day-width="1215"/>
@@ -117,7 +117,7 @@
     </resource-view>
     <calendar>
       <split-view-divider-position>290</split-view-divider-position>
-      <outline x="0" y="0" w="275" h="637">
+      <outline x="0" y="0" w="290" h="711">
         <column name="Notes" width="20"/>
         <column name="Type" width="49"/>
         <column name="Resource" width="160"/>
@@ -140,7 +140,7 @@ End:</group-table-style>
     </network-view>
   </window>
   <project>
-    <next-task-id>73</next-task-id>
+    <next-task-id>92</next-task-id>
     <next-resource-id>2</next-resource-id>
     <scenario id="ladLmvEmdR-" name="Actual" filename="Actual.xml"/>
     <scenario id="cQDYkrd3BA6" name="Baseline 8/28/17" filename="cQDYkrd3BA6.xml"/>

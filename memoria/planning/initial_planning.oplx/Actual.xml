@@ -55,9 +55,7 @@
     <type>Staff</type>
     <schedule>
       <schedule-day day-of-week="sunday"/>
-      <schedule-day day-of-week="monday">
-        <time-span start-time="43200" end-time="61200"/>
-      </schedule-day>
+      <schedule-day day-of-week="monday"/>
       <schedule-day day-of-week="tuesday">
         <time-span start-time="39600" end-time="50400"/>
         <time-span start-time="54000" end-time="61200"/>
@@ -70,10 +68,7 @@
       <schedule-day day-of-week="thursday">
         <time-span start-time="28800" end-time="50400"/>
       </schedule-day>
-      <schedule-day day-of-week="friday">
-        <time-span start-time="28800" end-time="39600"/>
-        <time-span start-time="53100" end-time="64800"/>
-      </schedule-day>
+      <schedule-day day-of-week="friday"/>
       <schedule-day day-of-week="saturday"/>
       <calendar name="Overtime" editable="yes" overtime="yes"/>
       <calendar name="Time Off" editable="yes" overtime="no">
@@ -103,238 +98,165 @@
     <child-task idref="t6"/>
     <child-task idref="t19"/>
     <child-task idref="t7"/>
-    <child-task idref="t8"/>
   </task>
   <task id="t6">
-    <title>Implementación</title>
+    <title>Índices para búsqueda aproximada</title>
     <type>group</type>
-    <child-task idref="t58"/>
-    <child-task idref="t59"/>
-    <child-task idref="t60"/>
-    <child-task idref="t9"/>
-    <child-task idref="t10"/>
-    <child-task idref="t57"/>
-    <child-task idref="t61"/>
+    <child-task idref="t77"/>
+    <child-task idref="t78"/>
+    <child-task idref="t79"/>
+    <child-task idref="t91"/>
   </task>
   <task id="t7">
-    <title>Revisión bibliográfica</title>
+    <title>Acelerador</title>
     <type>group</type>
-    <child-task idref="t33"/>
-    <child-task idref="t28"/>
-    <child-task idref="t29"/>
-    <child-task idref="t54"/>
-  </task>
-  <task id="t8">
-    <title>Escritura documento Memoria</title>
-    <leveled-start>2018-05-18T12:30:00.000Z</leveled-start>
-    <effort>864000</effort>
-    <prerequisite-task idref="t6"/>
-    <prerequisite-task idref="t7"/>
     <prerequisite-task idref="t19"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t9">
-    <title>Módulos kernel y controladores</title>
-    <leveled-start>2018-01-25T12:15:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <prerequisite-task idref="t58"/>
-    <prerequisite-task idref="t59"/>
-    <prerequisite-task idref="t60"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t10">
-    <title>Acelerador para índices</title>
-    <leveled-start>2018-02-23T13:15:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <prerequisite-task idref="t9"/>
-    <prerequisite-task idref="t25"/>
-    <assignment idref="r1"/>
   </task>
   <task id="t19">
-    <title>Análisis</title>
+    <title>FPGAs</title>
     <type>group</type>
-    <child-task idref="t23"/>
-    <child-task idref="t25"/>
-    <child-task idref="t26"/>
-    <child-task idref="t63"/>
-    <child-task idref="t55"/>
+    <prerequisite-task idref="t6"/>
   </task>
   <task id="t23">
-    <title>Complejidad de creación de índices en espacios métricos</title>
-    <leveled-start>2018-02-05T15:45:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <min-estimate>72000</min-estimate>
-    <max-estimate>216000</max-estimate>
-    <prerequisite-task idref="t58"/>
+    <title>Análisis de complejidad de operaciones en índices para búsqueda aproximada</title>
+    <leveled-start>2017-10-05T11:00:00.000Z</leveled-start>
+    <effort>115200</effort>
     <assignment idref="r1"/>
   </task>
   <task id="t25">
     <title>Evaluación de tareas potencialmente paralelizables</title>
-    <leveled-start>2018-02-14T17:00:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <min-estimate>72000</min-estimate>
-    <max-estimate>216000</max-estimate>
-    <prerequisite-task idref="t23"/>
+    <leveled-start>2017-11-22T17:30:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <prerequisite-task idref="t76"/>
     <assignment idref="r1"/>
-  </task>
-  <task id="t26">
-    <title>Rendimiento implementación sobre FPGA</title>
-    <leveled-start>2018-04-06T19:45:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <min-estimate>144000</min-estimate>
-    <max-estimate>432000</max-estimate>
-    <prerequisite-task idref="t10"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t28">
-    <title>ASIC</title>
-    <type>group</type>
-    <child-task idref="t45"/>
-    <child-task idref="t46"/>
-    <child-task idref="t48"/>
-  </task>
-  <task id="t29">
-    <title>Embebed Linux</title>
-    <type>group</type>
-    <child-task idref="t53"/>
-    <child-task idref="t50"/>
-    <child-task idref="t51"/>
-    <child-task idref="t52"/>
-    <prerequisite-task idref="t28"/>
   </task>
   <task id="t33">
-    <title>Búsqueda e indización sobre espacios métricos</title>
-    <leveled-start>2017-09-04T15:30:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <min-estimate>144000</min-estimate>
-    <max-estimate>432000</max-estimate>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t45">
-    <title>Diseño de circuitos digitales</title>
-    <leveled-start>2017-10-20T13:15:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <min-estimate>72000</min-estimate>
-    <max-estimate>216000</max-estimate>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t46">
-    <title>Núcleos IP para operaciones matemáticas.</title>
-    <leveled-start>2017-11-02T15:00:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <prerequisite-task idref="t45"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t48">
-    <title>Revisión bibliográfica de ASICs terminada.</title>
-    <type>milestone</type>
-    <leveled-start>2017-10-11T13:30:00.000Z</leveled-start>
-    <prerequisite-task idref="t46"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t50">
-    <title>Descripción de hardware y dispositivos</title>
-    <leveled-start>2017-12-14T11:45:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <min-estimate>72000</min-estimate>
-    <max-estimate>216000</max-estimate>
-    <prerequisite-task idref="t53"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t51">
-    <title>Interoperabilidad PS-PLs</title>
-    <leveled-start>2017-12-26T14:15:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <min-estimate>144000</min-estimate>
-    <max-estimate>432000</max-estimate>
-    <prerequisite-task idref="t50"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t52">
-    <title>Revisión bibliográfica para Embebed Linux terminada</title>
-    <type>milestone</type>
-    <leveled-start>2017-11-22T20:15:00.000Z</leveled-start>
-    <prerequisite-task idref="t51"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t53">
-    <title>Kernel y módulos</title>
-    <leveled-start>2017-12-01T19:45:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <min-estimate>72000</min-estimate>
-    <max-estimate>216000</max-estimate>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t54">
-    <title>Revisión bibliográfica terminada.</title>
-    <type>milestone</type>
-    <leveled-start>2017-11-22T20:15:00.000Z</leveled-start>
-    <prerequisite-task idref="t28"/>
-    <prerequisite-task idref="t29"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t55">
-    <title>Tareas de análisis terminadas.</title>
-    <type>milestone</type>
-    <leveled-start>2018-01-25T12:15:00.000Z</leveled-start>
-    <prerequisite-task idref="t23"/>
-    <prerequisite-task idref="t25"/>
-    <prerequisite-task idref="t26"/>
-    <assignment idref="r1"/>
-  </task>
-  <task id="t57">
-    <title>Mejoras en acelerador para índices.</title>
-    <leveled-start>2018-03-15T14:30:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <prerequisite-task idref="t10"/>
+    <title>Revisión bibliográfica espacios métricos</title>
+    <leveled-start>2017-09-05T14:00:00.000Z</leveled-start>
+    <effort>115200</effort>
     <assignment idref="r1"/>
   </task>
   <task id="t58">
-    <title>Indice inicial para espacios métricos</title>
-    <leveled-start>2017-09-29T13:00:00.000Z</leveled-start>
-    <effort>288000</effort>
+    <title>Documentación métodos de búsqueda aproximada</title>
+    <leveled-start>2017-12-07T14:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <prerequisite-task idref="t23"/>
+    <prerequisite-task idref="t74"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t73">
+    <title>Documentación espacios métricos.</title>
+    <leveled-start>2017-11-30T15:00:00.000Z</leveled-start>
+    <effort>57600</effort>
     <prerequisite-task idref="t33"/>
     <assignment idref="r1"/>
   </task>
-  <task id="t59">
-    <title>Prototipado ASIC</title>
-    <leveled-start>2017-11-22T20:15:00.000Z</leveled-start>
-    <effort>144000</effort>
-    <prerequisite-task idref="t28"/>
+  <task id="t74">
+    <title>Revisión bibliográfica de métodos para búsqueda aproximada </title>
+    <leveled-start>2017-09-14T15:00:00.000Z</leveled-start>
+    <effort>115200</effort>
     <assignment idref="r1"/>
   </task>
-  <task id="t60">
-    <title>Circuito para interconexión PS-PL</title>
-    <leveled-start>2018-01-16T14:30:00.000Z</leveled-start>
+  <task id="t75">
+    <title>Implementación de índice para marco referencial</title>
+    <leveled-start>2017-10-18T18:30:00.000Z</leveled-start>
     <effort>144000</effort>
-    <prerequisite-task idref="t29"/>
+    <prerequisite-task idref="t23"/>
     <assignment idref="r1"/>
   </task>
-  <task id="t61">
-    <title>Implementaciones terminadas.</title>
+  <task id="t76">
+    <title>Benchmarking y diseño de experimentos</title>
+    <leveled-start>2017-11-07T16:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <prerequisite-task idref="t75"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t77">
+    <title>Investigación</title>
+    <type>group</type>
+    <child-task idref="t33"/>
+    <child-task idref="t74"/>
+    <child-task idref="t23"/>
+    <child-task idref="t25"/>
+    <child-task idref="t87"/>
+  </task>
+  <task id="t78">
+    <title>Desarrollo</title>
+    <type>group</type>
+    <child-task idref="t75"/>
+    <child-task idref="t76"/>
+    <child-task idref="t88"/>
+  </task>
+  <task id="t79">
+    <title>Documentacion</title>
+    <type>group</type>
+    <child-task idref="t73"/>
+    <child-task idref="t58"/>
+    <child-task idref="t81"/>
+    <child-task idref="t82"/>
+    <child-task idref="t83"/>
+    <child-task idref="t89"/>
+  </task>
+  <task id="t81">
+    <title>Documentación de implementación de índice</title>
+    <leveled-start>2017-12-14T12:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <prerequisite-task idref="t75"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t82">
+    <title>Documentación benchmark y experimentos diseñados</title>
+    <leveled-start>2017-12-20T21:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <prerequisite-task idref="t76"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t83">
+    <title>Documentación de tareas a paralelizar</title>
+    <leveled-start>2017-12-27T20:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <prerequisite-task idref="t25"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t87">
+    <title>Investigación etapa 1 terminada</title>
     <type>milestone</type>
-    <leveled-start>2018-01-25T12:15:00.000Z</leveled-start>
-    <prerequisite-task idref="t9"/>
-    <prerequisite-task idref="t10"/>
-    <prerequisite-task idref="t57"/>
-    <prerequisite-task idref="t58"/>
-    <prerequisite-task idref="t59"/>
-    <prerequisite-task idref="t60"/>
+    <leveled-start>2017-11-07T16:00:00.000Z</leveled-start>
+    <prerequisite-task idref="t23"/>
+    <prerequisite-task idref="t25"/>
+    <prerequisite-task idref="t33"/>
+    <prerequisite-task idref="t74"/>
     <assignment idref="r1"/>
   </task>
-  <task id="t63">
-    <title>Contraste entre implementaciones FPGA y CPU</title>
-    <leveled-start>2018-04-27T11:15:00.000Z</leveled-start>
-    <effort>288000</effort>
-    <min-estimate>144000</min-estimate>
-    <max-estimate>432000</max-estimate>
-    <prerequisite-task idref="t6"/>
+  <task id="t88">
+    <title>Índice objetivo implementado</title>
+    <type>milestone</type>
+    <leveled-start>2017-10-25T17:30:00.000Z</leveled-start>
+    <prerequisite-task idref="t75"/>
+    <prerequisite-task idref="t76"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t89">
+    <title>Documentación espacios métricos e indización terminada.</title>
+    <type>milestone</type>
+    <leveled-start>2017-11-14T15:00:00.000Z</leveled-start>
+    <prerequisite-task idref="t58"/>
+    <prerequisite-task idref="t73"/>
+    <prerequisite-task idref="t81"/>
+    <prerequisite-task idref="t82"/>
+    <prerequisite-task idref="t83"/>
+    <assignment idref="r1"/>
+  </task>
+  <task id="t91">
+    <title>Etapa 1 Terminada</title>
+    <type>milestone</type>
+    <leveled-start>2017-11-14T15:00:00.000Z</leveled-start>
+    <prerequisite-task idref="t77"/>
+    <prerequisite-task idref="t78"/>
+    <prerequisite-task idref="t79"/>
     <assignment idref="r1"/>
   </task>
   <critical-path root="-1" enabled="false" resources="false">
     <color r="1" g="0.5" b="0.5"/>
-  </critical-path>
-  <critical-path root="61" enabled="false" resources="false">
-    <color h="0.4" s="0.5" v="0.8"/>
   </critical-path>
 </scenario>
