@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <omniplan xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opnx="http://www.omnigroup.com/namespace/OmniPlan/v2">
-  <window x="0" y="0" w="1280" h="758">
+  <window x="0" y="0" w="1280" h="757">
     <editing-scenario>ladLmvEmdR-</editing-scenario>
     <comparison-scenario>cQDYkrd3BA6</comparison-scenario>
-    <view>task</view>
+    <view>resource</view>
     <change-tracking/>
     <status-display>basic</status-display>
     <task-view>
       <split-view-divider-position>405</split-view-divider-position>
-      <outline x="0" y="0" w="405" h="720">
+      <outline x="0" y="111" w="405" h="719">
         <column name="Violations" width="20"/>
-        <column name="Title" width="190"/>
+        <column name="Title" width="233"/>
         <column name="Effort" width="42"/>
         <column name="Prerequisites" width="77"/>
         <column name="Start" width="64"/>
         <column name="End" width="64"/>
         <column name="%Done" width="74"/>
-        <expanded-items idrefs="t19 t1 t77 t78 t6"/>
-        <selected-items-at-filter-time idrefs="t66 t24 t59 t80 t73 t67 t25 t74 t81 t75 t19 t33 t26 t82 t90 t27 t83 t76 t77 t35 t28 t84 t91 t78 t36 t50 t29 t92 t85 t79 t51 t44 t86 t87 t52 t45 t10 t38 t6 t7 t88 t53 t8 t46 t60 t9 t89 t54 t47 t61 t55 t48 t49 t63 t57 t64 t65 t23 t58"/>
+        <expanded-items idrefs="t77 t19 t1 t78 t6 t79"/>
+        <selected-items-at-filter-time idrefs="t83 t75 t88 t92 t76 t89 t19 t77 t23 t81 t73 t78 t6 t82 t74 t58 t87 t79 t33 t25 t91"/>
       </outline>
-      <gantt-view x="-62" y="0" w="873" h="720">
+      <gantt-view x="-42" y="111" w="873" h="719">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>
@@ -66,13 +66,13 @@
     </task-view>
     <resource-view>
       <split-view-divider-position>168</split-view-divider-position>
-      <outline x="0" y="0" w="168" h="735">
+      <outline x="0" y="0" w="168" h="734">
         <column name="Notes" width="20"/>
         <column name="Type" width="49"/>
-        <column name="Resource" width="160"/>
+        <column name="Resource" width="175"/>
         <column name="#" width="75"/>
       </outline>
-      <timeline x="-279" y="0" w="1082" h="735">
+      <timeline x="-278" y="0" w="1082" h="734">
         <offtime-display>holidays</offtime-display>
         <resource-allocation/>
         <show-project-end/>
@@ -103,7 +103,7 @@
         <task-bar-label task-type="task" position="right">
           <key/>
         </task-bar-label>
-        <scale scale-name="Automatic" full-day-width="24.3436">
+        <scale scale-name="Automatic" full-day-width="23.952">
           <selected/>
         </scale>
         <scale scale-name="Day" full-day-width="1215"/>
@@ -117,10 +117,10 @@
     </resource-view>
     <calendar>
       <split-view-divider-position>290</split-view-divider-position>
-      <outline x="0" y="0" w="290" h="711">
+      <outline x="0" y="0" w="290" h="551">
         <column name="Notes" width="20"/>
         <column name="Type" width="49"/>
-        <column name="Resource" width="160"/>
+        <column name="Resource" width="150"/>
         <column name="Custom Work Week" width="20"/>
         <column name="Schedule Exception" width="20"/>
       </outline>
@@ -201,10 +201,10 @@ End:</group-table-style>
     <printinfo-dictionary>
       <key>OPPrintSettingPrintOption</key>
       <integer>0</integer>
-      <key>NSScalingFactor</key>
-      <real>1</real>
-      <key>NSPrinterName</key>
-      <string>Brother MFC-9120CN</string>
+      <key>NSTopMargin</key>
+      <real>90</real>
+      <key>NSBottomMargin</key>
+      <real>90</real>
       <key>NSRightMargin</key>
       <real>72</real>
       <key>NSPaperName</key>
@@ -213,10 +213,10 @@ End:</group-table-style>
       <real>72</real>
       <key>NSOrientation</key>
       <integer>0</integer>
-      <key>NSTopMargin</key>
-      <real>90</real>
-      <key>NSBottomMargin</key>
-      <real>90</real>
+      <key>NSScalingFactor</key>
+      <real>1</real>
+      <key>NSPrinterName</key>
+      <string>Brother MFC-9120CN</string>
     </printinfo-dictionary>
     <page-adornment>
       <master-page-headers>

@@ -1,7 +1,11 @@
+%%As you can imagine, if you replace the original memoria .cls with my version,
+%%it will translate all keywords used. Enjoy!
+%%
+%% Erik Regla, 2017
+%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{iccmemoria}
-[2005/01/19 v1 Estilo Memoria de Titulo - ICC - UTalca (fmeza, jperez)] 
-
+[2005/01/19 v1 Degree project documentation, English version - ICC - UTalca (fmeza, jperez, eregla)] 
 \PassOptionsToClass{12pt,oneside,fleqn,spanish}{report}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
@@ -15,21 +19,21 @@
 \selectlanguage{spanish}
 \bibliographystyle{plain}
 
-\def\utalca{Universidad de Talca}
-\def\facdeing{Facultad de Ingenier\'{\i}a}
-\def\escdeicc{Escuela de Ingenier\'{\i}a Civil en Computaci\'{o}n}
+\def\utalca{University of Talca}
+\def\facdeing{Engineering faculty}
+\def\escdeicc{Civil Computer Engineering School}
 \def\ciudad{Curic\'{o}}
 \def\pais{Chile}
 
-\def\dedicaname{Dedicatoria}
-\def\agradename{Agradecimientos}
-\def\resumenname{Resumen}
+\def\dedicaname{Dedicatory}
+\def\agradename{Acknowledgements}
+\def\resumenname{Summary}
 \def\Abstractname{Abstract}
-\def\tblcontname{Tabla de Contenidos}
-\def\indfigname{Índice de Figuras}
-\def\indtblname{Índice de Tablas}
-\def\glosname{Glosario}
-\def\appendixpartname{Anexos}
+\def\tblcontname{Content Index}
+\def\indfigname{Figure Index}
+\def\indtblname{Table Index}
+\def\glosname{Glossary}
+\def\appendixpartname{Annex}
 
 \def\supervisor#1{\def\@supervisor{#1}}
 \def\informantes#1#2{\def\@informantex{#1}\def\@informantey{#2}}
@@ -38,7 +42,7 @@
 \def\titulo#1{\def\@titulo{#1}}
 
 %%%
-% Redimensi�n de m�rgenes
+% Margin redimension
 %%%
 
 \setlength\paperheight{11in}  %
@@ -109,7 +113,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 {
 \doublespacing
 \parbox{300pt}{
-  El presente documento fue calificado con nota: \line(1,0){50}\\
+  This document was graded with a score of: \line(1,0){50}\\
   %Firman dicha calificación:\\
 }
 }
@@ -158,7 +162,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 \vfill
 
 \doublespacing
-{Profesor Gu\'{i}a: \MakeUppercase{\@supervisor}}
+{Advisor: \MakeUppercase{\@supervisor}}
 \bigskip
 \bigskip
 \bigskip
@@ -198,7 +202,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 %\begin{minipage}{6cm}
 %  \singlespacing
   %\vspace{1.0cm}\hrule\smallskip
-  {Profesor Gu\'{i}a:
+  {Advisor:
   \MakeUppercase{\@supervisor}}
 %\end{minipage}
 \bigskip
@@ -219,6 +223,7 @@ Memoria para optar al título de Ingeniero Civil en Computación\\}%} \\}
 %\end{minipage}
 %\bigskip
 
+%% TODO: What is?
 {Profesor Informante: \MakeUppercase{\@informantex}}
 \bigskip
 
