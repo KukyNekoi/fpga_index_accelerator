@@ -7,3 +7,6 @@ But there is a big problem with it, since we are [unable to allocate a bitfield 
 As is a practical thing on FPGAs since we *represent values as a set of wires*, to use those types will only invalidate the experiments performed by introducing [memory misalignment](https://en.wikipedia.org/wiki/Data_structure_alignment).
 
 Because of this, we'll only use primitive types that allow comparison without memory alignment problems.
+
+## Index implementation - Memory
+In order to ease memory transferal and to "encourage" caching, the index will be implemented on a single array without any reshaping involved. 
