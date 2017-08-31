@@ -19,13 +19,3 @@ I suggest you to read my memoria before digging all the experiments, this will g
 * Xilinix Vivado HLS 2017.2
 * Some C compiler like GNU GCC
 * LaTex (if you want to edit some documents)
-
-## Acknowledgements (in lexicographical order)
-
-* Andrés Olivares
-* Daniel Hedencrona
-* Daniela Paredes
-* Fabián Olivares
-* Felipe Astroza
-* Rodrigo Paredes
-* Samuel Ortega
