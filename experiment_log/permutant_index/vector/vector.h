@@ -3,13 +3,13 @@
 
 #include <inttypes.h>
 
-#ifndef PERMUTATION_SIZE
-#define PERMUTATION_SIZE 4
+#ifndef VECTOR_SIZE
+#define VECTOR_SIZE 8
 #endif
-typedef double vector_t;
+typedef float vector_t;
 
 // Moves pointer at specific offset based on VECTOR_DIM
-#define VECTOR_AT(X, Y) ( X + (Y*VECTOR_DIM) ) 
+#define VECTOR_AT(X, Y) ( X + (Y*VECTOR_SIZE) ) 
 
 #include "vector.c"
 #endif
