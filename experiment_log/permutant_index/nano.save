@@ -1,0 +1,7 @@
+{
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "Meslo LG M DZ for Powerline",
+    "window.zoomLevel": 0,
+    "git.enableSmartCommit": true
+}

@@ -1,28 +1,21 @@
 #include <stdio.h>
+#include "constants.h"
+#include "indexing/indexing.h"
 #include "permutant/permutant.h"
+#include "dataset/dataset.h"
 
 int main(int args, char **argv)
 {
     // printf("Hello World!");
-    permutant_t *index = create_index(2);
-    index[0] = 1;
-    index[1] = 2;
-    index[2] = 4;
-    index[3] = 3;
-    index[4] = 1;
-    index[5] = 2;
-    index[6] = 3;
-    index[7] = 4;
-    print_permutation(index, 0);
-    print_permutation(index, 1);
-
-    permutant_t *target = get_permutation_from_index(index, 0);
-    permutant_t *inverted = invert_permutation(target);
-    print_permutation(inverted, 0);
-    printf("Distance: %hu\n", spearman_footrule(INDEX_AT(index,1), inverted));
-
+    dataset_t *dataset = dload(DATASET_LOCATION, DATASET_DIM);
+    for(int i=0; i<10; i++){
+        dprint(dataset, i);
+    }
     
-    
-    destroy_permutation(index);
+    // // permutant_t *inverted = pgetinvert( (permutant_t*) dataset, 0);
+    // pprint(inverted, 0);
+    // printf("Distance: %hu\n", pspearman_footrule(dataset, 1, inverted));
+    get_sss_pivots(dataset, .01,.1);
+    dfree(dataset);
     return 1;
 }

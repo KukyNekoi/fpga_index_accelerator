@@ -1,1 +1,10 @@
-{}
+{
+    "files.associations": {
+        "dataset.h": "c",
+        "permutant.h": "c",
+        "indexing.h": "c",
+        "inttypes.h": "c",
+        "stdbool.h": "c"
+    },
+    "cSpell.enabled": false
+}

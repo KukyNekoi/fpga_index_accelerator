@@ -6,34 +6,42 @@
 #include <string.h>
 #include "permutant.h"
 
-permutant_t* create_index(size_t size)
+permutant_t* pcreate(size_t size)
 {
     //TODO, connect to global memory space.
     permutant_t *index = (permutant_t *)malloc(sizeof(permutant_t) * PERMUTATION_SIZE * size);
     return index;
 }
 
-permutant_t* get_permutation_from_index(permutant_t *index, size_t offset){
+permutant_t* pload(char *filename, size_t size){
+    permutant_t *index = pcreate(size);
+    FILE *ptr;
+    ptr = fopen("experiment/index.bin","rb");  // r for read, b for binary
+    fread(index,PERMUTATION_SIZE * size, sizeof(permutant_t), ptr); // read 10 bytes to our buffer
+    return index;
+}
+
+permutant_t* pget(permutant_t *index, size_t offset){
     permutant_t *perm = (permutant_t *)malloc(sizeof(permutant_t) * PERMUTATION_SIZE);
     memcpy(perm, index+(offset*PERMUTATION_SIZE), sizeof(permutant_t)*PERMUTATION_SIZE);
     return perm;
 }
 
-permutant_t* create_permutation(){
+permutant_t* pcreates(){
     permutant_t *perm = (permutant_t *)malloc(sizeof(permutant_t) * PERMUTATION_SIZE);
     return perm;
 }
 
-void copy_permutation(permutant_t *dest, permutant_t *src){
+void pcpy(permutant_t *dest, permutant_t *src){
     memcpy(dest, src, sizeof(permutant_t)*PERMUTATION_SIZE);
 }
 
-void destroy_permutation(permutant_t *target)
+void pfree(permutant_t *target)
 {
     free(target);
 }
 
-void print_permutation(permutant_t *target, size_t offset){
+void pprint(permutant_t *target, size_t offset){
     printf("(");
     for(size_t i=0; i<PERMUTATION_SIZE; i++){
         printf("%d", (int)target[i+(offset*PERMUTATION_SIZE)]);
@@ -71,7 +79,7 @@ permutant_t* invert_permutation(permutant_t *target)
     return inverted;
 };
 
-permutant_t* invert_permutation_on_index(permutant_t *index, size_t offset)
+permutant_t* pgetinvert(permutant_t *index, size_t offset)
 {
     permutant_t *inverted = (permutant_t *)malloc(sizeof(permutant_t) * PERMUTATION_SIZE);
     for (permutant_t i = 0; i < PERMUTATION_SIZE; i++)
@@ -82,23 +90,25 @@ permutant_t* invert_permutation_on_index(permutant_t *index, size_t offset)
 };
 
 // Both functions recieve an index, an inverted permutation and a target permutation.
-permutant_distance_t spearman_rho(permutant_t *index, permutant_t *inverted_permutation)
+permutant_distance_t pspearman_rho(permutant_t *index, size_t offset,  permutant_t *inverted_permutation)
 {
+    permutant_t *idx = INDEX_AT(index,offset);
     permutant_distance_t distance = 0;
     for (permutant_t i = 0; i < PERMUTATION_SIZE; i++)
     {
-        permutant_distance_t temp = (inverted_permutation[index[i]] - i);
+        permutant_distance_t temp = (inverted_permutation[idx[i]] - i);
         distance += temp * temp;
     }
     return distance;
 };
 
-permutant_distance_t spearman_footrule(permutant_t *index, permutant_t *inverted_permutation)
+permutant_distance_t pspearman_footrule(permutant_t *index, size_t offset, permutant_t *inverted_permutation)
 {
+    permutant_t *idx = INDEX_AT(index,offset);
     permutant_distance_t distance = 0;
     for (permutant_t i = 0; i < PERMUTATION_SIZE; i++)
     {
-        distance += (abs(inverted_permutation[index[i]] - i));
+        distance += (abs(inverted_permutation[idx[i]] - i));
     }
     return distance;
 };

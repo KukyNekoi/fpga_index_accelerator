@@ -1,15 +1,26 @@
 #ifndef VECTOR_H_
 #define VECTOR_H_
 
-#include <inttypes.h>
+#define VECTOR_INITIAL_CAPACITY 100
 
-#ifndef VECTOR_SIZE
-#define VECTOR_SIZE 8
-#endif
-typedef float vector_t;
+// Define a vector type
+typedef struct {
+  int size;      // slots used so far
+  int capacity;  // total available slots
+  int *data;     // array of integers we're storing
+} Vector;
 
-// Moves pointer at specific offset based on VECTOR_DIM
-#define VECTOR_AT(X, Y) ( X + (Y*VECTOR_SIZE) ) 
+void vector_init(Vector *vector);
 
-#include "vector.c"
+void vector_append(Vector *vector, int value);
+
+int vector_get(Vector *vector, int index);
+
+void vector_set(Vector *vector, int index, int value);
+
+void vector_double_capacity_if_full(Vector *vector);
+
+void vector_free(Vector *vector);
+
+
 #endif

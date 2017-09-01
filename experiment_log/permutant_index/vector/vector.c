@@ -1,44 +1,88 @@
 #ifndef VECTOR_C_
 #define VECTOR_C_
 
-#include <math.h>
+// vector.c
+
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "vector.h"
 
-vector_t* create_vector(size_t size)
-{
-    //TODO, connect to global memory space.
-    vector_t *index = (vector_t *)malloc(sizeof(vector_t) * size * VECTOR_SIZE);
-    return index;
+void vector_init(Vector *vector) {
+  // initialize size and capacity
+  vector->size = 0;
+  vector->capacity = VECTOR_INITIAL_CAPACITY;
+
+  // allocate memory for vector->data
+  vector->data = malloc(sizeof(int) * vector->capacity);
 }
 
-vector_t* copy_from_vector(vector_t *index, size_t offset){
-    vector_t *vect = (vector_t *)malloc(VECTOR_SIZE * sizeof(vector_t));
-    memcpy(vect, index+(offset), VECTOR_SIZE * sizeof(vector_t));
-    return vect;
+void vector_append(Vector *vector, int value) {
+  // make sure there's room to expand into
+  vector_double_capacity_if_full(vector);
+
+  // append the value and increment vector->size
+  vector->data[vector->size++] = value;
 }
 
-void copy_vector(vector_t *dest, vector_t *src){
-    memcpy(dest, src, VECTOR_SIZE * sizeof(vector_t));
+int vector_get(Vector *vector, int index) {
+  if (index >= vector->size || index < 0) {
+    printf("Index %d out of bounds for vector of size %d\n", index, vector->size);
+    exit(1);
+  }
+  return vector->data[index];
 }
 
-void destroy_vector(vector_t *target)
-{
-    free(target);
+void vector_set(Vector *vector, int index, int value) {
+  // zero fill the vector up to the desired index
+  while (index >= vector->size) {
+    vector_append(vector, 0);
+  }
+
+  // set the value at the desired index
+  vector->data[index] = value;
 }
 
-void print_vector_from_index(vector_t *target, size_t offset){
-    printf("(");
-    for(size_t i=0; i<VECTOR_SIZE; i++){
-        printf("%f", (vector_t)target[i+(offset*VECTOR_SIZE)]);
-        if(i<VECTOR_SIZE-1){
-            printf(" ");
-        }
-    }
-    printf(")\n");
+void vector_double_capacity_if_full(Vector *vector) {
+  if (vector->size >= vector->capacity) {
+    // double vector->capacity and resize the allocated memory accordingly
+    vector->capacity *= 2;
+    vector->data = realloc(vector->data, sizeof(int) * vector->capacity);
+  }
 }
 
-
+void vector_free(Vector *vector) {
+  free(vector->data);
+}
 
 #endif
+
+
+
+// // vector-usage.c
+
+// #include <stdio.h>
+// #include "vector.h"
+
+// int main() {
+//   // declare and initialize a new vector
+//   Vector vector;
+//   vector_init(&vector);
+
+//   // fill it up with 150 arbitrary values
+//   // this should expand capacity up to 200
+//   int i;
+//   for (i = 200; i > -50; i--) {
+//     vector_append(&vector, i);
+//   }
+
+//   // set a value at an arbitrary index
+//   // this will expand and zero-fill the vector to fit
+//   vector_set(&vector, 4452, 21312984);
+
+//   // print out an arbitrary value in the vector
+//   printf("Heres the value at 27: %d\n", vector_get(&vector, 27));
+
+//   // we're all done playing with our vector, 
+//   // so free its underlying data array
+//   vector_free(&vector);
+// }
