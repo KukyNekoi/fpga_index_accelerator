@@ -2,3 +2,4 @@
 #define DATASET_LOCATION "experiment/dataset.bin"
 #define PERMUTATION_SIZE 4
 #define DATASET_DIM 8
+#define VECTOR_INITIAL_CAPACITY 100

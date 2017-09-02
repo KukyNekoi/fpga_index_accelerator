@@ -6,39 +6,37 @@
 #include <string.h>
 #include "dataset.h"
 
-dataset_t *dcreate(size_t size)
-{
+void dataset_create(dataset_t **index, size_t size){
     //TODO, connect to global memory space.
-    dataset_t *index = (dataset_t *)malloc(sizeof(dataset_t) * size * DATASET_DIM);
-    return index;
+    dataset_t *memory = (dataset_t *)malloc(sizeof(dataset_t) * size * DATASET_DIM);
+    *index = (dataset_t *)memory;
 }
 
-dataset_t* dload(char *filename, size_t size){
-    dataset_t *index = dcreate(size);
+void dataset_load(dataset_t **index, char *filename, size_t size){
+    dataset_create(index, size);
     FILE *ptr;
     ptr = fopen("experiment/dataset.bin","rb");  // r for read, b for binary
     fread(index,DATASET_DIM * size,sizeof(dataset_t), ptr); // read 10 bytes to our buffer
-    return index;
 }
 
-dataset_t *dget(dataset_t *index, size_t offset)
+dataset_t* dataset_get(dataset_t *index, size_t offset)
 {
     dataset_t *vect = (dataset_t *)malloc(DATASET_DIM * sizeof(dataset_t));
     memcpy(vect, index + (offset), DATASET_DIM * sizeof(dataset_t));
     return vect;
 }
 
-void dcpy(dataset_t *dest, dataset_t *src)
+void dataset_copy(dataset_t **dest, dataset_t **src)
 {
     memcpy(dest, src, DATASET_DIM * sizeof(dataset_t));
 }
 
-void dfree(dataset_t *target)
+void dataset_free(dataset_t *target)
 {
     free(target);
 }
 
-void dprint(dataset_t *target, size_t offset)
+void dataset_print(dataset_t *target, size_t offset)
 {
     printf("(");
     for (size_t i = 0; i < DATASET_DIM; i++)
@@ -52,7 +50,7 @@ void dprint(dataset_t *target, size_t offset)
     printf(")\n");
 }
 
-dataset_t ddistance(dataset_t *dataset, size_t a, size_t b)
+dataset_t dataset_distance(dataset_t *dataset, size_t a, size_t b)
 {
     double total_value = 0;
     size_t i = 0;

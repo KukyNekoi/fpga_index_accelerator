@@ -4,7 +4,10 @@
         "permutant.h": "c",
         "indexing.h": "c",
         "inttypes.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "math.h": "c"
     },
     "cSpell.enabled": false
 }

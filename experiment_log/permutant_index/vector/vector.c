@@ -1,5 +1,5 @@
-#ifndef VECTOR_C_
-#define VECTOR_C_
+#ifndef C_VECTOR_C_
+#define C_VECTOR_C_
 
 // vector.c
 
@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "vector.h"
 
-void vector_init(Vector *vector) {
+void vector_init(vector_t *vector) {
   // initialize size and capacity
   vector->size = 0;
   vector->capacity = VECTOR_INITIAL_CAPACITY;
@@ -16,7 +16,7 @@ void vector_init(Vector *vector) {
   vector->data = malloc(sizeof(int) * vector->capacity);
 }
 
-void vector_append(Vector *vector, int value) {
+void vector_append(vector_t *vector, int value) {
   // make sure there's room to expand into
   vector_double_capacity_if_full(vector);
 
@@ -24,7 +24,7 @@ void vector_append(Vector *vector, int value) {
   vector->data[vector->size++] = value;
 }
 
-int vector_get(Vector *vector, int index) {
+int vector_get(vector_t *vector, int index) {
   if (index >= vector->size || index < 0) {
     printf("Index %d out of bounds for vector of size %d\n", index, vector->size);
     exit(1);
@@ -32,7 +32,7 @@ int vector_get(Vector *vector, int index) {
   return vector->data[index];
 }
 
-void vector_set(Vector *vector, int index, int value) {
+void vector_set(vector_t *vector, int index, int value) {
   // zero fill the vector up to the desired index
   while (index >= vector->size) {
     vector_append(vector, 0);
@@ -42,7 +42,7 @@ void vector_set(Vector *vector, int index, int value) {
   vector->data[index] = value;
 }
 
-void vector_double_capacity_if_full(Vector *vector) {
+void vector_double_capacity_if_full(vector_t *vector) {
   if (vector->size >= vector->capacity) {
     // double vector->capacity and resize the allocated memory accordingly
     vector->capacity *= 2;
@@ -50,7 +50,7 @@ void vector_double_capacity_if_full(Vector *vector) {
   }
 }
 
-void vector_free(Vector *vector) {
+void vector_free(vector_t *vector) {
   free(vector->data);
 }
 
