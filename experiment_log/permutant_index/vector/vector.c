@@ -13,10 +13,10 @@ void vector_init(vector_t *vector) {
   vector->capacity = VECTOR_INITIAL_CAPACITY;
 
   // allocate memory for vector->data
-  vector->data = malloc(sizeof(int) * vector->capacity);
+  vector->data = malloc(sizeof(element_t) * vector->capacity);
 }
 
-void vector_append(vector_t *vector, int value) {
+void vector_append(vector_t *vector, element_t value) {
   // make sure there's room to expand into
   vector_double_capacity_if_full(vector);
 
@@ -24,15 +24,15 @@ void vector_append(vector_t *vector, int value) {
   vector->data[vector->size++] = value;
 }
 
-int vector_get(vector_t *vector, int index) {
-  if (index >= vector->size || index < 0) {
-    printf("Index %d out of bounds for vector of size %d\n", index, vector->size);
+element_t vector_get(vector_t *vector, size_t index) {
+  if (index >= vector->size) {
+    printf("Index %zd out of bounds for vector of size %zd\n", index, vector->size);
     exit(1);
   }
   return vector->data[index];
 }
 
-void vector_set(vector_t *vector, int index, int value) {
+void vector_set(vector_t *vector, size_t index, element_t value) {
   // zero fill the vector up to the desired index
   while (index >= vector->size) {
     vector_append(vector, 0);
@@ -44,14 +44,33 @@ void vector_set(vector_t *vector, int index, int value) {
 
 void vector_double_capacity_if_full(vector_t *vector) {
   if (vector->size >= vector->capacity) {
+    // printf("ALLOCATING MEMORY!");
     // double vector->capacity and resize the allocated memory accordingly
     vector->capacity *= 2;
-    vector->data = realloc(vector->data, sizeof(int) * vector->capacity);
+    element_t *ptr = realloc(vector->data, sizeof(element_t) * vector->capacity);
+    if(ptr == NULL){
+      // printf("Memory allocation failed. \n"); exit(1);
+    }
+    else{
+      vector->data = ptr;
+    }
   }
 }
 
 void vector_free(vector_t *vector) {
   free(vector->data);
+  vector->size = 0;
+}
+
+void vector_print(vector_t *vector) {
+  printf("{");
+  for(int i=0; i<vector->size; i++){
+    printf("%zd", vector->data[i]);
+    if(i < vector->size - 1){
+      printf(" ");
+    }
+  }
+  printf("}\n");
 }
 
 #endif

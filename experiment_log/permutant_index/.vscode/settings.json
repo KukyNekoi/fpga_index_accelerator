@@ -1,0 +1,28 @@
+{
+    "files.associations": {
+        "functional": "c",
+        "rope": "c",
+        "dataset.h": "c",
+        "constants.h": "c",
+        "string.h": "c",
+        "vector": "c",
+        "stdio.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "inttypes.h": "c",
+        "random": "c",
+        "cmath": "c",
+        "complex": "c",
+        "cstdlib": "c",
+        "iterator": "c",
+        "bitset": "c",
+        "slist": "c",
+        "hashtable": "c",
+        "valarray": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "vector.h": "c",
+        "permutant.h": "c",
+        "indexing.h": "c"
+    }
+}

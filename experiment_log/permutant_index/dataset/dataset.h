@@ -1,5 +1,5 @@
-#ifndef dataset_H_
-#define dataset_H_
+#ifndef DATASET_H_
+#define DATASET_H_
 
 #include <inttypes.h>
 #include "../constants.h"

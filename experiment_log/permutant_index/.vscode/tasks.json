@@ -6,7 +6,7 @@
         {
             "taskName": "build generator",
             "type": "shell",
-            "command": "gcc-6",
+            "command": "gcc",
             "args": [
                 "-o","generate_dataset.out",
                 "-g","generate_dataset.c"
@@ -22,7 +22,7 @@
         {
             "taskName": "build index",
             "type": "shell",
-            "command": "gcc-6",
+            "command": "gcc",
             "args": [
                 "-o","index.out",
                 "-g","index.c"

@@ -65,7 +65,7 @@ void pprint(permutant_t *target, size_t offset){
  Since all permutants are numbered from 0..p-1 we can invert the index for
  most compared element in order to ease future queries.
 
- BEWARE THAT THIS DOESNT WORK IF THE RANGE IS NOT 0..p-1
+ BEWARE THAT THIS DOESN'T WORK IF THE RANGE IS NOT 0..p-1
  */
 permutant_t* get_invert_permutation(permutant_t *target)
 {

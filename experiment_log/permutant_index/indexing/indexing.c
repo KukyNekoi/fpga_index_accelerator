@@ -4,7 +4,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
+#include "../constants.h"
 #include "indexing.h"
 #include "../dataset/dataset.h"
 #include "../permutant/permutant.h"
@@ -18,7 +18,7 @@ size_t comp (const void * elem1, const void * elem2) {
     return 0;
 }
 
-permutant_t* get_sss_pivots(dataset_t *dataset, double factor, double alpha){
+vector_t get_sss_pivots(dataset_t *dataset, double factor, double alpha){
     // Random sampling to determine max distance. Otherwise, this could take an eternity TwT
 
     //Random seed generation for random pivot selection
@@ -41,13 +41,13 @@ permutant_t* get_sss_pivots(dataset_t *dataset, double factor, double alpha){
     for (int i=0; i < sss_sample_size; i++){
         fread(&random_number, 1, sizeof(size_t), random_source);
         sample[i] = random_number % DATASET_SIZE;
-        // printf("Random sample[%ld]: %ld\n", i ,sample[i]);
+        // printf("Random sample[%d]: %zu\n", i ,sample[i]);
     }
     fclose(random_source);
-    return NULL;    
+    // return NULL;    
 
     // Now selecting pivots
-    // calculate max distance between the samples (exaustive for now)
+    // calculate max distance between the samples (exhaustive for now)
     double max_distance = 0;
     for(int i = 0; i < sss_sample_size; i++){
         for(int j = i+1; j < sss_sample_size - 1; j++){
@@ -61,6 +61,55 @@ permutant_t* get_sss_pivots(dataset_t *dataset, double factor, double alpha){
     // Believe it or not, we only did that to get the max distance. wwwww
     free(sample);
 
+    vector_t pivots;
+    vector_init(&pivots);
+    vector_append(&pivots, 0);
+    
+    // for each new element if distance to all pivots exceeds (max*alpha) add as pivots
+    #ifndef SKIP_SSS_INTERVAL
+    for(size_t i = 0; i < current_index_size; i++){
+    #else
+    for(size_t i = 0; i < current_index_size; i+= SKIP_SSS_INTERVAL){
+    #endif
+        bool accepted = true;
+
+        for(size_t j = 0; j < pivots.size; j++){
+            // vector_print(&pivots);
+            double dist = dataset_distance(dataset, vector_get(&pivots, j), i);
+            size_t next = vector_get(&pivots, j);
+            dataset_t *a = dataset_get(dataset, next);
+            dataset_t *b = dataset_get(dataset, i);
+
+            if(dist < alpha * max_distance){
+                accepted = false;
+                break;
+            }
+        }
+        if(accepted == true){
+            vector_append(&pivots, i);
+        }
+    }
+    vector_print(&pivots);
+    return pivots;
 }
 
+vector_t force_sss_pivots(dataset_t *dataset, double factor, double precision, size_t amount){
+    size_t lower_bound = amount * (1.0-precision);
+    size_t upper_bound = amount * (1.0+precision);
+    double upper_alpha_bound = 1;
+    double lower_alpha_bound = 0;
+    while(1){
+        double curr_alpha = ((2*upper_alpha_bound)+lower_alpha_bound)/3.0;
+        vector_t pivots = get_sss_pivots(dataset, factor, curr_alpha);
+        if(pivots.size > upper_bound){
+            lower_alpha_bound = curr_alpha;
+        }
+        else if(pivots.size < lower_bound){
+            upper_alpha_bound = curr_alpha;
+        }
+        else{
+            return pivots;
+        }
+    }
+}
 #endif
