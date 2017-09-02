@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../constants.h"
 #include "dataset.h"
 
 void dataset_create(dataset_t **index, size_t size){

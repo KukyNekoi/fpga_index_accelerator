@@ -60,7 +60,7 @@ permutant_t* get_sss_pivots(dataset_t *dataset, double factor, double alpha){
 
     // Believe it or not, we only did that to get the max distance. wwwww
     free(sample);
-    
+
 }
 
 #endif

@@ -3,7 +3,7 @@
     "configurations": [
         
         {
-            "name": "(lldb) Launch",
+            "name": "(lldb) Launch generator",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/generate_dataset.out",
@@ -14,6 +14,19 @@
             "externalConsole": true,
             "MIMode": "lldb",
             "preLaunchTask": "build generator"
+        },
+        {
+            "name": "(lldb) Launch index",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/index.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "build index"
         }
     ]
 }

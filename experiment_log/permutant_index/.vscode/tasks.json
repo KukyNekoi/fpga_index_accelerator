@@ -6,14 +6,30 @@
         {
             "taskName": "build generator",
             "type": "shell",
-            "command": "gcc",
+            "command": "gcc-6",
             "args": [
                 "-o","generate_dataset.out",
                 "-g","generate_dataset.c"
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "taskName": "build index",
+            "type": "shell",
+            "command": "gcc-6",
+            "args": [
+                "-o","index.out",
+                "-g","index.c"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
             "problemMatcher": [
                 "$gcc"

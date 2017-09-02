@@ -8,7 +8,7 @@ int main(int args, char **argv)
 {
     // printf("Hello World!");
     dataset_t *dataset;
-    dataset_load(dataset, DATASET_LOCATION, DATASET_DIM);
+    dataset_load(&dataset, DATASET_LOCATION, DATASET_DIM);
     for(int i=0; i<10; i++){
         dataset_print(dataset, i);
     }
