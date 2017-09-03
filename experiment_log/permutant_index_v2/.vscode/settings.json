@@ -23,7 +23,6 @@
         "utility": "c",
         "vector.h": "c",
         "permutant.h": "c",
-        "indexing.h": "c",
-        "algorithm": "c"
+        "indexing.h": "c"
     }
 }

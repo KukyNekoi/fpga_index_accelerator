@@ -15,7 +15,7 @@ typedef struct {
   element_t *data;     // array of integers we're storing
 } vector_t;
 
-void vector_init(vector_t *vector);
+void vector_init(vector_t *vector); 
 void vector_append(vector_t *vector, element_t value);
 element_t vector_get(vector_t *vector, size_t index);
 void vector_set(vector_t *vector, size_t index, element_t value);

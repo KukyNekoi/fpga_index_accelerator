@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "(lldb) Launch generator",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/generate_dataset.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build generator"
+        },
+        {
+            "name": "(lldb) Launch index",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/index.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build index"
+        }
+    ]
+}
