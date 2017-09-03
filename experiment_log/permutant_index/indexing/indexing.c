@@ -112,4 +112,9 @@ vector_t force_sss_pivots(dataset_t *dataset, double factor, double precision, s
         }
     }
 }
+
+permutant_t* get_permutation_mapping(dataset_t *dataset, vector_t pivots, size_t offset){
+    permutant_t *permutation = NULL;
+    permutation_create(permutation, DATASET_SIZE);
+}
 #endif

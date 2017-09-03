@@ -9,6 +9,7 @@
 size_t comp (const void * elem1, const void * elem2);
 vector_t get_sss_pivots(dataset_t *dataset, double factor, double alpha);
 vector_t force_sss_pivots(dataset_t *dataset, double factor, double precision, size_t amount);
+vector_t get_permutation_mapping(dataset_t *dataset, vector_t pivots, double precision, size_t amount);
 
 #include "indexing.c"
 #endif

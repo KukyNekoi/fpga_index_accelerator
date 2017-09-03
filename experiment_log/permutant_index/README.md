@@ -10,3 +10,11 @@ Because of this, we'll only use primitive types that allow comparison without me
 
 ## Index implementation - Memory
 In order to ease memory transferal and to "encourage" caching, the index will be implemented on a single array without any reshaping involved. 
+
+## What's the problem with this implementation?
+As you can see, it's tweaked for direct memory address. This is probably not what I actually want, because I do need a way to access memory, but to generate some obscure code is not what I want. Still, it helped me to devise the caveats of this approach.
+
+Given this situation, the next implementation will be organised as follows:
+* A wapper implementation
+* An improved copy of current lib compilant with some standard
+* Probably some macros

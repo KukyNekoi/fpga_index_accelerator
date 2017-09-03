@@ -15,6 +15,14 @@ int main(int args, char **argv)
     
     vector_t pivots = force_sss_pivots(dataset, .01, .01, 74);
     printf("Total pivots? %ld", pivots.size);
+    permutant_t *index = NULL;
+    
+    // TODO: Save pivot binary
+    permutation_create(&index, pivots.size);
+    
+
+
+
     dataset_free(dataset);
     
     return 1;
