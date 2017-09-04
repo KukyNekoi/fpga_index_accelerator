@@ -1,7 +1,7 @@
 #define true 1
 #define false 0
 
-typedef int bool;
+// typedef int bool;
 
 // #define DATASET_SIZE 100000
 // #define DATASET_LOCATION "experiment/dataset.bin"
