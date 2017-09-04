@@ -22,15 +22,13 @@ void dataset_print(dataset_t *dataset){
     return;
 }
 element_t dataset_get(dataset_t *dataset, size_t index){
-    return NULL;
+    element_t null;
+    return null;
 }
-double_t dataset_distance(dataset_t *dataset, size_t a, size_t b, vector_distance_method_t method){
-    return NULL;
+double dataset_distance(dataset_t *dataset, size_t a, size_t b, vector_distance_method_t method){
+    return 0.0;
 }
 void dataset_copy(dataset_t *dest, dataset_t *src){
-    return;
-}
-void dataset_free(dataset_t *target){
     return;
 }
 

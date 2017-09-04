@@ -4,13 +4,14 @@
 #include <inttypes.h>
 #include "../constants.h"
 #include "element.h"
+#include <stdlib.h>
 
 // This defines a structure for datasets
 typedef struct{
-    size_t size,        // Actual size of the dataset
-    size_t capacity,    // Current capacity of it
-    size_t dim,         // Dimensions of data for memory reshaping
-    double_t *data      // Data.
+    size_t size;
+    size_t capacity;
+    size_t dim;
+    double *data;
 } dataset_t;
 
 void dataset_init(dataset_t *dataset, size_t size, size_t dim);
@@ -20,7 +21,7 @@ void dataset_double_capacity_if_full(dataset_t *dataset);
 void dataset_free(dataset_t *dataset);
 void dataset_print(dataset_t *dataset);
 element_t dataset_get(dataset_t *dataset, size_t index);
-double_t dataset_distance(dataset_t *dataset, size_t a, size_t b, vector_distance_method_t method);
+double dataset_distance(dataset_t *dataset, size_t a, size_t b, vector_distance_method_t method);
 void dataset_copy(dataset_t *dest, dataset_t *src);
 void dataset_free(dataset_t *target);
 
