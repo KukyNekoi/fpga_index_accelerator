@@ -25,6 +25,4 @@ double dataset_distance(dataset_t *dataset, size_t a, size_t b, vector_distance_
 void dataset_copy(dataset_t *dest, dataset_t *src);
 void dataset_free(dataset_t *target);
 
-
-#include "dataset.c"
 #endif

@@ -93,5 +93,5 @@ unsigned int vect_ins(vect *v, unsigned int pos);
   {                                                                 \
     return;                                                         \
   }
-#include "vector.c"
+  
 #endif

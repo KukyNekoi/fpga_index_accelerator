@@ -1,5 +1,5 @@
-#include "../tests/Unity/src/unity.h"
-#include "element.h"
+#include "../lib/Unity/src/unity.h"
+#include "../include/element.h"
 
 void test_element_init(void){
     element_t test;

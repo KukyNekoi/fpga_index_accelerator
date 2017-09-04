@@ -25,5 +25,4 @@ permutation_t permutation_distance(permutation_t *a, permutation_t *b, permutati
 void permutation_copy(permutation_t *dest, permutation_t *src);
 void permutation_free(permutation_t *target);
 
-#include "permutant.c"
 #endif

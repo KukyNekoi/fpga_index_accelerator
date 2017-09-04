@@ -44,5 +44,4 @@ void build(index_t *index, dataset_t *dataset, build_paramenters_t *params);
 vector_t knn(index_t *index, dataset_t *dataset, element_t target, size_t k);
 vector_t range_query(index_t *index, dataset_t *dataset, element_t target, double range);
 
-#include "index.c"
 #endif

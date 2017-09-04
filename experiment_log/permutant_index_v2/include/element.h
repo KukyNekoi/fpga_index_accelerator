@@ -21,5 +21,4 @@ inline void element_set(element_t *element, size_t index, double value);
 void element_free(element_t *element);
 double element_distance(element_t *a, element_t *b, vector_distance_method_t method);
 
-#include "element.c"
 #endif
