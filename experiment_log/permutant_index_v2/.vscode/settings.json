@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.h": "c",
+        "*.cisco": "cisco",
         "functional": "c",
         "rope": "c",
         "dataset.h": "c",
@@ -23,6 +25,11 @@
         "utility": "c",
         "vector.h": "c",
         "permutant.h": "c",
-        "indexing.h": "c"
+        "indexing.h": "c",
+        "type_traits": "c",
+        "*.tcc": "c",
+        "system_error": "c",
+        "tuple": "c",
+        "cerrno": "c"
     }
 }

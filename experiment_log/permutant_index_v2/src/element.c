@@ -63,4 +63,18 @@ void element_free(element_t *element){
     element->data = NULL;
     return;
 }
+
+/**
+Prints an element with a new line
+*/
+void element_print(element_t *element){
+    printf("element@%p[", element);
+    for(int i=0; i<element->dim; i++){
+        printf("%f", element->data[i]);
+        if(i < element->dim -1){
+            printf(", ");
+        }
+    }
+    printf("]\n");
+}
 #endif

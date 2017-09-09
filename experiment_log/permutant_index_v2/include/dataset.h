@@ -5,7 +5,6 @@
 #include "../constants.h"
 #include "element.h"
 #include <stdlib.h>
-
 // This defines a structure for datasets
 typedef struct{
     size_t size;

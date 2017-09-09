@@ -78,7 +78,6 @@ void test_element_distance(void){
     element_free(&test_2);
 }
 
-
 int main(void){
     UNITY_BEGIN();
     RUN_TEST(test_element_init);

@@ -23,7 +23,9 @@ double element_get(element_t *element, size_t index);
 void element_set(element_t *element, size_t index, double value);
 void element_free(element_t *element);
 double element_distance(element_t *a, element_t *b, vector_distance_method_t method);
+void element_print(element_t *element);
 // inline 
 bool _element_checkbounds(element_t *element, size_t index);
+
 
 #endif
