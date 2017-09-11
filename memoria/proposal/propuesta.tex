@@ -13,7 +13,7 @@
 \pagestyle{empty}
 
 \title{
-    ASIC prototyping for hardware-accelerated index operations for similarity search.
+    FPGA-based hardware-accelerated similarity search implementation on the Adapteva Parallella-16 system on chip.
     % Experimental analysis for hardware accelerators on custom heterogeneous architectures.
     %Implementation of hardware-accelerated approximate search algorithms on a High-performance Low-Energy platform.\\
 %\footnote{Los comentarios de este documento (texto en itálica), incluyendo esta nota a pie de página, deben ser removidos por el alumno al momento de elaborar su propuesta de proyecto.}
@@ -26,7 +26,6 @@ University of Talca}
 \date{\today}
 \maketitle
 
-
 \section{Proposal description}
 % \emph{
 %     %(Esta sección debe incluir una presentación general del problema a investigar y/o idea a desarrollar. En esta sección se debe incluir aquellas referencias bibliográficas vinculadas al contexto del proyecto. Para esto último se recomienda el uso de un archivo *.bib, el cual usa el formato BibTex \cite{1} para codificar  referencias sobre libros \cite{2}, artículos en revistas científicas \cite{3}, artículos en conferencias o workshops \cite{4}, reportes técnicos \cite{5}, capítulos en libros \cite{6}, y páginas Web \cite{7}. La longitud máxima de esta sección es de 2.5 páginas.)
@@ -35,45 +34,99 @@ University of Talca}
 
 
 \subsection{Project's context} 
-\emph{
-    Moore's law is now on decline as we're approaching to atomical scale of transistors and then to minimize the lithography of processing units will be impossible. This is a source of worry for many engineers because Moore's law statements are becoming hard to maintain with each passing day. This encourages the need of new computational models and architectures to solve some problems, for instance General Purpose GPU Computing (GPGPU) in which graphic cards are used as massively parallel processors to work with large amounts of data at the cost of a reduced, and somewhat limited instruction set.
-\\
-%     Another problem is energy consumption rate of current hardware, which can be very aggressive depending on the target platform, thus, leading to a rise in the computational cost. This is a problem not only for the hardware consumption itself as cooling systems are needed to maintain systems running over extended periods of time.
-% \\
-    There is a growing interest on High-performance and low-power custom computing machines implemented on FPGAs as they pose a flexible platform to implement custom algorithms in the form of combinatorial circuits. These solutions are only limited by their power-budget, offering a scalable compute model for certain problems even after Moore's law end.
-\\
+
+    With the current advances in transistor technology, the design of 3D layered silicon chips and 5nm 
+    litography, Moore's Law is now a problem as now is harder to push the hardware limits -for single chips-
+    at the same rate as ten years ago\cite{7478302,EETIMES1}. As stated in an 2007 technical report made by Altera
+    Corporation: \emph{``For most of the microprocessor's history, application demands have risen in response to 
+    processor improvements, allowing processors to stay ahead of demand. In the last few years, however, the 
+    situation has changed. High-performance computing (HPC) applications are now demanding more than processors 
+    alone can deliver, creating a technology gap between demand and performance.''}\cite{ALTERA_Accel_fpga}
+
+
+    This \emph{Technology gap} is nowdays tackled by the using of heterogeneous computer architectures, being
+    General Purpose GPU Computing (GPGPU) one of the most recurrent solutions due to the ease of programming
+    and solution design provided by hardware-specific programming languages like Nvidia CUDA
+    \cite{NVIDIA_volta}. But even promising solutions like GPGPU have their shortcommings, as energy consumption and branch divergence heavily degrades performance on control-flow intensive algorithms
+    -which are the most common- \cite{6376229}.
+
+
+    There is a growing interest on \emph{high-performance and low-power custom computing machines} which 
+    aim to design \emph{Application-specific integrated circuits} (ASICs) in order to solve certain 
+    computational problems. But as ASIC design, prototyping, and implementation is very costly,
+    \emph{Field Programable Gate Arrays} (FPGAs) has been proven as a cost-effective solution to implement those 
+    designs and interconnect them with our current platforms to form reconfigurable computing architectures
+    \cite{ReconfigurableComputing, 6589302} being only limited by their power-budget while offering 
+    a scalable compute model for certain problems even after Moore's law end.
+
+%\\
     % As we reduce the dimensionality of a dataset, similarity queries degrade their accurracy. In the case of 
     % Esta sección debe incluir el marco en el cual se presenta el problema y/o proyecto a desarrollar, incluyendo los fundamentos teóricos y/o prácticos necesarios para el desarrollo del proyecto.) Esta sección responde a la pregunta ¿Dónde surge el problema?
-}
-
 \subsection{Problem definition} 
-\emph{One of the many approaches to perform similarity searches is to perform k-nn or range queries on permutant-based indices, which abstract the dataset dimensionality and the cost of the object-object distance calculation. To perform a search on this index, a permutation is generated for the query object and then compared to the whole dataset under the premise that computing distance between two permutations is faster than computing the full distance between the two elements. After their distances are computed, a subset is selected under a certain criteria given by the query nature and the results are filtered later in order to answer the query.
-\\
-As permutations are abstractions of the intrinsic dataset dimension, as we reduce the permutation/dimensionality ratio, the results become inaccurate, on the other hand, if we raise the ratio to increase acurracy we end computating the whole dataset rendering the approach useless as it's more time consuming than the original problem.
-    % (Esta sección debe incluir la descripción del problema resolver o idea a desarrollar, y la motivación para hacerlo. Es decir, cual es la importancia, innovación, aporte, y/o beneficio para la ciencia y/o la humanidad). Esta sección responde a la pregunta ¿Cuál es el problema que voy a resolver?
-}
+    One of the many approaches to perform similarity searches is to perform k-nn or range queries on permutant-based 
+    indices, which abstract the dataset dimensionality and the cost of the object-object distance calculation. To 
+    perform a search on this index, a permutation is generated for the query object and then compared to the whole 
+    dataset under the premise that computing distance between two permutations is faster than computing the full 
+    distance between the two elements. After their distances are computed, a subset is selected under a certain 
+    criteria given by the query nature and the results are filtered later in order to answer the query.\cite{5271946,5271944}
 
+
+    As permutations are abstractions of the intrinsic dataset dimension, as we reduce the permutation/dimensionality 
+    ratio, the results become inaccurate, on the other hand, if we raise the ratio to increase acurracy we end 
+    computating the whole dataset rendering the approach useless as it's more time consuming than the original 
+    problem.
+
+    This behaivour makes similarity search indices a perfect testbench for its implementation on a reconfigurable
+    computing device\cite{5999889} such as the Adapteva Parallella-16, a \emph{System on chip} (SoC) based on the 
+    Xilinx All Programable Zynq7000 Series SoC which packs a Dual-core 32-bit ARM Cortex-A9 host controller and a 
+    Artix-7 FPGA \cite{DBLP:journals/corr/OlofssonNZ14,LINLEY_1}.
+    The board also has an Epiphany III multicore accelerator coprocesor, interconnected with the host-controller
+    though an FPGA designed ASIC in order to be used as a low-power high-performance heterogeneous computing 
+    platform.
+
+    The main problem with reconfigurable computing is the complexity of circuit design\cite{SPA_thesis}. 
+    Independently of the algorithm being ported to an FPGA implementation, there is not automated way to use
+    the same source code used on the Processing System (PS) version of the problem in the Programable Logic (PL). 
+    As there are some tools developed for both FPGA manufacturers and 3rd parties to design circuits using the C 
+    language, they lack of precision and many considerations and ``compile'' optimizations must be performed 
+    in order to successfully port certain algorithms\cite{SPA_thesis}, such as instruction pipelining, read/write 
+    syncronization, clockgating\cite{XILINX_clockgating}, etc \cite{XILINX_axi,XILINX_clockgating,
+    XILINX_ddr_rate,XILINX_mem_interface}.
+
+    % On top of that, newcomers to reconfigurable computing architectures have to deal with hardware imposed
+    % constraints like a resticted component availability depending on the target device and in some cases,
+    % the implementation of interconnect mechanisms between different components in those architectures is
+    % strongly affected by the algorithm nature.
+    % (Esta sección debe incluir la descripción del problema resolver o idea a desarrollar, y la motivación para hacerlo. Es decir, cual es la importancia, innovación, aporte, y/o beneficio para la ciencia y/o la humanidad). Esta sección responde a la pregunta ¿Cuál es el problema que voy a resolver?
 \subsection{Current works} 
 TODO
 % \emph{
 %     (Esta sección debe incluir los enfoques usados actualmente para resolver el problema. Esta sección debe contener referencias bibliográficas a trabajos relacionados al proyecto.) Esta sección responde a la pregunta ¿Qué se ha hecho para resolver el problema?
 % }
-
 \subsection{Proposed solution}
-\emph{
-    In order to tacke this problem, we propose to port fragments of the routines involved on both indexing and searching procedures to an FPGA-based hardware-accelerator, in the hopes of reducing both compute time and energy consumption by taking advantage of the nature of the combinatorial circuits which could be implemented directly on hardware.
-\\
-    To test our solution we will implement them on a Adapteva Parallella board, an heterogeneous parallel SoC capable of running linux which embeds together a 16-core Epiphany III processor, an ARM A9-based host controller and a Zynq7000 Series FPGA, all of this in a single credit-card form factor.
-    % (Esta sección debe incluir el planteamiento y justificación de la solución y/o idea, incluyendo aspectos novedosos.) Esta sección responde a la pregunta ¿Cómo voy a resolver el problema planteado?
-}
+% \emph{
+    In order to accelerate a similarity search engine, we will develop a naive implementation of a 
+    permutant-based metric space index without any major optimizations to study the feasibility of porting
+    each subroutines involved based on their potential parallelism.
 
-%\section{Hipótesis}
-%\emph{(En esta sección se deben incluir una lista de afirmaciones o suposiciones las cuales se esperar responder con el desarrollo del proyecto. La longitud máxima de esta sección es de 1/2 página.)}
-%\begin{itemize}
-%\item El uso de ... puede facilitar ....
-%\item El problema de .... puede estudiarse como ... 
-%\item Las técnicas usadas en ... pueden ser aplicables para resolver el problema de ...
-%\end{itemize}
+    After the study, we will port such algorithms as Intellectual Properties (IPs) to be validated and
+    then implemented on the FGPA as accelerators for futher interconnect with the host-controller. Then a
+    performance comparison will be executed in order to determine the feasibility of the solution.
+
+    
+    % (Esta sección debe incluir el planteamiento y justificación de la solución y/o idea, incluyendo aspectos novedosos.) Esta sección responde a la pregunta ¿Cómo voy a resolver el problema planteado?
+% }
+
+% \section{Hipótesis}
+% % \emph{(En esta sección se deben incluir una lista de afirmaciones o suposiciones las cuales se esperar responder con el desarrollo del proyecto. La longitud máxima de esta sección es de 1/2 página.)}
+% \begin{itemize}
+%     \item{ Recurrent routines such as incremental sorting, median selection, permutant generation and comparison
+%     are good targets to be accelerated on the FPGA.}
+%     \item{ FPGA acceleration should improve the overall performance of metric spaces}
+% % \item El uso de ... puede facilitar ....
+% % \item El problema de .... puede estudiarse como ... 
+% % \item Las técnicas usadas en ... pueden ser aplicables para resolver el problema de ...
+% \end{itemize}
 
 
 
@@ -105,9 +158,10 @@ TODO
 \section{Scope}
 % \emph{(En esta sección se debe incluir una lista de puntos que definen los límites del trabajo. La longitud máxima de esta sección es de 1/2 página.)}
 \begin{itemize}
-\item During this work we will not create a framework to develop new algorithms on FPGAs. 
-\item Also, we will not work on optimizations for the original versions of the tested routines.
-\item This work is limited only to research about FPGA hardware design, and to compare and contrast both implementations.
+    \item During this work we will not create a framework to develop new algorithms on FPGAs. 
+    \item Also, we will not work on optimizations for the original versions of the tested routines.
+    \item This work is limited only to research about FPGA hardware design, and to compare and contrast both 
+        implementations.
 \end{itemize}
 
 
@@ -118,26 +172,28 @@ TODO
 
 \paragraph{Milestone 1:} ``Approximate search algorithms and indices"
 \begin{itemize}
-\item Analise previously developed hardware-accelerators.
-\item Research about resource sharing methods and techniques for the proposed architecture.
-\item Implement a simple hardware-accelerator IP Core on the FPGA.
-\item Study possible problems which could arise when porting common algorithms on custom hardware.
-\item Research about approximate search indices for metric spaces.
-\item Research about workarounds for high-dimensionality metric space datasets.
-\item Implement a permutant-based index and query algorithm.
-\item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
+    \item Analise previously developed hardware-accelerators.
+    \item Research about resource sharing methods and techniques for the proposed architecture.
+    \item Implement a simple hardware-accelerator IP Core on the FPGA.
+    \item Study possible problems which could arise when porting common algorithms on custom hardware.
+    \item Research about approximate search indices for metric spaces.
+    \item Research about workarounds for high-dimensionality metric space datasets.
+    \item Implement a permutant-based index and query algorithm.
+    \item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
 \end{itemize}
 
 \paragraph{Milestone 2:} ``Hardware-accelerated index implementation"
 \begin{itemize}
-\item Research about hardware prototyping.
-\item Research about hardware-software interconnection techniques and techlologies applicable to the target platform. 
-\item Implement as IP Cores the selected code fragments.
-\item Implement an interconection protocol for resource sharing between the two platforms.
-\item Detect possible bottlenecks or other problems derived from the interconection between the Atrix-7 FPGA and the ARMv7 A9 processor.
-\item Implement a loadable bitstream for the Parallella board and design according kernel modules.
-\item Replace software solution with custom hardware solution.
-\item Benchmark hardware implemented solution and constrast it with software implementation.
+    \item Research about hardware prototyping.
+    \item Research about hardware-software interconnection techniques and techlologies applicable to the
+    target platform. 
+    \item Implement as IP Cores the selected code fragments.
+    \item Implement an interconection protocol for resource sharing between the two platforms.
+    \item Detect possible bottlenecks or other problems derived from the interconection between the Atrix-7 
+    FPGA and the ARMv7 A9 processor.
+    \item Implement a loadable bitstream for the Parallella board and design according kernel modules.
+    \item Replace software solution with custom hardware solution.
+    \item Benchmark hardware implemented solution and constrast it with software implementation.
 \end{itemize}
 
 \section{Work plan}
@@ -145,16 +201,15 @@ TODO
 
 \paragraph{Milestone 1:} ``Approximate search algorithms and indices"
 \begin{itemize}
-\item Analise previously developed hardware-accelerators.
-\item Research about resource sharing methods and techniques for the proposed architecture.
-\item Implement a simple hardware-accelerator IP Core on the FPGA.
-\item Study possible problems which could arise when porting common algorithms on custom hardware.
-\item Research about approximate search indices for metric spaces.
-\item Research about workarounds for high-dimensionality metric space datasets.
-\item Implement a permutant-based index and query algorithm.
-\item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
+    \item Analise previously developed hardware-accelerators.
+    \item Research about resource sharing methods and techniques for the proposed architecture.
+    \item Implement a simple hardware-accelerator IP Core on the FPGA.
+    \item Study possible problems which could arise when porting common algorithms on custom hardware.
+    \item Research about approximate search indices for metric spaces.
+    \item Research about workarounds for high-dimensionality metric space datasets.
+    \item Implement a permutant-based index and query algorithm.
+    \item Analise the behiavour of the implemented solution and identify potential targets for hardware-acceleration
 \end{itemize}
-
 \paragraph{Milestone 2:} ``Hardware-accelerated index implementation"
 % \begin{itemize}
 % % \item Research about hardware prototyping.
@@ -167,10 +222,8 @@ TODO
 % % \item Benchmark hardware implemented solution and constrast it with software implementation.
 % \end{itemize}
 
-
 \bibliographystyle{plain}
-
 \bibliography{referencias}
-%%pegar referencias www
+
 
 \end{document}
