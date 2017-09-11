@@ -109,30 +109,34 @@
   <task id="t19">
     <title>FPGAs</title>
     <type>group</type>
+    <child-task idref="t99"/>
+    <child-task idref="t94"/>
+    <child-task idref="t95"/>
+    <child-task idref="t96"/>
     <prerequisite-task idref="t6"/>
   </task>
   <task id="t23">
     <title>Complexity analysis for selected index operations</title>
-    <leveled-start>2017-10-04T20:00:00.000Z</leveled-start>
+    <leveled-start>2017-10-11T20:00:00.000Z</leveled-start>
     <effort>115200</effort>
     <assignment idref="r1"/>
   </task>
   <task id="t25">
     <title>Detection of potential tasks worth of parallelization</title>
-    <leveled-start>2017-11-22T11:30:00.000Z</leveled-start>
+    <leveled-start>2017-11-29T11:30:00.000Z</leveled-start>
     <effort>86400</effort>
     <prerequisite-task idref="t76"/>
     <assignment idref="r1"/>
   </task>
   <task id="t33">
     <title>Literature review on metric spaces</title>
-    <leveled-start>2017-09-05T14:00:00.000Z</leveled-start>
+    <leveled-start>2017-09-11T03:00:00.000Z</leveled-start>
     <effort>115200</effort>
     <assignment idref="r1"/>
   </task>
   <task id="t58">
     <title>Similarity search </title>
-    <leveled-start>2017-12-06T20:00:00.000Z</leveled-start>
+    <leveled-start>2017-12-13T20:00:00.000Z</leveled-start>
     <effort>57600</effort>
     <prerequisite-task idref="t23"/>
     <prerequisite-task idref="t74"/>
@@ -140,27 +144,27 @@
   </task>
   <task id="t73">
     <title>Metric spaces</title>
-    <leveled-start>2017-11-30T11:30:00.000Z</leveled-start>
+    <leveled-start>2017-12-07T11:30:00.000Z</leveled-start>
     <effort>57600</effort>
     <prerequisite-task idref="t33"/>
     <assignment idref="r1"/>
   </task>
   <task id="t74">
     <title>Literature review on approximate search methods</title>
-    <leveled-start>2017-09-14T14:00:00.000Z</leveled-start>
+    <leveled-start>2017-09-28T13:00:00.000Z</leveled-start>
     <effort>115200</effort>
     <assignment idref="r1"/>
   </task>
   <task id="t75">
     <title>Metric space index, reference implementation</title>
-    <leveled-start>2017-10-18T17:00:00.000Z</leveled-start>
+    <leveled-start>2017-10-25T17:00:00.000Z</leveled-start>
     <effort>144000</effort>
     <prerequisite-task idref="t23"/>
     <assignment idref="r1"/>
   </task>
   <task id="t76">
     <title>Experiment design and benchmarking</title>
-    <leveled-start>2017-11-07T14:30:00.000Z</leveled-start>
+    <leveled-start>2017-11-14T14:30:00.000Z</leveled-start>
     <effort>144000</effort>
     <prerequisite-task idref="t75"/>
     <assignment idref="r1"/>
@@ -193,21 +197,21 @@
   </task>
   <task id="t81">
     <title>Index implementation</title>
-    <leveled-start>2017-12-13T18:30:00.000Z</leveled-start>
+    <leveled-start>2017-12-20T18:30:00.000Z</leveled-start>
     <effort>57600</effort>
     <prerequisite-task idref="t75"/>
     <assignment idref="r1"/>
   </task>
   <task id="t82">
     <title>Benchmark results</title>
-    <leveled-start>2017-12-20T13:30:00.000Z</leveled-start>
+    <leveled-start>2017-12-27T13:30:00.000Z</leveled-start>
     <effort>57600</effort>
     <prerequisite-task idref="t76"/>
     <assignment idref="r1"/>
   </task>
   <task id="t83">
     <title>Parallelization targets</title>
-    <leveled-start>2017-12-27T12:00:00.000Z</leveled-start>
+    <leveled-start>2018-01-03T12:00:00.000Z</leveled-start>
     <effort>57600</effort>
     <prerequisite-task idref="t25"/>
     <assignment idref="r1"/>
@@ -253,10 +257,210 @@
   <task id="t92">
     <title>Memoria complete</title>
     <type>milestone</type>
-    <leveled-start>2017-11-09T16:00:00.000Z</leveled-start>
+    <leveled-start>2017-12-20T17:00:00.000Z</leveled-start>
     <prerequisite-task idref="t6"/>
     <prerequisite-task idref="t19"/>
     <assignment idref="r1"/>
+  </task>
+  <task id="t94">
+    <title>Development</title>
+    <type>group</type>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <child-task idref="t104"/>
+    <child-task idref="t105"/>
+    <child-task idref="t106"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t95">
+    <title>Documentation</title>
+    <type>group</type>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <child-task idref="t108"/>
+    <child-task idref="t110"/>
+    <child-task idref="t111"/>
+    <child-task idref="t112"/>
+    <child-task idref="t114"/>
+    <child-task idref="t115"/>
+    <child-task idref="t116"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t96">
+    <title>Stage 2 complete</title>
+    <type>milestone</type>
+    <leveled-start>2017-12-20T13:30:00.000Z</leveled-start>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t94"/>
+    <prerequisite-task idref="t95"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t99">
+    <title>Research</title>
+    <type>group</type>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <child-task idref="t101"/>
+    <child-task idref="t102"/>
+    <child-task idref="t103"/>
+    <child-task idref="t109"/>
+    <child-task idref="t113"/>
+    <child-task idref="t117"/>
+    <child-task idref="t118"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t101">
+    <title>Literature review on FPGA development</title>
+    <leveled-start>2018-01-09T19:30:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t102">
+    <title>Literature review on interconnection techniques</title>
+    <leveled-start>2018-01-17T20:30:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t103">
+    <title>Literature review on past implementation of reconfigurable computing solutions</title>
+    <leveled-start>2018-01-25T17:00:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t104">
+    <title>Initial FPGA accelerator</title>
+    <leveled-start>2018-02-21T21:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t101"/>
+    <prerequisite-task idref="t102"/>
+    <prerequisite-task idref="t103"/>
+    <prerequisite-task idref="t109"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t105">
+    <title>Specialized IPs</title>
+    <leveled-start>2018-03-08T16:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t101"/>
+    <prerequisite-task idref="t102"/>
+    <prerequisite-task idref="t103"/>
+    <prerequisite-task idref="t109"/>
+    <prerequisite-task idref="t113"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t106">
+    <title>Improved index</title>
+    <leveled-start>2018-04-05T16:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t108">
+    <title>FPGA development</title>
+    <leveled-start>2018-05-03T15:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t104"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t109">
+    <title>Literature review on previous software developed for the Adapteva Parallella SoC</title>
+    <leveled-start>2018-02-07T12:30:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t110">
+    <title>Adapteva Parallella</title>
+    <leveled-start>2018-05-10T13:30:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t104"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t111">
+    <title>Interconnection</title>
+    <leveled-start>2018-05-17T13:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t112">
+    <title>IP generation and synthesis</title>
+    <leveled-start>2018-05-23T21:30:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t105"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t113">
+    <title>Literature review on ASIC prototyping</title>
+    <leveled-start>2018-02-15T12:30:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t114">
+    <title>Accelerator implementation</title>
+    <leveled-start>2018-05-30T20:00:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t106"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t115">
+    <title>Index improvements</title>
+    <leveled-start>2018-06-06T18:30:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t118"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t116">
+    <title>Results</title>
+    <leveled-start>2018-06-13T13:30:00.000Z</leveled-start>
+    <effort>57600</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t115"/>
+    <prerequisite-task idref="t118"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t117">
+    <title>Analysis of shortcomings/bottlenecks derived from ASIC design</title>
+    <leveled-start>2018-03-27T19:00:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t104"/>
+    <prerequisite-task idref="t105"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t118">
+    <title>Benchmarking</title>
+    <leveled-start>2018-04-24T19:00:00.000Z</leveled-start>
+    <effort>86400</effort>
+    <start-constraint-date>2017-09-11T11:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t106"/>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2017-09-11T11:00:00.000Z</start-no-earlier-than>
   </task>
   <critical-path root="-1" enabled="false" resources="false">
     <color r="1" g="0.5" b="0.5"/>
