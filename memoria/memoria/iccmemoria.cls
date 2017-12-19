@@ -15,7 +15,6 @@
 \RequirePackage[english]{babel}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
-\RequirePackage{hyperlink}
 
 \selectlanguage{english}
 \bibliographystyle{plain}

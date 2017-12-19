@@ -37,6 +37,36 @@ As it can be seen, there is a need to iterate though every artifact of this rese
 \subsection{Design and architecture}
 %self-explanatory, only specs not details
 \subsection{Development}
+There are a series or requirements for each one of the artifacts involved in this research which are detailed as follows.
+
+\begin{itemize}
+    \item {\textbf{Permutant-based index testbench:} 
+        \begin{itemize}
+            \item{Must provide results in both visual and data.}
+            \item{Must be implemented on C/C++ to ease the port to ARM architectures.}
+            \item{Must generate it is own datasets, as they will be used in later stages.}
+        \end{itemize}
+    }
+    \item {\textbf{FPGA Accelerator:} 
+        \begin{itemize}
+            \item{Must provide an interconnection solution between the implemented FPGA core and the ARM processor.}
+            \item{Program should be not hardware-dependent only limited by chip vendor.}
+            \item{Implementation has to be memory-safe, as the FPGA chip provided by Xilinx has direct memory addressing to all DRAM segments.}
+        \end{itemize}
+    }
+    \item {\textbf{Accelerated index testbench:} 
+        \begin{itemize}
+            \item{Has to be memory-coalesent in order to leverage both FPGA and pure-CPU implementations.}
+            \item{Must pass memory-safety arguments to the accelerator.}
+        \end{itemize}
+    }
+    \item {\textbf{Kernel drivers:} 
+        \begin{itemize}
+            \item{Must be compilant with GNU/Linux implementation standards.}
+        \end{itemize}
+    }
+\end{itemize}
+
 
 \section{Testing and experimentation Methodology}
 For experimentation we will follow an experimental approach rather than a purely theoretical one \cite{citation_required} to devise how the 
