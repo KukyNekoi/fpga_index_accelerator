@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/untitled.dir/main.c.o CMakeFiles/untitled.dir/lib/dataset.c.o CMakeFiles/untitled.dir/lib/element.c.o CMakeFiles/untitled.dir/lib/index.c.o CMakeFiles/untitled.dir/lib/permutant.c.o  -o untitled 
