@@ -1,0 +1,85 @@
+\section{Context}
+Currently developers can enjoy of a vast availability of computational resources to
+perform many resource-hungry tasks, such as real-time load balancing, molecular
+simulations with fairly accurate results, etcetera. But at the same time computer
+scientists are struggling with limits of hardware, more specifically, transistor size.
+
+With the current advances in transistor technology, the design of 3D layered silicon 
+chips and 5nm lithography, Moore's Law is now a problem as now is harder to push the 
+hardware limits -for single chips- at the same rate as ten years ago\cite{7478302,EETIMES1}.
+The Altera Corporation stated in 2007 in a technical report that: \emph{``For most of 
+the microprocessor's history, application demands have risen in response to 
+processor improvements, allowing processors to stay ahead of demand. In the last 
+few years, however, the situation has changed. High-performance computing (HPC) 
+applications are now demanding more than processors alone can deliver, creating a 
+technology gap between demand and performance.''}\cite{ALTERA_Accel_fpga}
+
+The use of heterogeneous computer architectures is one of the most popular methods
+nowdays to tackle this \emph{Technology Gap Problem}, solutions like Nvidia CUDA
+\cite{NVIDIA_volta} allows developers to harness the massively parallel power of present-day
+GPUs to perform intensive tasks, as long as the problem fits the constraints imposed
+by the hardware. 
+
+As such, there is a growing interest on \emph{high-performance and low-power custom computing 
+machines} which aim to design \emph{Application-specific integrated circuits} (ASICs) in order 
+to solve  certain computational problems. But as ASIC design, prototyping, and implementation is
+very costly, \emph{Field Programable Gate Arrays} (FPGAs) has been proven as a cost-effective 
+solution to implement those designs and interconnect them with our current platforms to form 
+reconfigurable computing architectures \cite{ReconfigurableComputing, 6589302,
+Compton00anintroduction} being only limited by their power-budget while offering a scalable
+compute model at the same time as overcome many of GPGPU current problems as energy consumption
+and performance degradation when facing intensive branch-divergence control-flow algorithms 
+\cite{6376229}, posing many applications in practice, most of them in the robotics field, but
+also on high-performance computing. 
+
+\subsection{Motivation}
+On non-traditional databases, metric spaces indices offer an abstraction to classify objects using
+the underlying notion of space and distance which is natural for humans to understand. Those indices 
+work by placing elements on a hiperdimensional grid allowing to query for their closeness between objects.
+One of the many approaches to perform similarity searches is to perform k-nn or range queries 
+on permutant-based indices, which abstract the dataset dimensionality and the cost of the 
+object-object distance calculation. To perform a search on this index, a permutation is generated
+for the query object and then compared to the whole dataset under the premise that computing
+distance between two permutations is faster than computing the full distance between the two
+elements. After their distances are computed, a subset is selected under a certain 
+criteria given by the query nature and the results are filtered later in order to answer the query.
+\cite{5271946,5271944}
+
+The implementation of indices for approximate search on metric spaces pose a great problem, since 
+as the operations involved in the distance calculations are rather easy to perform on a CPU, those
+operations are executed individually for each element of the index, regardless it is part of the
+solution or not. This behaviour makes similarity search indices a perfect test bench for its 
+implementation on a reconfigurable computing device\cite{5999889} such as the Adapteva Parallella-16,
+a \emph{System on chip} (SoC) based on the Xilinx All Programmable Zynq7000 Series SoC which packs together
+a Dual-core 32-bit ARM Cortex-A9 host controller and a Artix-7 FPGA \cite{DBLP:journals/corr/OlofssonNZ14,LINLEY_1}.
+The board also has an Epiphany III multicore accelerator coprocessor, interconnected with the host-controller
+though an FPGA designed ASIC in order to be used as a low-power high-performance heterogeneous computing 
+platform.
+
+One of the main problems with reconfigurable computing is the complexity of circuit design \cite{SPA_thesis}. 
+Independently of the algorithm being ported to an FPGA implementation, there is not automated way to use
+the same source code used on the Processing System (PS) version of the problem in the Programmable Logic (PL). 
+As there are some tools developed for both FPGA manufacturers and 3rd parties to design circuits using the C 
+language, they lack of precision and many considerations and ``compile'' optimizations must be performed 
+in order to successfully port certain algorithms\cite{SPA_thesis}, such as instruction pipelines, read/write 
+syncronization, clock gating\cite{XILINX_clockgating}, etc \cite{XILINX_axi,XILINX_clockgating,
+XILINX_ddr_rate,XILINX_mem_interface}. As such this work intends to serve as a guide to future hardware
+designers and developers and to demonstrate that with proper study we can port some algorithms to
+certain reconfigurable computing machines without major hassle.
+
+\subsection{Goals}
+\paragraph{Main objective}
+\begin{itemize}
+\item Study the feasibility of implementing hardware-based accelerators for the Adapteva Parallella SoC.
+\end{itemize}
+
+\paragraph{Specific objectives}
+% \emph{(Una lista de puntos que detallan el objetivo general.)}
+\begin{itemize}
+    \item Specify requirements and considerations to be accounted when porting general purpose algorithms to FPGAs.
+    \item Study and implement a data sharing sharing solution between the Programable Logic and the Programable Software.
+    \item Develop a functional FPGA-based hardware-accelerator prototype for a subset of routines involved 
+    on approximate similarity search.
+    \item Deliver a solid guide to serve as a starting point to future computer scientists with little or no 
+    knowledge about hardware design. 
+\end{itemize}

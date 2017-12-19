@@ -1,0 +1,34 @@
+\section{Field Programmable Gate Arrays}
+\subsection{Overview}
+Field Programmable Gate Arrays (or FPGA for short) are programmable devices that contains logical blocks arranged as a grid that can be configured and
+interconnected as will in a \emph{in-situ} way. The programable feature of this chips enables the replication of simple logic circuits sucj as logical
+gates to complex designs such as \emph{Digital Signal Processors}. Commonly these chips are used in \emph{Application-Specific Integrated Circuits}
+prototyping because the process behind its programming is similar to \emph{waffer synthesis} used on the creation of ASICs and their design flow
+flexibility, but their energy consumption, thermal disipation and performance are worse than a dedicated circuit. The internal resources of an FPGA 
+chip consist of a matrix of configurable logic blocks (CLBs) surrounded by a periphery of I/O blocks. Signals are routed within the FPGA matrix by 
+programmable interconnect switches and wire routes. Because of the latter point, those chips are commonly used on robotics and hardware development.
+
+\subsection{FPGA Programming and its difficulties}
+Most programming on FPGA is done using \emph{hardware description languages} such as \emph{VHDL} and \emph{VERILOG} which describes the circuit to be
+loaded onto the FPGA using a \emph{register-transfer level} abstraction of synchronous digital circuit models a in terms of the flow of digital signals 
+between each one of the hardware registeres and the logical operations performed on those signals as well. This generates a high-level representation
+of a circuit, from which lower-level representations and ultimately actual wiring can be derived. 
+
+As such, a single FPGA can replace thousands of discrete components by incorporating millions of logic gates in a single integrated circuit (IC) chip. 
+Given that FPGAs are huge fields of programable gates, its programming allows the creation of multiple hardware paths, delivering a trully parallel nature
+in which different processing operations do not compete each other for resources (as opposite in modern CPUs in which all programs running on the OS are
+competting for the available resources). At the same time, hardware execution of the problem provide more performance than most processor-based solutions
+as well as a higher throughput of data, which becomes the main goal in FPGA programming.
+
+FPGAs give software developers a promise of a greater performance than processor-based solutions, but it comes of a cost that all operations must be
+implemented as it were directly on hardware, thus, for most computer engineers there is a wide knowledge gap when it comes to use it for actual data
+processing.
+
+\subsection{High-level synthesis}
+In order to turn the hardware description into code, a process known as \emph{logical synthesis} is performed, which takes an abstraction of the circuit 
+behavour as RTL and then turns it into a logic implementation in terms of logic gates and blocks. Then, a \emph{bitstream} is generated which is transfered
+to the FPGA to reconfigure its grid.
+
+
+
+\subsection{Interconnection between Programable Logic and Processing Systems}

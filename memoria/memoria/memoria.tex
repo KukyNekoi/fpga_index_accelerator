@@ -8,16 +8,22 @@
 \usepackage{amsmath}
 \usepackage{epsfig}
 \usepackage{url}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\graphicspath{{./images/}}
 
 %% datos generales y para la tapa
-\titulo{Hardware-accelerated algorithms for approximate search engines}
+\titulo{Hardware-accelerated similarity search index implementation on a Adapteva 
+Parallella-16 reconfigurable computing machine}
+
 \author{Erik Regla}
 \supervisor{Rodrigo Paredes}
 \informantes
 	{Profesor Informante 1}
 	{Profesor Informante 2}
 \adicional{(sólo por si se necesita agregar algún otro profesor)}
-\director{Degree Droject professor}
+\director{Degree Project professor}
 \date{month, year}
 
 %% inicio de documento
@@ -28,12 +34,12 @@
 
 %% dedicatoria
 \begin{dedicatory}
-Dedicated to the me of the future. To remember him that desire knows no bounds.
+Dedicated to the me of the future. %yeah, no joking on this.
 \end{dedicatory}
 
 %% agradecimientos
 \begin{acknowledgment}
-Agradecimientos a ...
+Acknowledgements to ...
 \end{acknowledgment}
 
 %% indices
@@ -43,7 +49,7 @@ Agradecimientos a ...
 
 %% resumen
 \begin{resumen}
-Aquí va el resumen (en Castellano)... 
+Here goes the abstract
 \end{resumen}
 
 
@@ -51,40 +57,26 @@ Aquí va el resumen (en Castellano)...
 
 %% contenido del primer capítulo
 \chapter{Introduction}
-Introduction to the problem
+  \input{./chapters/introduction/introduction.tex}
 
-\section{Context}
-Aquí va el texto de la primera sección del capítulo 1... 
-
-\subsection{Motivation}
-
-
-\subsection{Goals}
-
+\chapter{Methodology}
+  \input{./chapters/methodology/methodology.tex} 
+  
 %% contenido del primer capítulo
 \chapter{Required knowledge}
-  \section{Aproximate search indexing}
-  \section{Metric spaces}
-    \subsection{Dimensionality crux}
-    \subsection{Pivot-based indices}
-    \subsection{Permutant-based indices}
-  \section{General overview}
-  \section{Permutant-based indices}
-
-  \section{Permutant-based search}
+  \input{./chapters/required_knowledge/metric_spaces.tex}
+  \input{./chapters/required_knowledge/fpga.tex}
+  \input{./chapters/required_knowledge/adapteva_parallella.tex}
   \section{Hardware acceleration}
     \subsection{GPGPU}
     \subsection{ASIC}
     \subsection{FPGA}
     \subsection{Design synthesis}
     \subsection{High Level Synthesis}
-  \section{Embebbed Linux} 
+  \section{Embebbed Linux}
     \subsection{Linux kernel}
     \subsection{Modules}
     \subsection{Devicetree}
-  \section{Adapteva Parallela} 
-    \subsection{Hardware}
-    \subsection{Inner workings}
 
 \chapter{Metric Space indexing}
   \section{Dataset description}
@@ -94,7 +86,7 @@ Aquí va el texto de la primera sección del capítulo 1...
   \section{Algorithm analysis}
     \subsection{Index generation}
     \subsection{Approximate search}
-  \section{Code analysis and benchmarking}
+  \section{Code analysis and benchmarking} 
     \subsection{Permutation distance}
     \subsection{Permutation generation}
 
@@ -111,9 +103,7 @@ Aquí va el texto de la primera sección del capítulo 1...
   \section{Permutation generation}
     \subsection{Analysis}
     \subsection{Implementations}
-
-
-
+    
 \chapter{Hardware-Software interoperation}
 \section{AXI4 Protocol}
   \subsection{AXI4 Protocol}
@@ -129,7 +119,6 @@ Aquí va el texto de la primera sección del capítulo 1...
 \section{Original implementation benchmarks}
 \section{Accelerated implementation benchmarks}
 \section{Comparison between results}
-
 
 \chapter{Conclusions}
 
@@ -166,15 +155,14 @@ Aquí va el texto de la primera sección del capítulo 1...
 
 
 %% genera las referencias
-\bibliography{refs}
+\bibliography{./refs}
 
 
 %% comienzo de la parte de anexos
 \appendixpart
 
 %% contenido del primer anexo
-\appendix{HLS IP C++ code}
-Aquí va el texto del primer anexo...
+\input{./chapters/appendix/hls_code_sorting_evenodd.tex}
 
 % \section{La primera sección del primer anexo}
 % Aquí va el texto de la primera sección del primer anexo...

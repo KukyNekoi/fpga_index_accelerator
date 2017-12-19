@@ -2,7 +2,6 @@
 #define ELEMENT_H_
 
 #include <stdlib.h>
-#include <stdbool.h>
 // Defines a common structure to work with element elements.
 // Those elements acts as a wappers for element structures, delegating
 typedef struct {

@@ -1,0 +1,47 @@
+\appendix{HLS IP C++ code for Even-Odd sorting network example}
+\begin{lstlisting}[basicstyle=\tiny,language=c++]
+    #include <hls_stream.h>
+    #include <ap_axi_sdata.h>
+    typedef ap_axis<32,2,5,6> intSdCh;
+    #define INTS_TO_PROCESS 10000
+    void doGain(hls::stream<intSdCh> &inStream,hls::stream<intSdCh> &outStream){
+    #pragma HLS INTERFACE axis port=outStream
+    #pragma HLS INTERFACE axis port=inStream
+        intSdCh valIn[INTS_TO_PROCESS];
+        int idx;
+        for (idx = 0; idx < (INTS_TO_PROCESS); idx++){
+        #pragma HLS PIPELINE
+            valIn[idx] = inStream.read();
+            intSdCh valOut;
+        }
+        for (int stage = 0, temp, i  ; stage < INTS_TO_PROCESS ; stage++){
+        #pragma HLS UNROLL factor=2
+            if (stage & 1){
+                even: for(i=2; i<INTS_TO_PROCESS; i+=2){
+                #pragma HLS PIPELINE
+                #pragma HLS UNROLL factor=10
+                    if (valIn[i].data < valIn[i-1].data){
+                        temp = valIn[i].data;
+                        valIn[i].data = valIn[i-1].data;
+                        valIn[i-1].data = temp;
+                    }
+                }
+            }
+            else{
+                odd: for(i=1; i<INTS_TO_PROCESS; i+=2){
+                #pragma HLS PIPELINE
+                #pragma HLS UNROLL factor=10
+                    if (valIn[i].data < valIn[i-1].data){
+                        temp = valIn[i].data;
+                        valIn[i].data = valIn[i-1].data;
+                        valIn[i-1].data = temp;
+                    }
+                }
+            }
+        }
+        for (int idx = 0; idx < (INTS_TO_PROCESS); idx++){
+        #pragma HLS PIPELINE
+            outStream.write(valIn[idx]);
+        }
+    }
+\end{lstlisting}

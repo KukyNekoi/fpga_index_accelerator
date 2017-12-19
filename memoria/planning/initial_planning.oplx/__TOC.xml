@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <omniplan xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opnx="http://www.omnigroup.com/namespace/OmniPlan/v2">
-  <window x="0" y="0" w="1280" h="758">
+  <window x="4" y="0" w="1276" h="758">
     <editing-scenario>ladLmvEmdR-</editing-scenario>
     <comparison-scenario>cQDYkrd3BA6</comparison-scenario>
     <view>task</view>
@@ -8,18 +8,14 @@
     <status-display>basic</status-display>
     <task-view>
       <split-view-divider-position>405</split-view-divider-position>
-      <outline x="46" y="0" w="405" h="720">
-        <column name="Violations" width="20"/>
-        <column name="Title" width="260"/>
+      <outline x="0" y="0" w="405" h="675">
+        <column name="Violations" width="18"/>
+        <column name="Title" width="292"/>
         <column name="Effort" width="42"/>
-        <column name="Prerequisites" width="77"/>
-        <column name="Start" width="64"/>
-        <column name="End" width="64"/>
-        <column name="%Done" width="74"/>
-        <expanded-items idrefs="t1 t94 t95 t19 t6"/>
-        <selected-items-at-filter-time idrefs="t58 t77 t117 t96 t101 t113 t105 t83 t78 t97 t33 t106 t118 t79 t102 t98 t114 t110 t91 t99 t107 t119 t73 t92 t103 t115 t87 t111 t23 t74 t93 t88 t108 t75 t104 t94 t19 t100 t116 t89 t81 t25 t120 t6 t95 t112 t76 t82 t109"/>
+        <expanded-items idrefs="t95 t79 t78 t94 t19 t77 t99 t6 t1"/>
+        <selected-items-at-filter-time idrefs="t58 t105 t77 t96 t101 t113 t83 t117 t78 t33 t106 t118 t79 t102 t114 t110 t91 t99 t73 t103 t115 t92 t87 t111 t23 t74 t88 t108 t75 t104 t116 t94 t19 t112 t89 t81 t25 t76 t6 t95 t82 t109"/>
       </outline>
-      <gantt-view x="-27" y="0" w="873" h="720">
+      <gantt-view x="-27" y="0" w="869" h="675">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>
@@ -201,10 +197,10 @@ End:</group-table-style>
     <printinfo-dictionary>
       <key>OPPrintSettingPrintOption</key>
       <integer>0</integer>
-      <key>NSScalingFactor</key>
-      <real>1</real>
-      <key>NSPrinterName</key>
-      <string>Brother MFC-9120CN</string>
+      <key>NSTopMargin</key>
+      <real>90</real>
+      <key>NSBottomMargin</key>
+      <real>90</real>
       <key>NSRightMargin</key>
       <real>72</real>
       <key>NSPaperName</key>
@@ -213,10 +209,10 @@ End:</group-table-style>
       <real>72</real>
       <key>NSOrientation</key>
       <integer>0</integer>
-      <key>NSTopMargin</key>
-      <real>90</real>
-      <key>NSBottomMargin</key>
-      <real>90</real>
+      <key>NSScalingFactor</key>
+      <real>0.506545186042786</real>
+      <key>NSPrinterName</key>
+      <string>Brother MFC-9120CN</string>
     </printinfo-dictionary>
     <page-adornment>
       <master-page-headers>

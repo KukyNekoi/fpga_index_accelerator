@@ -1,0 +1,61 @@
+\section{Methodology}
+This problem required now only knowledge in computer science but also a prior background on electronics, as such, is needed to 
+research about the following topics before going into serious development:
+
+\begin{itemize}
+    \item {\textbf{Non-traditional databases and metric spaces}}
+    \item {\textbf{FPGA development}}
+    \item {\textbf{High-level synthesis}}
+    \item {\textbf{Interconnection between programable logic and program software}}
+\end{itemize}
+%according to the required knowledge we create a solution, why so much prior knowledge, and which elements elements do I use
+\section{Implementation Methodology}
+%explain why I'm using or not a certain methodology
+To develop both the experiments and the acelerator we will follow an interative development cycle, based on the results of each
+source code but not following a exact construction metodology because of the nature of this work. Namely the elements to iterate 
+can be summarized as follows:
+
+\begin{itemize}
+    \item {\textbf{Permutant-based index testbench:} This implementation is intented to be used to gain insight of which methods are the most frequently
+    executed and to use it as reference to compare the results with the acelerator-improved version. It will be developed using C++ and it will provide 
+    a graphical interface to visually debug the queries.}
+    \item {\textbf{FPGA Accelerator:} This artifact it will be used to test the interconnection capabilities of hardware accelerators over the Zynq board,
+    and it will not provide drivers for userspace memory management rather it will operate directly with each DRAM block present on the board. It will be 
+    developed using Xilinx Vivado SDK for FPGA programming and with Xilinx Vivado HLS to write C/C++ code targeted to be synthetized on the on the board
+    as an acelerator IP.}
+    \item {\textbf{Accelerated index testbench:} Once the FPGA accelerator is ready, this artifact will provide insight on how the accelerator implementation affects
+    the performance of the original index. This implmentation will be optimized to run on ARM architectures and it will be a memory-coalesent implementation
+    of the first index implemented at the beggining.}
+    \item {\textbf{Kernel drivers:} This artifact will enable our accelerator to peform memory-safe operations by restricting memory access on userspace.
+    It will be developed using C and designed aroung GNU Linux guidelines for kernel drivers and modules.}
+    \item {\textbf{Accelerated index:} This artifact will wrap everything together, both the accelerated and non accelerated versions and it will be used
+    to measure the final performance of the index.}
+\end{itemize}
+
+As it can be seen, there is a need to iterate though every artifact of this research.
+
+\subsection{Design and architecture}
+%self-explanatory, only specs not details
+\subsection{Development}
+
+\section{Testing and experimentation Methodology}
+For experimentation we will follow an experimental approach rather than a purely theoretical one \cite{citation_required} to devise how the 
+accelerator affects the behaivour of the index. For such purposes a series of tests will be performed:
+
+\begin{itemize}
+    \item {\textbf{Hot zones on permutant index:} The bigger benefits of implementing a stream-like accelerator are reaped when the operation
+    to perform is simple and it can be streamlined and paralelized. So, after implementing the index, we want to map all code zones which are in most 
+    demand and then classify by their complexity and size. This two parameters will be the base to decide which ones are feasible to implementation
+    on the FPGA as accelerators.}
+    \item {\textbf{Litography and synthesis:} As we will be using high-level synthesis to implement the accelerators, there is a need to study the 
+    effects of different \texttt{PRAGMAS} in the accelerator source code. It is expected that pragmas that increase the thoughput of our 
+    accelerator will also be in higher demmand of resources which could be not be satisfied by our entry-level development board, which also affects
+    the scope of the accelerator covered as well as the synthesis time required to create a given IP.}
+    \item {\textbf{Kernel Userspace I/O Drivers:} There are several ways to build kernel drivers and modules, some of them treat as mere files, while
+    another approaches treat each device descriptor as text files, streams or raw memory mapping. Each one of those will have pros and cons that
+    will be need to be studied in order to correct the implementation to be memory-safe and scalable.}
+    \item {\textbf{Memory-safe implementation:} The implementation cannot go into a non-memory safe state as FPGA will have raw access to DRAM and this 
+    can suppose many problems as the index being stuck or memory corruption to other processes. This involves the implementation of checked runtime checks
+    along the execution which are expected to be done though a correct memory management on userspace and bound checking on hardware.}
+\end{itemize}
+%how the experiments were to be performed

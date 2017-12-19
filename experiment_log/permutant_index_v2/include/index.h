@@ -24,24 +24,26 @@ typedef struct {
     vector_distance_method_t vector_distance_method
 } build_parameters_t
 
-void index_init(index_t *index, size_t size, size_t dim);
-void index_append(index_t *index, permutation_t value);
-void index_set(index_t *index, size_t index, permutation_t value);
-void index_double_capacity_if_full(index_t *index);
-void index_free(index_t *index);
-void index_print(index_t *index);
-permutation_t index_get(index_t *index, size_t index);
-index_t index_distance(index_t *index, size_t a, size_t b);
+void index_init(index_t *index_body, size_t size, size_t dim);
+void index_append(index_t *index_body, permutation_t value);
+void index_set(index_t *index_body, size_t index, permutation_t value);
+void index_double_capacity_if_full(index_t *index_body);
+void index_free(index_t *index_body);
+void index_print(index_t *index_body);
+permutation_t index_get(index_t *index_body, size_t index);
+index_t index_distance(index_t *index_body, size_t a, size_t b);
 void index_copy(index_t *dest, index_t *src);
 void index_free(index_t *target);
 
+
 size_t comp (const void * elem1, const void * elem2);
-vector_t get_sss_pivot_indices(index_t *index, double sampling_factor, double alpha);
-vector_t force_sss_pivots(index_t *index, double sampling_factor, double precision, size_t amount);
+vector_t get_sss_pivot_indices(index_t *index_body, double sampling_factor, double alpha);
+vector_t force_sss_pivots(index_t *index_body, double sampling_factor, double precision, size_t amount);
 
-void build(index_t *index, dataset_t *dataset, build_paramenters_t *params);
+void build(index_t *index_body, dataset_t *dataset, build_paramenters_t *params);
 
-vector_t knn(index_t *index, dataset_t *dataset, element_t target, size_t k);
-vector_t range_query(index_t *index, dataset_t *dataset, element_t target, double range);
+vector_t knn(index_t *index_body, dataset_t *dataset, element_t target, size_t k);
+vector_t range_query(index_t *index_body, dataset_t *dataset, element_t target, double range);
 
+inline bool _index_checkbounds(index_t *index_body, size_t index);
 #endif

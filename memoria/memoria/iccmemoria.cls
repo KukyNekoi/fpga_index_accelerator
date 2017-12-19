@@ -5,18 +5,19 @@
 %%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{iccmemoria}
-[2005/01/19 v1 Degree project documentation, English version - ICC - UTalca (fmeza, jperez, eregla)] 
-\PassOptionsToClass{12pt,oneside,fleqn,spanish}{report}
+[2017/08/20 v2 Degree project documentation, English version - ICC - UTalca (fmeza, jperez, eregla)] 
+\PassOptionsToClass{12pt,oneside,fleqn,english}{report}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
 \LoadClass{report}
 
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[english,spanish]{babel}
+\RequirePackage[english]{babel}
 \RequirePackage{graphicx}
 \RequirePackage{setspace}
+\RequirePackage{hyperlink}
 
-\selectlanguage{spanish}
+\selectlanguage{english}
 \bibliographystyle{plain}
 
 \def\utalca{University of Talca}

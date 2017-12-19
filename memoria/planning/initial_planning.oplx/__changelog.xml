@@ -453,6 +453,18 @@
       <change idref="t106" attribute="title" type="string" to="Improved index"/>
     </change>
   </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-09-11T18:50:58.093Z" timestamp="2017-09-11T18:50:58.093Z">
+    <change idref="t23" attribute="internalEffortDone" type="real" from="0" to="115200" resolved="yes"/>
+    <change idref="t33" attribute="internalEffortDone" type="real" from="0" to="115200" resolved="yes"/>
+    <change idref="t74" attribute="internalEffortDone" type="real" from="0" to="115200" resolved="yes"/>
+    <change idref="t75" attribute="internalEffortDone" type="real" from="0" to="72000" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="KuKy NeKoi" date="2017-09-11T18:51:15.252Z" timestamp="2017-09-11T18:51:15.252Z">
+    <change idref="t23" attribute="internalEffortDone" type="real" from="115200" to="0" resolved="yes"/>
+    <change idref="t33" attribute="internalEffortDone" type="real" from="115200" to="0" resolved="yes"/>
+    <change idref="t74" attribute="internalEffortDone" type="real" from="115200" to="0" resolved="yes"/>
+    <change idref="t75" attribute="internalEffortDone" type="real" from="72000" to="0" resolved="yes"/>
+  </task-change-set>
   <resource-change-set user="KuKy NeKoi" date="2017-08-27T23:57:33.313Z" timestamp="2017-08-27T23:57:33.313Z">
     <change idref="r1" attribute="name" type="string" from="Resource 1" to="Erik Regla"/>
   </resource-change-set>

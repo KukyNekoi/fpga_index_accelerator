@@ -1,0 +1,119 @@
+\section{Metric Spaces and Non-Traditional Databases}
+\subsection{Overview}
+Chávez and Navarro \cite{chavez2005metric} gives an accurate description of what a non-traditional database
+is and which problems intends to solve. To summarise the whole idea of the former paper, traditional databases
+can be seen as engines that answer queries based on the premise that for a certain key there is a certain element
+with a (possibly unique) relationship. In other words, for a certain query $Q$ with constraints $C$ there is an answer
+$A$ which satisfies $Q \times C$. Actually, there is nothing wrong with this approach, but it's really complex and
+expensive to execute queries were we do not desire a exact answer because it does not exists or because it is
+to resourse-expensive to compute, for instance, if we have a large dataset of points in the space and we want to query 
+the ``10 points more closer to a point $Q$'' (this is also known as a $k$-nearest-neighbour query) we need to 
+execute this query for each point in the database and to compute their distances as well, which we don't know beforehand
+how costly it is.
+
+This is an interesting property which multimedia objects which makes pointless the use of exact queries as there is
+no two objects with the exact parameters -unless they are exact copies-. A ``real'' world example of this situation is plagiarism
+detection on multimedia files. Plagiarism\cite{dictionary_plagiarism}
+can be hard to detect because in most cases, only a part of the multimedia resembles the original work \cite{citation_needed}.
+There are many approaches to this problem, but in music one of the easiest representations is the ``spectrogram''\cite{citation_needed}
+which is a visual representation of the different waveforms involved on a certain audio file. Spectrograms allows the extraction of
+multiple features from a single audio picece such as scale, BPM (beats per minute), movements, entropy and so on, so forth.
+
+
+The values of this features can be allocated as \emph{vectors} $\mathbb{X}$ on a \emph{metric space} $\mathbb{U}$ formally defined as follows:
+
+For a given cartesian pair $\mathbb{U} = (\mathbb{X}, d)$ where $\mathbb{X}$ is a non-empty set of elements and is a distance function which
+operates over $\mathbb{X}$ in the following manner $d: \mathbb{X}\times\mathbb{X}\rightarrow[0,\infty)$, then it is considered a \emph{metric space}
+if it satisfies all the following conditions:
+
+\begin{enumerate}
+\item{\textbf{Reflexibility:} $\forall x_1,x_2 \in \mathbb{X}, x_1=x_2 : d(x_1,x_2) = 0$}
+\item{\textbf{Positiviness:} $\forall x_1,x_2 \in \mathbb{X} : d(x_1,x_2) \geq 0$}
+\item{\textbf{Simmetry:} $\forall x_1,x_2 \in \mathbb{X} :d(x_1,x_2) = d(x_2,x_1)$}
+\item{\textbf{Triangular inequality:} $\forall x_1,x_2,x_3 \in \mathbb{X} :d(x_1,x_2) \leq d(x_1,x_3) + d(x_3,x_1)$}
+\end{enumerate}
+
+\subsection{Metric Range and Nearest Neighbour Queries}
+A typical request is to find all the songs from $\mathbb{X}$ which have at most $15\%$ of similarity with our query song $q$. This 
+kind of queries are also known as \emph{Metric Range Queries} on which the result is a subset $\mathbb{X}'$of $\mathbb{X}$ which satisfies 
+$\forall x \in \mathbb{X}'; q, x_1, x_2 \in \mathbb{X} : d(x,d) \leq  0.15 \times max(d(x_1,x_2))$, where $0.15 \times max(d(x_1,x_2))$ represents
+the 15\% of the maximum distance between elements in the space. 
+
+There is a good reason behind to choose the maximum distance between elements instead of the maximum distance allowed by our space,
+because the maximum distance is infinity, thus, the relative nature of the space does not allow such queries to be performed. In a strict
+sense, we can generalise metric range queries as follows:
+
+$\forall x \in \mathbb{X}'; q, x_1, x_2 \in \mathbb{X} : d(x,d) \leq d$
+
+Now, for our subset of waveforms if we want to obtain the 10 songs more similar to a certain one we are talking about
+a \emph{Nearest Neighbour query}, on which the dataset is filtered and the result is a subset $\mathbb{X}'$ of $\mathbb{X}$ of fixed size $k$ (in 
+this case 10) satisfying $\forall x_1, x_2... x_n \in \mathbb{X}, x_1 < x_2 < .. < x_n ; q \in \mathbb{X} : \mathbb{X}' = {x_1, x_2, .., x_{10} }$.
+Formally this can be defined as $\forall x_1, x_2... x_n \in \mathbb{X}, x_1 < x_2 < .. < x_n; q \in \mathbb{X} : \mathbb{X}' = {x_1, x_2, .., x_k }$.
+
+\subsection{Dimensionality crux}
+All the queries previously explanined requires an evaluation of every element on the index, thus any improvement on
+the running time can be only achieved by reducing the dataset to be compared, but this ignores the fact that we do not know
+how expensive it is to compute a distance between two elements. On high-dimensional spaces, distance computation can be a pain
+depending on the function $d$ involved. This dependency on the space dimension is known as the \emph{dimensionality crux}. There are 
+many approaches to this problem such as dimensionaly reduction using techniques like \emph{Self Organizing Maps} which work
+under the premise that the real dimensions of the problem are less than the ones given by the dataset, depends on a
+prior treatment of the data and requires the asumption of data loss.
+
+So, dimensionality crux can be defined as the tradeoff between the amount of data available for computation (thus, the quality of our results) and
+the efficiency of the operations performed on this space.
+
+\subsection{Pivot and Permutant based indices}
+Given the dimensionality crux, we know that we need to reduce the dataset to compare in order speed up out queries, so, let's change the problem from
+searching similar songs to a geolocation problem, on which we need to find a point closer to another in the world map. If we were to
+find Curicó (Chile) without any prior knowledge of where it is, then the only option is to search on every label on the map
+in the hopes of finding the one that we desire to mark. This is known as \emph{exhaustive search}, which is pretty much like performing a 
+linear scan over the elements of $\mathbb{X}$.
+
+Everything would be easier if we have an \emph{index} to search on, a small database that can give us some insight on where
+the location belongs in order to reduce the problem size even if doesn't give us the exact position. We do not worry about dimensionality crux
+implcations at this point, since we are not quering the exact solution, rather a good aproximation of it. Now, assuming that we ask
+our index about the location of Curicó it can suggest how far it is from the major cities on the world (\emph{pivot} cities), this kind of indices
+is known as \emph{Pivot-based indices}, on which we don't store all the dimensions of the problem, rather than the distance of the element to certain
+\emph{key elements} of $\mathbb{X}$. Then by applying the triangular inequality property of metric spaces we can triangulate a reduced
+area on the map in which we know that Curicó is situated.
+
+So, assuming that we have a set $\mathbb{P} \subset \mathbb{X}$ of randomly chosen pivots, for a range query $(q,r)$ on $\mathbb{U}$ we do not need to 
+compute the distance of every element of $\mathbb{X}$ to our query object $q$ since the triangle inequality follows that 
+$\forall x \in \mathbb{X} : d(p_i,x) \leq d(p_i, q) + d(q,x)$ and also that $\forall x \in \mathbb{X} : d(p_i,q) \leq d(p_i, x) + d(p_i,q)$ thus
+we can approximate $d(q,x)$ for all elements on $\mathbb{X}$ only using the reference data given by the closeness of each element to their pivots.
+
+This approach implies that $|\mathbb{P}|$ indices must be created in order to store the information needed for a pivot approach but since we can store them
+as sorted arrays of data we perform an approximate binary search on each one of the indices (which can be later retrieved using incremental sorting 
+techniques \cite{7416566}), thus the search complexity yields $|\mathbb{P}| \times log_2(|\mathbb{X}|)$ for the pivot discard stage plus linear time to retrieve 
+all of the results from the resulting sets at the cost of  of extra $|\mathbb{P}|\times|\mathbb{X}|$ space. 
+
+Taking into account how space expensive is to generate such indices, another approach is to search for Curicó not using the distances to the major cities
+at all and only using the information given by the closeness order to each one of the pivots generated in the earlier stage. In this case, such cities which
+acts as pivots are know as \emph{permutants}. Then our approach now is to not store all the indices generated by the pivots, rather to map the entire dataset to another index which condenses this queries
+creating a single database in which the \emph{real distance calculations} are replaced by computing the permutation distance between each one of the permutants.
+
+This kind of indices are known as \emph{permutation indices} and work under the premise that computing the permutation distance is much simplier than
+to compute the actual distance for every object in $\mathbb{X}$. Such distances can be computed by using \emph{vector absolute distance} forumlas such as
+\emph{Spearman's footrule} and \emph{Kendall 's tau}.
+
+\subsection{Correlation coefficients and permutation distance metrics}
+One of the most well-known formulas for computing the correlation on two datasets is \emph{Spearman's rho}, which gives an interdependence metric
+between two continous random variables. For our case, we expect to have two permutations which represents a ranking of each object (namely, our
+query object and a test object in the dataset) so, to measure the similarity between those two permutations is a feasible solution at first glance. 
+But there are two problems given by both the nature of the data and it is implementation. First \emph{Spearman's rho} formula is intended for continous
+random variables, as such we always have intermediate objects between each data in the dataset, which is not our case. Second, it is hard to compute
+continous variable on a computer, since we do not enjoy o abritrary precision on our current compute machines.
+
+As such, we use the discrete version of correlation coefficients, which are also known as \emph{absolute distance} between vectors. In our case
+we have the following formulas for each one of the before mentioned metrics:
+
+Spearman's Footrule, which measures the total element displacement between the identity permutation:
+$$ F(\sigma) = \sum_{i} (i-\sigma(i))$$
+
+Kendall's tau, which measures the total number of pairwise inversions:
+$$ K(\sigma) = \sum_{i,j : i>j} (\sigma(i)<\sigma(j))$$
+
+
+%put formal definition
+
+
