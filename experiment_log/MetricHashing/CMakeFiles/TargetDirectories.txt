@@ -1,0 +1,3 @@
+/Users/jvarred/Documents/Sources/Research/MetricHashing/CMakeFiles/rebuild_cache.dir
+/Users/jvarred/Documents/Sources/Research/MetricHashing/CMakeFiles/edit_cache.dir
+/Users/jvarred/Documents/Sources/Research/MetricHashing/CMakeFiles/MetricHashing.dir

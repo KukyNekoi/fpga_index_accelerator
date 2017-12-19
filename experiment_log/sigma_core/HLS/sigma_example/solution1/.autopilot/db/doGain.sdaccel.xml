@@ -1,0 +1,190 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'doGain'" level="0">
+<item name = "Date">Mon Dec  4 06:35:55 2017
+</item>
+<item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
+<item name = "Project">sigma_example</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">5.42</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">100035004, 100035004, 100035005, 100035005, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">10000, 10000, 1, 1, 1, 10000, yes</column>
+<column name="- Loop 2">100015000, 100015000, 20003, -, -, 5000, no</column>
+<column name=" + odd">10000, 10000, 2, 2, 1, 5000, yes</column>
+<column name=" + even">9998, 9998, 2, 2, 1, 4999, yes</column>
+<column name="- Loop 3">10000, 10000, 2, 1, 1, 10000, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 146</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">54, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 253</column>
+<column name="Register">-, -, 141, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">19, 0, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="valIn_data_V_U">doGain_valIn_data_V, 32, 0, 0, 10000, 32, 1, 320000</column>
+<column name="valIn_dest_V_U">doGain_valIn_dest_V, 6, 0, 0, 10000, 6, 1, 60000</column>
+<column name="valIn_id_V_U">doGain_valIn_id_V, 5, 0, 0, 10000, 5, 1, 50000</column>
+<column name="valIn_keep_V_U">doGain_valIn_keep_V, 4, 0, 0, 10000, 4, 1, 40000</column>
+<column name="valIn_strb_V_U">doGain_valIn_keep_V, 4, 0, 0, 10000, 4, 1, 40000</column>
+<column name="valIn_last_V_U">doGain_valIn_last_V, 1, 0, 0, 10000, 1, 1, 10000</column>
+<column name="valIn_user_V_U">doGain_valIn_user_V, 2, 0, 0, 10000, 2, 1, 20000</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_2_fu_477_p2">+, 0, 0, 14, 14, 2</column>
+<column name="i_3_1_fu_511_p2">+, 0, 0, 14, 14, 2</column>
+<column name="idx_1_fu_391_p2">+, 0, 0, 14, 14, 1</column>
+<column name="idx_2_fu_529_p2">+, 0, 0, 14, 14, 1</column>
+<column name="stage_1_fu_517_p2">+, 0, 0, 14, 14, 2</column>
+<column name="tmp_10_1_fu_494_p2">+, 0, 0, 14, 14, 2</column>
+<column name="tmp_10_fu_460_p2">+, 0, 0, 14, 14, 2</column>
+<column name="ap_sig_bdd_70">and, 0, 0, 1, 1, 1</column>
+<column name="exitcond1_fu_385_p2">icmp, 0, 0, 5, 14, 14</column>
+<column name="exitcond2_fu_443_p2">icmp, 0, 0, 5, 14, 14</column>
+<column name="exitcond_fu_523_p2">icmp, 0, 0, 5, 14, 14</column>
+<column name="tmp_12_1_fu_505_p2">icmp, 0, 0, 11, 32, 32</column>
+<column name="tmp_6_fu_471_p2">icmp, 0, 0, 11, 32, 32</column>
+<column name="tmp_8_fu_449_p2">icmp, 0, 0, 5, 14, 14</column>
+<column name="tmp_9_1_fu_483_p2">icmp, 0, 0, 5, 14, 14</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">6, 12, 1, 12</column>
+<column name="ap_sig_ioackin_outStream_TREADY">1, 2, 1, 2</column>
+<column name="i_1_reg_350">14, 2, 14, 28</column>
+<column name="i_s_reg_362">14, 2, 14, 28</column>
+<column name="idx2_reg_374">14, 2, 14, 28</column>
+<column name="idx_reg_327">14, 2, 14, 28</column>
+<column name="stage1_reg_338">14, 2, 14, 28</column>
+<column name="valIn_data_V_address0">14, 6, 14, 84</column>
+<column name="valIn_data_V_address1">14, 6, 14, 84</column>
+<column name="valIn_data_V_d0">32, 4, 32, 128</column>
+<column name="valIn_data_V_d1">32, 3, 32, 96</column>
+<column name="valIn_dest_V_address0">14, 3, 14, 42</column>
+<column name="valIn_id_V_address0">14, 3, 14, 42</column>
+<column name="valIn_keep_V_address0">14, 3, 14, 42</column>
+<column name="valIn_last_V_address0">14, 3, 14, 42</column>
+<column name="valIn_strb_V_address0">14, 3, 14, 42</column>
+<column name="valIn_user_V_address0">14, 3, 14, 42</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">11, 0, 11, 0</column>
+<column name="ap_reg_ioackin_outStream_TREADY">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp3_it0">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp3_it1">1, 0, 1, 0</column>
+<column name="exitcond_reg_607">1, 0, 1, 0</column>
+<column name="i_1_reg_350">14, 0, 14, 0</column>
+<column name="i_s_reg_362">14, 0, 14, 0</column>
+<column name="idx2_reg_374">14, 0, 14, 0</column>
+<column name="idx_reg_327">14, 0, 14, 0</column>
+<column name="stage1_reg_338">14, 0, 14, 0</column>
+<column name="valIn_data_V_addr_2_reg_561">14, 0, 14, 0</column>
+<column name="valIn_data_V_addr_3_reg_567">14, 0, 14, 0</column>
+<column name="valIn_data_V_addr_4_reg_584">14, 0, 14, 0</column>
+<column name="valIn_data_V_addr_5_reg_589">14, 0, 14, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, doGain, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, doGain, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, doGain, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, doGain, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, doGain, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, doGain, return value</column>
+<column name="inStream_TDATA">in, 32, axis, inStream_V_data_V, pointer</column>
+<column name="inStream_TVALID">in, 1, axis, inStream_V_data_V, pointer</column>
+<column name="inStream_TREADY">out, 1, axis, inStream_V_dest_V, pointer</column>
+<column name="inStream_TDEST">in, 6, axis, inStream_V_dest_V, pointer</column>
+<column name="inStream_TKEEP">in, 4, axis, inStream_V_keep_V, pointer</column>
+<column name="inStream_TSTRB">in, 4, axis, inStream_V_strb_V, pointer</column>
+<column name="inStream_TUSER">in, 2, axis, inStream_V_user_V, pointer</column>
+<column name="inStream_TLAST">in, 1, axis, inStream_V_last_V, pointer</column>
+<column name="inStream_TID">in, 5, axis, inStream_V_id_V, pointer</column>
+<column name="outStream_TDATA">out, 32, axis, outStream_V_data_V, pointer</column>
+<column name="outStream_TVALID">out, 1, axis, outStream_V_dest_V, pointer</column>
+<column name="outStream_TREADY">in, 1, axis, outStream_V_dest_V, pointer</column>
+<column name="outStream_TDEST">out, 6, axis, outStream_V_dest_V, pointer</column>
+<column name="outStream_TKEEP">out, 4, axis, outStream_V_keep_V, pointer</column>
+<column name="outStream_TSTRB">out, 4, axis, outStream_V_strb_V, pointer</column>
+<column name="outStream_TUSER">out, 2, axis, outStream_V_user_V, pointer</column>
+<column name="outStream_TLAST">out, 1, axis, outStream_V_last_V, pointer</column>
+<column name="outStream_TID">out, 5, axis, outStream_V_id_V, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">5.42</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'valIn_data_V_load', main.cpp:46">load, 2.71, 2.71, -, -, -, -, -, -, &apos;valIn.data.V&apos;, main.cpp:16, -, -, -, -</column>
+<column name="main.cpp:50">store, 2.71, 5.42, &apos;valIn_data_V_load&apos;, main.cpp:46, -, -, -, -, -, &apos;valIn.data.V&apos;, main.cpp:16, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

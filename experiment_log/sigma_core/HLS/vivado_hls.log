@@ -1,0 +1,75 @@
+@I [HLS-10] Running '/opt/Xilinx/Vivado_HLS/2015.4/bin/unwrapped/lnx64.o/vivado_hls'
+            for user 'jvarred' on host 'ubuntu' (Linux_x86_64 version 4.10.0-28-generic) on Mon Dec 04 06:34:46 CLST 2017
+            in directory '/home/jvarred/Desktop/HLS'
+@I [HLS-10] Opening project '/home/jvarred/Desktop/HLS/sigma_example'.
+@I [HLS-10] Adding design file 'main.cpp' to the project
+@I [HLS-10] Adding test bench file 'main_tb.cpp' to the project
+@I [HLS-10] Opening solution '/home/jvarred/Desktop/HLS/sigma_example/solution1'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-10] Analyzing design file 'main.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [HLS-10] Checking synthesizability ...
+@I [XFORM-501] Unrolling loop 'Loop-2' (main.cpp:27) in function 'doGain' partially with a factor of 2.
+@W [XFORM-542] Cannot flatten a loop nest 'Loop-2' (main.cpp:27:21) in function 'doGain' : 
+               more than one sub loop.
+@I [HLS-111] Elapsed time: 4.82008 seconds; current memory usage: 73.8 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'doGain' ...
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'doGain' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-61] Pipelining loop 'odd'.
+@W [SCHED-69] Unable to schedule 'store' operation (main.cpp:49) of variable 'valIn_data_V_load_1', main.cpp:46 on array 'valIn.data.V', main.cpp:16 due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'even'.
+@W [SCHED-69] Unable to schedule 'store' operation (main.cpp:37) of variable 'valIn_data_V_load_3', main.cpp:34 on array 'valIn.data.V', main.cpp:16 due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 3'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.081951 seconds; current memory usage: 74.4 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'doGain' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.047675 seconds; current memory usage: 74.9 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'doGain' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_data_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_keep_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_strb_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_user_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_last_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_id_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/inStream_V_dest_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_data_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_keep_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_strb_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_user_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_last_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_id_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'doGain/outStream_V_dest_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on function 'doGain' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Finished creating RTL model for 'doGain'.
+@I [HLS-111] Elapsed time: 0.085691 seconds; current memory usage: 75.7 MB.
+@I [RTMG-278] Implementing memory 'doGain_valIn_data_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'doGain_valIn_keep_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'doGain_valIn_user_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'doGain_valIn_last_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'doGain_valIn_id_V_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'doGain_valIn_dest_V_ram' using block RAMs.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'doGain'.
+@I [WVHDL-304] Generating RTL VHDL for 'doGain'.
+@I [WVLOG-307] Generating RTL Verilog for 'doGain'.
+@I [HLS-112] Total elapsed time: 69.288 seconds; peak memory usage: 75.7 MB.
