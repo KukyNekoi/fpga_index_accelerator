@@ -1,28 +1,28 @@
 \section{Metric Spaces and Non-Traditional Databases}
 \subsection{Overview}
 Chávez and Navarro \cite{chavez2005metric} gives an accurate description of what a non-traditional database
-is and which problems intends to solve. To summarise the whole idea of the former paper, traditional databases
+is, and which problems it intends to solve. To summarise the main idea of the former paper, traditional databases
 can be seen as engines that answer queries based on the premise that for a certain key there is a certain element
 with a (possibly unique) relationship. In other words, for a certain query $Q$ with constraints $C$ there is an answer
-$A$ which satisfies $Q \times C$. Actually, there is nothing wrong with this approach, but it's really complex and
-expensive to execute queries were we do not desire a exact answer because it does not exists or because it is
-to resourse-expensive to compute, for instance, if we have a large dataset of points in the space and we want to query 
-the ``10 points more closer to a point $Q$'' (this is also known as a $k$-nearest-neighbour query) we need to 
-execute this query for each point in the database and to compute their distances as well, which we don't know beforehand
-how costly it is.
+$A$ which satisfies $Q \times C$. In truth, there is nothing wrong with this approach, but it is really complex and
+expensive to execute queries to which we do not desire a exact answer, because it does not exists or because it is
+resourse-expensive to compute. For instance, if we have a large dataset of points in space and we want to query 
+the ``10 points closest to a point $Q$'' (also known as a $k$-nearest-neighbour query) we need to 
+execute this query for each point in the database computing their individual distances as well, an operation with a cost
+that is not known beforehand.
 
-This is an interesting property which multimedia objects which makes pointless the use of exact queries as there is
-no two objects with the exact parameters -unless they are exact copies-. A ``real'' world example of this situation is plagiarism
+This is an interesting property of multimedia objects which makes the use of exact queries pointless as there are
+no two objects with the same parameters -unless they are exact copies-. A ``real'' world example of this situation is plagiarism
 detection on multimedia files. Plagiarism\cite{dictionary_plagiarism}
 can be hard to detect because in most cases, only a part of the multimedia resembles the original work \cite{citation_needed}.
 There are many approaches to this problem, but in music one of the easiest representations is the ``spectrogram''\cite{citation_needed}
 which is a visual representation of the different waveforms involved on a certain audio file. Spectrograms allows the extraction of
-multiple features from a single audio picece such as scale, BPM (beats per minute), movements, entropy and so on, so forth.
+multiple features from a single audio picece such as scale, BPM (beats per minute), movements, entropy and so on.
 
 
-The values of this features can be allocated as \emph{vectors} $\mathbb{X}$ on a \emph{metric space} $\mathbb{U}$ formally defined as follows:
+The values of these features can be allocated as \emph{vectors} $\mathbb{X}$ on a \emph{metric space} $\mathbb{U}$ formally defined as follows:
 
-For a given cartesian pair $\mathbb{U} = (\mathbb{X}, d)$ where $\mathbb{X}$ is a non-empty set of elements and is a distance function which
+For a given cartesian pair $\mathbb{U} = (\mathbb{X}, d)$ where $\mathbb{X}$ is a non-empty set of elements and $d$ is a distance function which
 operates over $\mathbb{X}$ in the following manner $d: \mathbb{X}\times\mathbb{X}\rightarrow[0,\infty)$, then it is considered a \emph{metric space}
 if it satisfies all the following conditions:
 
@@ -40,7 +40,7 @@ $\forall x \in \mathbb{X}'; q, x_1, x_2 \in \mathbb{X} : d(x,d) \leq  0.15 \time
 the 15\% of the maximum distance between elements in the space. 
 
 There is a good reason behind to choose the maximum distance between elements instead of the maximum distance allowed by our space,
-because the maximum distance is infinity, thus, the relative nature of the space does not allow such queries to be performed. In a strict
+because the maximum distance is infinity. Thus, the relative nature of the space does not allow such queries to be performed. In a strict
 sense, we can generalise metric range queries as follows:
 
 $\forall x \in \mathbb{X}'; q, x_1, x_2 \in \mathbb{X} : d(x,d) \leq d$
@@ -51,14 +51,15 @@ this case 10) satisfying $\forall x_1, x_2... x_n \in \mathbb{X}, x_1 < x_2 < ..
 Formally this can be defined as $\forall x_1, x_2... x_n \in \mathbb{X}, x_1 < x_2 < .. < x_n; q \in \mathbb{X} : \mathbb{X}' = {x_1, x_2, .., x_k }$.
 
 \subsection{Dimensionality crux}
-All the queries previously explanined requires an evaluation of every element on the index, thus any improvement on
-the running time can be only achieved by reducing the dataset to be compared, but this ignores the fact that we do not know
-how expensive it is to compute a distance between two elements. On high-dimensional spaces, distance computation can be a pain
+All the queries previously explained require an evaluation of every element on the index. Thus any improvement on
+the execution time can only achieved by reducing the dataset to be compared, but this ignores the fact that we do not know
+how expensive it is to compute the distance between two elements. On high-dimensional spaces, distance computation can be a pain,
 depending on the function $d$ involved. This dependency on the space dimension is known as the \emph{dimensionality crux}. There are 
-many approaches to this problem such as dimensionaly reduction using techniques like \emph{Self Organizing Maps} which work
-under the premise that the real dimensions of the problem are less than the ones given by the dataset, depends on a
-prior treatment of the data and requires the asumption of data loss.
+several approaches to this problem, such as dimensionaly reduction using techniques like \emph{Self Organizing Maps}, which work
+under the premise that the real dimensions of the problem are less than the ones given by the dataset, that it depends on a
+prior treatment of the data, and that it requires the asumption of data loss.
 
+%TODO continue checking
 So, dimensionality crux can be defined as the tradeoff between the amount of data available for computation (thus, the quality of our results) and
 the efficiency of the operations performed on this space.
 
