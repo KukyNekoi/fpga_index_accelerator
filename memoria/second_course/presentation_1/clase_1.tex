@@ -1,0 +1,102 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} 
+\usepackage{amssymb}
+\usepackage{soul}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{underscore}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\PassOptionsToPackage{pdflatex}{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\graphicspath{ {data/} }
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+
+
+\usefonttheme{professionalfonts}
+
+
+\title[Proyecto de Titulación]{Proyecto de Titulación}
+\subtitle{Presentacion de avances (?)} 
+\author[E. Regla]{Erik Regla} 
+\institute[UTalca]{Universidad de Talca}
+\date{\today} 
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% introduccion y/o motivacion
+% problema 
+% metodlogia
+% solución
+% donde estoy
+
+
+\begin{frame}
+	Motivation
+	\begin{itemize}
+		\item None.
+	\end{itemize}
+  \end{frame}
+
+
+\begin{frame}
+	Introduction/Motivation
+	\begin{itemize}
+		\item Hardware-accelerated similarity search indices on the Adapteva Parallella-16 reconfigurable computing machine
+	\end{itemize}
+  \end{frame}
+
+
+  \begin{frame}
+	Problem
+	\begin{itemize}
+		\item Currently we already hit the atomical scale on transitor techonlogy.
+		\item Focuses on research are pointing towards heterogenous architectures rather than homogeneous ones.
+		\item There is work on using FPGAs as reconfigurable computing solutions, but there are no work related on metric space indexing.
+	\end{itemize}
+  \end{frame}
+
+
+
+\begin{frame}
+	Methodology
+	\begin{itemize}
+		\item We're gonna develop several prototypes for accelerators to test on our FPGA target.
+		\item We're gonna compare the results agains a plain C (and memory coalesent/safe) implementation of an permutant index.
+		\item Profit.
+	\end{itemize}
+  \end{frame}
+
+
+\begin{frame}
+	Solution
+	\begin{itemize}
+		\item Leverage a study on which techniques can be applied to an hybrid FS-PL solution in order to accelerate the proceses involved on a metric space indexing and searching.
+		\item Implement such changes to our index
+		\item Repeat.
+	\end{itemize}
+  \end{frame}
+
+
+\begin{frame}
+	Current status
+	\begin{itemize}
+		\item Rescheduling everything because of a WHOLE SEMESTER HIATUS.
+		\item We're gonna implement a new upgrade for the algorithm, a segment-sorting variation for a network-sort.
+		\item Check it out here https://github.com/KukyNekoi/fpga_index_accelerator
+	\end{itemize}
+  \end{frame}
+
+\end{document}

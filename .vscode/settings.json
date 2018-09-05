@@ -2,6 +2,7 @@
     "files.associations": {
         "permutant.h": "c",
         "indexing.h": "c",
-        "vector.h": "c"
+        "vector.h": "c",
+        "element.h": "c"
     }
 }
